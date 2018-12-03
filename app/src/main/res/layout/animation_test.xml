@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" 
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal">
+
+      <ImageButton
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@null"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/btn_icon"
+        android:textColor="#0A84BD"
+        android:textSize="16sp" />
+      
+    <EditText
+        android:id="@+id/custom_edittext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/btn_margin_left_right"
+        android:layout_marginRight="@dimen/btn_margin_left_right"
+        android:background="@drawable/animation_edit_background"
+        android:gravity="left|center_vertical"
+        android:hint="username"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+         android:maxLength="25"
+        android:textColor="#000000"
+        android:textColorHint="#AEAEAE"
+        android:textSize="16sp" />
+    
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/btn_margin_left_right"
+        android:layout_marginRight="@dimen/btn_margin_left_right"
+        android:background="@drawable/animation_edit_background"
+        android:gravity="left|center_vertical"
+        android:hint="password"
+        android:inputType="phone|numberDecimal"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:maxLength="25"
+        android:textColor="#000000"
+        android:textColorHint="#AEAEAE"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:text="确定"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_item_selector"
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
+
+     
+     <Button
+        android:id="@+id/write_diary_add_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Position"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:background="@drawable/location_button"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+     </Button>
+     
+    <LinearLayout
+     android:id="@+id/write_diary_location_layout"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:orientation="horizontal"
+     android:gravity="center_vertical">
+     <ImageView
+     	android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/location">
+     </ImageView>
+     <TextView
+     	android:id="@+id/write_diary_location_des"
+     	android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+     </TextView>
+     <Button
+        android:id="@+id/write_diary_remove_loadtion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="remove"
+        android:textColor="#000000"
+        android:background="@drawable/common_button_style"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+     </Button>
+  </LinearLayout>
+
+</LinearLayout>

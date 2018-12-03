@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">picOptimize</string>
+
+    <string name="border_top">Border Top</string>
+    <string name="border_bottom">Border Bottom</string>
+    <string name="image_url">Image Url</string>
+
+    <array name="entry">
+        <item>aa</item>
+        <item>bb</item>
+        <item>cc</item>
+    </array>
+    <array name="entry_value">
+        <item>aaa</item>
+        <item>bbb</item>
+        <item>ccc</item>
+    </array>
+
+    <string name="main_tab_home">首页</string>
+    <string name="main_tab_bar">聊吧</string>
+    <string name="main_tab_message">消息</string>
+    <string name="main_tab_myinfo">我的微博</string>
+    <string name="main_tab_more">更多</string>
+    <string name="upgrade_content">The customized message.</string>
+    <string name="remind_me">Remind Me Next Time </string>
+    <string name="remove">移除</string>
+    <string name="remove_photo">移除照片</string>
+    <string name="building_list_dialog_title">选择当前位</string>
+    <string name="add_location">添加当前位</string>
+    <string name="select_location">选择当前位</string>
+    <string name="finding_location">正在获取位...</string>
+    <string name="cannot_find_location">无法获取当前位</string>
+    <string name="location_service_disabled_notice">定位服务已被禁用,是否需要启用?</string>
+    <string name="test">dfsfsdfdsfdsfsd&#64;sfsfdsfsd&amp;erewrew
+	    &lt;br>&lt;br>sfsdfdsfds</string>
+    <string name="branded_settings_item_privacy_policy_content">To view RingCentral\'s privacy policy, visit http://www.ringcentral.com/legal/privacy-policy.html &lt;br>&lt;br>To view AT&amp;T\'s privacy policy, visit http://www.att.com/privacy</string>
+    <string name="branded_tos_text2">   		&lt;br>RingCentral does not provide Internet service or Public Switched Telephone Network (\"PSTN\") service (e.g., traditional telephone or cellular telephone service), which are required to use features of the Service and Mobile App. You are solely responsible for obtaining and paying for any required Internet or PSTN service.
+ 		&lt;br>&lt;br>You shall not use the Service for any illegal, fraudulent, improper, or abusive purpose or in any way that interferes with RingCentral\'s ability to provide the Service to other customers. If RingCentral or AT&amp;T find that You are using the Service for anything other than the permitted uses in the EULA or TOS or for any of the prohibited uses in the EULA or TOS, RingCentral or AT&amp;T may at their sole discretion terminate Your Service and charge You any applicable fees for the Services used plus damages caused by Your improper use.
+		&lt;br>&lt;br>RingCentral and AT&amp;T own exclusive right, title, and interest to their respective parts of the Services and Mobile App, including all patents, copyrights, trademarks,service marks, trade secrets, and all other intellectual property rights thereto. RingCentral and AT&amp;T grant You a limited, personal, revocable, non-exclusive, non-sublicensable, non-assignable, non-transferable, non-resellable license and right to use the Services and Mobile App in strict accordance with the Terms.
+		&lt;br>&lt;br>THE SERVICE AND MOBILE APP ARE PROVIDED \"AS IS\" AND \"AS AVAILABLE\" AND NEITHER RINGCENTRAL NOR AT&amp;T MAKE ANY WARRANTIES, EXPRESS OR LIMITED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS OR WARRANTIES OF NONINFRINGEMENT. THE ENTIRE RISK ASSOCIATED WITH THE USE OF THE SERVICE AND MOBILE APP SHALL BE BORNE SOLELY BY YOU. RINGCENTRAL\'S AND AT&amp;T\'S TOTAL LIABILITY FOR ANY AND ALL DAMAGES, REGARDLESS OF THE FORM OF ACTION, SHALL BE LIMITED TO ONE MONTH\'S FEES FOR THE SERVICE.
+		&lt;br>&lt;br>You shall indemnify and hold harmless, RingCentral and AT&amp;T, their affiliates, agents, and other providers who furnish goods and services to You in connection with the Services, and their officers, directors, managers, employees, and shareholders from and against any and all liability, claims, losses, damages, fines, penalties, injuries, costs and expenses (including reasonable attorneys\' fees) arising from or related to Your use of the Service or Mobile App, any breach of the EULA or TOS by You, or other covered activities as specified in the EULA or TOS.
+		&lt;br>&lt;br>In the event of any dispute, claim, question, or disagreement (\"Dispute\") between You and RingCentral, You agree to first use reasonable best efforts to settle the Dispute directly with RingCentral. If such efforts fail, for any Dispute with RingCentral involving $10,000 or less, either party may choose to resolve the Dispute through binding, non-appearance-based arbitration.You agree that venue for any other Dispute with RingCentral shall be the Superior Court of California, County of San Mateo for state court cases and the United States District Court of the Northern District of California for federal court cases. You agree to submit to the jurisdiction of such courts and agree not to bring any Dispute with RingCentral in any other court or adjudicative body. The non-prevailing party shall reimburse the prevailing party for all reasonable and documented attorneys\' fees, costs, and expenses relating to Disputes with RingCentral. Disputes between You and AT&amp;T shall be governed by the AT&amp;T Terms of Service, including its binding arbitration and choice of law provisions.
+ 		&lt;br>&lt;br>Your use of the Services and Mobile App shall be governed by and construed under the laws of California and U.S. without regard to its conflict of law rules.
+		&lt;br>&lt;br>By clicking on \"Accept\", (a) You acknowledge that You have read and are bound by this Summary, the RingCentral End User License Agreement and AT&amp;T Terms of Service, and (b) You warrant that if enrolling in the Service on behalf of a legal entity that You have the authority to agree to the EULA and TOS and to bind the legal entity and its individuals that use the Service. If You do not agree to the terms of this Summary, the End User License Agreement and the Terms of Service, do not click on \"Accept\".
+		&lt;br></string>
+    <string name="name1">我叫%1$s身高%2$2.2fCM</string>
+    <string name="noContacts">No Contacts</string>
+    <string name="contact_no_name">Unknown</string>
+</resources>
+

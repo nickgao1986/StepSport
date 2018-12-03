@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="56dp"
+    android:minHeight="56dp"
+    >
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/image_icon"
+        android:layout_width="@dimen/favorites_item_picture_width"
+        android:layout_height="@dimen/favorites_item_picture_height"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+         />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="@dimen/messages_list_view_text_margin_left"
+        android:layout_toRightOf="@+id/image_icon"
+        android:background="@drawable/bg_list_item_divider"
+         >
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:ellipsize="marquee"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_size_medium" />
+        
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/name"
+            android:ellipsize="marquee"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_size_small" />
+    </RelativeLayout>
+
+</RelativeLayout>

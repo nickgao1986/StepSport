@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <include layout="@layout/title_list" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:layout_below="@id/title"
+        android:background="@drawable/rc_list_divider" />
+
+    <FrameLayout
+        android:id="@+id/contacts_logo_layout"
+        android:layout_width="@dimen/incall_photo_view_size"
+        android:layout_height="@dimen/incall_photo_view_size" >
+
+        <ImageView
+            android:id="@+id/voip_call_info_caller_photo"
+            android:layout_width="@dimen/incall_photo_view_size"
+            android:layout_height="@dimen/incall_photo_view_size"
+            />
+
+        <ImageView
+            android:id="@+id/contacts_logoborder"
+            android:layout_width="@dimen/incall_photo_view_size"
+            android:layout_height="@dimen/incall_photo_view_size"
+            android:background="@drawable/images_box" >
+        </ImageView>
+    </FrameLayout>
+
+</RelativeLayout>

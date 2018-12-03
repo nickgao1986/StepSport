@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+	    <!-- Focused states -->
+    <item android:drawable="@drawable/btn_launcher_more_pressed" android:state_selected="true"/>
+    <item android:drawable="@drawable/btn_launcher_more_pressed" android:state_pressed="true"/>
+
+    <!-- Pressed -->
+    <item android:drawable="@drawable/btn_launcher_more_nor"/>
+</selector>

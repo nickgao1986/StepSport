@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 搜索 -->
+    <string-array name="browse_titles">
+        <item>内容</item>
+        <item>知识</item>
+        <item>商品</item>
+    </string-array>
+    <string-array name="favourite_titles">
+        <item>内容</item>
+        <item>知识</item>
+    </string-array>
+
+    <!-- 问答 -->
+    <string-array name="qa_titles">
+        <item>我提问的</item>
+        <item>我回答的</item>
+        <item>我旁听的</item>
+    </string-array>
+
+    <string-array name="message_titles">
+        <item>通知</item>
+        <item>私信</item>
+        <item>动态</item>
+    </string-array>
+
+    <string-array name="gang_menu_default">
+        <item>置顶圈子</item>
+        <item>退出圈子</item>
+        <item>取消</item>
+    </string-array>
+    <string-array name="gang_menu_exit">
+        <item>退出圈子</item>
+        <item>取消</item>
+    </string-array>
+    <string-array name="gang_menu_my_hospital">
+        <item>置顶圈子</item>
+        <item>更换医院圈</item>
+        <item>取消</item>
+    </string-array>
+    <string-array name="gang_menu_my_hospital_top">
+        <item>更换医院圈</item>
+        <item>取消</item>
+    </string-array>
+    <string-array name="gang_menu_without_exit">
+        <item>置顶圈子</item>
+        <item>取消</item>
+    </string-array>
+    <!-- 同龄圈Tab， 备孕/孕期/育儿-->
+    <string-array name="age_group_tab_1">
+        <item>圈排行</item>
+        <item>距离近</item>
+    </string-array>
+    <string-array name="age_group_tab_2">
+        <item>圈排行</item>
+        <item>距离近</item>
+        <item>同生日</item>
+    </string-array>
+    <string-array name="age_group_tab_3">
+        <item>圈排行</item>
+        <item>距离近</item>
+        <item>同生日</item>
+    </string-array>
+
+    <!-- 非同龄圈Tab，备孕/孕期/育儿-->
+    <string-array name="normal_group_tab_1">
+        <item>圈排行</item>
+        <item>距离近</item>
+        <item>备孕姐妹</item>
+    </string-array>
+    <string-array name="normal_group_tab_2">
+        <item>圈排行</item>
+        <item>距离近</item>
+        <item>同孕龄</item>
+    </string-array>
+    <string-array name="normal_group_tab_3">
+        <item>圈排行</item>
+        <item>距离近</item>
+        <item>同宝龄</item>
+    </string-array>
+
+    <!-- 疫苗时间表 -->
+    <string-array name="vaccine_time">
+        <item>疫苗前三天</item>
+        <item>疫苗前一天</item>
+        <item>疫苗当天</item>
+    </string-array>
+
+    <string-array name="group_text">
+        <item>热帖</item>
+        <item>我的圈</item>
+    </string-array>
+
+    <!-- 帖子标题的预置文案 -->
+    <string-array name="topic_post_title">
+        <item>上头条就靠它！（必填）</item>
+        <item>好标题会被更多人看到哦！（必填）</item>
+        <item>混圈子，靠标题！（必填）</item>
+        <item>我只是个标题（必填）</item>
+        <item>(。･∀･)ﾉﾞ嗨 我是标题~（必填）</item>
+        <item>酷炫点儿，帖子才不容易沉哦（必填）</item>
+    </string-array>
+
+    <!-- 帖子正文的预置文案 -->
+    <string-array name="topic_post_content">
+        <item>一看你就是有“内秀”的人！那你写的“内容”也一定很有“内涵”！（不少于5个字）</item>
+        <item>好的内容，会被管管加为精华帖哦~（不少于5个字）</item>
+        <item>空有一身文采无处发挥？来这里畅所欲言，别控制！（不少于5个字）</item>
+        <item>我就是正文（不少于5个字）</item>
+        <item>(。･∀･)ﾉﾞ嗨，我是标题他妹，我是内容。（不少于5个字）</item>
+        <item>只要你愿意，什么文风都可以（不少于5个字）</item>
+    </string-array>
+
+    <!-- 新用户帖子标题的预置文案 -->
+    <string-array name="new_topic_post_title">
+        <item>新人报到快来说点什么吧！（必填）</item>
+        <item>和热情的宝妈们打个招呼吧！（必填）</item>
+        <item>初来宝宝树啥感受？说说吧！（必填）</item>
+        <item>发个帖子找找有缘分的宝妈！（必填）</item>
+        <item>你可以这样介绍一下自己~（必填）</item>
+        <item>跟圈子里的宝妈打个招呼吧！（必填）</item>
+    </string-array>
+
+    <!-- 新用户帖子正文的预置文案 -->
+    <string-array name="new_topic_post_content">
+        <item>从现在开始，和圈子里的宝妈们分享你的点点滴滴吧~（不少于5个字）</item>
+        <item>你的自我介绍？你的孕育问题？这些都可以作为你的第一篇帖子的内容哦！（不少于5个字）</item>
+        <item>这将成为你的第一篇帖子，去圈子里交个朋友？还有额外积分奖励哦！（不少于5个字）</item>
+        <item>现在有什么问题，和宝妈们交流一下吧！（不少于5个字）</item>
+        <item>我的预产期是X年X月X日，有和我一样的吗？（不少于5个字）</item>
+        <item>这里的姐妹都很热情，怀孕育娃，八卦唠嗑，快来加入她们！（不少于5个字）</item>
+    </string-array>
+
+    <!-- 我的积分等级 -->
+    <string-array name="score_level">
+        <item>普通会员</item>
+        <item>铁牌会员</item>
+        <item>铜牌会员</item>
+        <item>银牌会员</item>
+        <item>金牌会员</item>
+        <item>铂金会员</item>
+        <item>钻石会员</item>
+        <item>皇冠会员</item>
+    </string-array>
+
+    <string-array name="score_awards">
+        <item>铁牌</item>
+        <item>铜牌</item>
+        <item>银牌</item>
+        <item>金牌</item>
+        <item>铂金</item>
+        <item>钻石</item>
+        <item>皇冠</item>
+    </string-array>
+
+    <string-array name="growth_record">
+        <item>  身高  </item>
+        <item>  体重  </item>
+    </string-array>
+
+    <string-array name="dialog_notify_title1">
+        <item>经期日历</item>
+        <item>关爱提醒</item>
+        <item>日程提醒</item>
+    </string-array>
+
+    <string-array name="dialog_notify_title2">
+        <item>备孕知识</item>
+        <item>时间表提醒</item>
+        <item>精彩内容推送</item>
+    </string-array>
+
+    <string-array name="dialog_notify_content1">
+        <item>哪天容易中，通知提醒您</item>
+        <item>孕育问题，我们支招</item>
+        <item>不再错过宝宝疫苗时间</item>
+    </string-array>
+
+    <string-array name="dialog_notify_content2">
+        <item>造娃那点事，推送告诉您</item>
+        <item>开启通知，不再错过产检时间</item>
+        <item>育儿知识，爆笑内容先人一步</item>
+    </string-array>
+    <!-- 搜索 -->
+    <string-array name="my_posts_titles">
+        <item>发布</item>
+        <item>评论</item>
+        <item>回复</item>
+        <item>投票</item>
+    </string-array>
+
+    <string-array name="qa_label_titles">
+        <item>最热</item>
+        <item>最新</item>
+        <item>同龄</item>
+    </string-array>
+
+    <string-array name="notification_titles">
+        <item>快来吧，唯有健康才能使人走上人生巅峰。</item>
+        <item>改善身体健康，从一点一滴开始。</item>
+        <item>世界上最好的运动，你走对了吗？</item>
+        <item>跬步之行，终成千里。</item>
+        <item>步行是种修行，心灵为之沉淀，身心自然舒畅！</item>
+        <item>运动是一切生命的源泉！</item>
+        <item>每走一步都是为健康投资。</item>
+        <item>生命在于运动！</item>
+        <item>天天万步走，健康在招手。</item>
+        <item>人生要走太多路，尤其健康这几步 。</item>
+        <item>妈妈有一句话说对了：好身体是走出来的。</item>
+        <item>用低成本坚持，换无价健康享受。</item>
+        <item>坚持一件小事，比如计步达标30日 。</item>
+        <item>有些事，多走几步就扛过去了。</item>
+        <item>人生总要有些平淡的小坚持，比如你脚下的这几步。</item>
+        <item>人生没有白走的路，每一步都算数。</item>
+        <item>走过的都是风景，拥有的都是幸运。</item>
+    </string-array>
+
+    <array name="launcher_item_drawables">
+        <item>@drawable/btn_launcher_call</item>
+        <item>@drawable/btn_launcher_text</item>
+        <item>@drawable/btn_launcher_fax</item>
+        <item>@drawable/btn_launcher_conference</item>
+        <item>@drawable/btn_launcher_video</item>
+        <item>@drawable/btn_launcher_meeting</item>
+        <item>@drawable/btn_launcher_presence</item>
+    </array>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/white_a"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/news_home_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:footerDividersEnabled="true"
+        android:listSelector="@color/trans_color"
+        android:scrollbars="none"
+        android:scrollingCache="false" />
+
+</LinearLayout>

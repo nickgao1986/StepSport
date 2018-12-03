@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="theme">#F67D97</color>
+
+    <color name="white">#ffffff</color>
+    <color name="link_color">#666666</color>
+    <color name="light_gray">#DCDCDC</color>
+    <color name="login_third_driver_color">#dddddd</color>
+    <color name="c_mood_vertical_line">@color/theme</color>
+    <color name="c_mood_title_color">#666666</color>
+    <color name="group_user_name">@color/theme</color>
+    <color name="second_bar_normal_color">@color/pregnancy_color_888888</color>
+    <color name="second_bar_selected_color">@color/pregnancy_color_46d0db</color>
+    <color name="t888888">#888888</color>
+    <color name="gray">#888888</color>
+    <color name="picker_main_bj">#cccccc</color>
+    <color name="transparent_black">#7F000000</color>
+    <color name="bg_bar">#262626</color>
+
+    <color name="e5e5e5">#e5e5e5</color>
+    <color name="t49c9c9">#49c9c9</color>
+    <color name="t181818">#181818</color>
+    <color name="t999999">#999999</color>
+
+    <!-- 其他页面主页 -->
+    <color name="c_mood_hint_color">#cccccc</color>
+    <color name="feed_bg">@color/theme</color>
+
+    <!-- 孕期首页背景-新版 -->
+    <color name="sailfishbar_tv_normal">#999999</color>
+    <color name="c_home_list_title">#333333</color>
+
+    <!-- 宝宝树推荐更多 -->
+    <color name="listline">#eeeeee</color>
+    <color name="listview_bg_press">#e0e0e0</color>
+    <color name="guanzhu">#4acccc</color>
+    <color name="more_tool">#83DCDE</color>
+
+    <color name="orange">#ffffbb33</color>
+
+    <color name="comm_text">#666666</color>
+    <color name="comm_separate_line">#cccccc</color>
+    <color name="comm_list_item_sel">#cccccc</color>
+
+
+    <!--个人资料编辑-->
+    <color name="comm_list_item_text">#555555</color>
+    <color name="edit_list_item_text">#222</color>
+    <color name="edit_list_item_text_sub">#777</color>
+    <color name="comm_list_item_text_unable">#c7c7cc</color>
+    <!-- 收藏 -->
+
+    <!-- 签到页 -->
+    <color name="sign_in_dialog_content">#ff527b</color>
+
+    <color name="home_now_view_bg">#43cacd</color>
+
+    <!--宝宝听页 -->
+    <color name="baby_listen_mydownload_item">#90E0E1</color>
+
+    <color name="line_message">#FFBBBBBB</color>
+    <color name="my_gourp_text">#212121</color>
+    <color name="bg_reply_color">#99000000</color>
+
+    <color name="introduce_color_one">#66CCE3</color>
+
+
+    <!--蒙层背景-->
+    <color name="mask_layer_background">#b2000000</color>
+
+    <color name="battleship_grey">#727d7f</color>
+    <color name="publish_text_color">#6FD2D2</color>
+    <color name="white_alpha_50">#7Fffffff</color>
+
+    <color name="background_tab_pressed">#6633B5E5</color>
+
+    <color name="pregnancy_color_43c2c1">#43c2c1</color>
+    <color name="pregnancy_color_c1c1c1">#c1c1c1</color>
+    <color name="pregnancy_color_455683">#455683</color>
+    <color name="pregnancy_color_373737">#373737</color>
+    <color name="pregnancy_color_3fbfbd">#3fbfbd</color>
+    <color name="pregnancy_color_ff848a">#ff848a</color>
+    <color name="pregnancy_color_aaaaaa">#AAAAAA</color>
+    <color name="pregnancy_color_999999">#999999</color>
+    <color name="pregnancy_color_777777">#777777</color>
+    <color name="pregnancy_color_444444">#444444</color>
+    <color name="pregnancy_color_5DCBDB">#5DCBDB</color>
+    <color name="pregnancy_color_222222">#222222</color>
+    <color name="pregnancy_color_666666">#666666</color>
+    <color name="pregnancy_color_1e1e1e">#1e1e1e</color>
+    <color name="pregnancy_color_878787">#878787</color>
+    <color name="pregnancy_color_fcf8f5">#fcf8f5</color>
+    <color name="pregnancy_color_6ed7d9">#6ed7d9</color>
+    <color name="pregnancy_color_7fdcde">#7FDCDE</color>
+    <color name="pregnancy_color_eeeeee">#EEEEEE</color>
+    <color name="pregnancy_color_c3c3c3">#c3c3c3</color>
+    <color name="pregnancy_color_fafafa">#fafafa</color>
+    <color name="pregnancy_color_cdcdcd">#cdcdcd</color>
+    <color name="pregnancy_color_ffe98c">#ffe98c</color>
+    <color name="pregnancy_color_fdce0a">#fdce0a</color>
+    <color name="pregnancy_color_5e7785">#5e7785</color>
+    <color name="pregnancy_color_4daf35">#4daf35</color>
+    <color name="pregnancy_color_41952d">#41952d</color>
+    <color name="pregnancy_color_e3f3e0">#e3f3e0</color>
+    <color name="pregnancy_color_b0f2a1">#b0f2a1</color>
+    <color name="pregnancy_color_dff9d9">#dff9d9</color>
+    <color name="pregnancy_color_95d988">#95d988</color>
+    <color name="pregnancy_color_f9dbde">#f9dbde</color>
+    <color name="pregnancy_color_cde0ee">#cde0ee</color>
+    <color name="pregnancy_color_78defe">#78defe</color>
+    <color name="pregnancy_color_2a7019">#2a7019</color>
+    <color name="pregnancy_color_92b789">#92b789</color>
+    <color name="pregnancy_color_dd0000">#dd0000</color>
+    <color name="pregnancy_color_bb0000">#bb0000</color>
+    <color name="pregnancy_color_fad9db">#fad9db</color>
+    <color name="pregnancy_color_f6aeb4">#f6aeb4</color>
+    <color name="pregnancy_color_f88069">#f88069</color>
+    <color name="pregnancy_color_940000">#940000</color>
+    <color name="pregnancy_color_c77e84">#c77e84</color>
+    <color name="pregnancy_color_2a77c7">#2a77c7</color>
+    <color name="pregnancy_color_2366a9">#2366a9</color>
+    <color name="pregnancy_color_dbebf7">#dbebf7</color>
+    <color name="pregnancy_color_87bbe3">#87bbe3</color>
+    <color name="pregnancy_color_6ca7d5">#6ca7d5</color>
+    <color name="pregnancy_color_1b558d">#1b558d</color>
+    <color name="pregnancy_color_719cbd">#719cbd</color>
+    <color name="pregnancy_color_cccccc">#cccccc</color>
+    <color name="pregnancy_color_dddddd">#DDDDDD</color>
+    <color name="pregnancy_color_4ccccf">#4ccccf</color>
+    <color name="pregnancy_color_252627">#252627</color>
+    <color name="pregnancy_color_7b7a86">#7b7a86</color>
+    <color name="pregnancy_color_d4ddee">#d4ddee</color>
+    <color name="pregnancy_color_f6f7f8">#f6f7f8</color>
+    <color name="pregnancy_color_f6f6f6">#f6f6f6</color>
+    <color name="pregnancy_color_f7f7f7">#f7f7f7</color>
+    <color name="pregnancy_color_83dcde">#83dcde</color>
+    <color name="pregnancy_color_f5f8fa">#f5f8fa</color>
+    <color name="pregnancy_color_474d50">#474D50</color>
+    <color name="pregnancy_color_727d7f">#727D7F</color>
+    <color name="pregnancy_color_bdbdbd">#BDBDBD</color>
+    <color name="pregnancy_color_ccffffff">#ccffffff</color>
+    <color name="pregnancy_color_66cccc">#66cccc</color>
+    <color name="pregnancy_color_ffd24d">#ffd24d</color>
+    <color name="pregnancy_color_000000">#000000</color>
+    <color name="pregnancy_color_ffffff">#ffffff</color>
+    <color name="pregnancy_color_b6b7bd">#b6b7bd</color>
+    <color name="pregnancy_color_272727">#272727</color>
+    <color name="pregnancy_color_abe34b">#ABE34B</color>
+    <color name="pregnancy_color_dcdcdc">#dcdcdc</color>
+    <color name="pregnancy_color_2ec6ca">#2EC6CA</color>
+    <color name="pregnancy_color_44ccd0">#44CCD0</color>
+    <color name="pregnancy_divider_line">#e5e5e5</color>
+    <color name="pregnancy_color_3c3c3c">#3c3c3c</color>
+    <color name="pregnancy_color_282828">#282828</color>
+    <color name="pregnancy_color_b9b9b9">#B9B9B9</color>
+    <color name="pregnancy_color_home_dim">#63000000</color>
+    <color name="pregnancy_color_323232">#323232</color>
+    <color name="pregnancy_color_d8d8d8">#D8D8D8</color>
+    <color name="pregnancy_color_656565">#656565</color>
+    <color name="pregnancy_color_f2f2f2">#F2F2F2</color>
+    <color name="pregnancy_color_f5f5f5">#F5F5F5</color>
+    <color name="pregnancy_color_46d0db">#46D0DB</color>
+    <color name="pregnancy_color_181818">#181818</color>
+    <color name="pregnancy_color_989898">#989898</color>
+    <color name="pregnancy_color_30181818">#30181818</color>
+    <color name="pregnancy_color_333333">#333333</color>
+    <color name="pregnancy_color_ff5e6c">#ff5e6c</color>
+    <color name="pregnancy_color_ff5780">#ff5780</color>
+    <color name="pregnancy_color_979797">#979797</color>
+    <color name="pregnancy_color_f18181">#f18181</color>
+    <color name="pregnancy_color_f6f7f9">#F6F7F9</color>
+    <color name="pregnancy_color_4c000000">#4c000000</color>
+    <color name="pregnancy_color_888888">#888888</color>
+    <color name="pregnancy_color_d6d6d6">#d6d6d6</color>
+    <color name="pregnancy_color_ff527b">#ff527b</color>
+    <color name="pregnancy_color_eb7f97">#EB7F97</color>
+    <color name="pregnancy_color_49c9c9">#49C9C9</color>
+    <color name="pregnancy_color_4d49c9c9">#4d49C9C9</color>
+
+    <color name="pregnancy_color_1A49c9c9">#1A49C9C9</color>
+    <color name="pregnancy_color_e17843">#e17843</color>
+    <color name="pregnancy_color_f89090">#f89090</color>
+    <color name="pregnancy_color_43cacd">#43cacd</color>
+    <color name="pregnancy_color_eaf5f7">#EAF5F7</color>
+    <color name="white_alpha_60">#99FFFFFF</color>
+    <color name="pregnancy_color_f67d97">#f67d97</color>
+    <color name="pregnancy_color_1Af67d97">#1Af67d97</color>
+    <color name="pregnancy_color_e1fdfd">#e1fdfd</color>
+    <color name="pregnancy_color_f794a9">#F794A9</color>
+    <color name="pregnancy_color_59cdcd">#59CDCD</color>
+    <color name="pregnancy_color_191919">#191919</color>
+    <color name="pregnancy_color_43C2C1">#43C2C1</color>
+    <color name="pregnancy_color_b6b6b6">#b6b6b6</color>
+    <color name="pregnancy_color_757575">#757575</color>
+    <color name="pregnancy_color_9992dfdf">#9992dfdf</color>
+    <color name="pregnancy_color_ffbaca">#ffbaca</color>
+    <color name="pregnancy_color_728af4">#728af4</color>
+    <color name="pregnancy_color_a6b5f6">#a6b5f6</color>
+    <color name="pregnancy_color_b6e9e9">#b6e9e9</color>
+    <color name="pregnancy_color_e93c62">#e93c62</color>
+    <color name="pregnancy_color_e9e9e9">#e9e9e9</color>
+    <color name="pregnancy_color_49c8c8">#49c8c8</color>
+    <color name="pregnancy_color_8b9ff6">#8B9FF6</color>
+    <color name="pregnancy_color_4666db">#4666db</color>
+    <color name="pregnancy_color_e97281">#e97281</color>
+    <color name="pregnancy_color_e96281">#e96878</color>
+    <color name="pregnancy_color_ffabb7">#ffabb7</color>
+    <color name="pregnancy_color_e87281">#e87281</color>
+    <color name="pregnancy_color_ffe7ea">#ffe7ea</color>
+    <color name="pregnancy_color_fff6f7">#fff6f7</color>
+    <color name="pregnancy_color_ececec">#ececec</color>
+    <color name="pregnancy_color_cc078e8e">#cc078e8e</color>
+    <color name="pregnancy_color_ccd42b50">#ccd42b50</color>
+    <color name="pregnancy_color_cc6579cd">#cc6579cd</color>
+    <color name="pregnancy_color_99000000">#99000000</color>
+    <color name="pregnancy_color_ebeaeb">#ebeaeb</color>
+    <color name="pregnancy_color_fdfdfe">#fdfdfe</color>
+    <color name="pregnancy_color_fc3668">#fc3668</color>
+    <color name="pregnancy_color_dedede">#dedede</color>
+    <color name="pregnancy_color_e0e0e0">#e0e0e0</color>
+    <color name="pregnancy_color_464646">#464646</color>
+    <color name="pregnancy_color_14bfd3">#14bfd3</color>
+    <color name="pregnancy_color_e7e7e7">#e7e7e7</color>
+    <color name="pregnancy_color_ffb6b9">#ffb6b9</color>
+    <color name="pregnancy_color_a9a9a9">#a9a9a9</color>
+    <color name="pregnancy_color_ff7e86">#ff7e86</color>
+    <color name="pregnancy_color_afafaf">#afafaf</color>
+    <color name="pregnancy_color_cbcbcb">#cbcbcb</color>
+    <color name="pregnancy_color_33000000">#33000000</color>
+    <color name="pregnancy_color_e27842">#e27842</color>
+    <color name="pregnancy_color_0079de">#0079de</color>
+    <color name="pregnancy_color_eff8ff">#eff8ff</color>
+    <color name="pregnancy_color_027de5">#027de5</color>
+    <color name="pregnancy_color_131313">#131313</color>
+    <color name="pregnancy_color_eaeaea">#eaeaea</color>
+    <color name="pregnancy_color_535353">#535353</color>
+    <color name="pregnancy_color_69e5e5e5">#69e5e5e5</color>
+    <color name="pregnancy_color_A8ff527b">#A8ff527b</color>
+    <color name="pregnancy_color_a8000000">#a8000000</color>
+    <color name="pregnancy_color_00c1d5">#00c1d5</color>
+    <color name="pregnancy_color_5900c1d5">#5900c1d5</color>
+    <color name="pregnancy_color_ef4123">#ef4123</color>
+    <color name="pregnancy_color_f6d047">#f6d047</color>
+    <color name="pregnancy_color_eb0029">#eb0029</color>
+    <color name="pregnancy_color_1d78be">#1d78be</color>
+    <color name="pregnancy_color_fdce07">#fdce07</color>
+    <color name="pregnancy_color_08bed5">#08bed5</color>
+
+    <color name="pregnancy_color_0abed5">#0abed5</color>
+    <color name="pregnancy_color_cacaca">#cacaca</color>
+    <color name="pregnancy_color_71d9e6">#71d9e6</color>
+    <color name="pregnancy_color_05d2cfd1">#05d2cfd1</color>
+    <color name="pregnancy_color_10d2cfd1">#10d2cfd1</color>
+    <color name="pregnancy_color_15d2cfd1">#15d2cfd1</color>
+    <color name="pregnancy_color_20d2cfd1">#20d2cfd1</color>
+    <color name="pregnancy_color_30d2cfd1">#30d2cfd1</color>
+    <color name="pregnancy_color_ff7f87">#ff7f87</color>
+    <color name="pregnancy_color_0078c8">#0078c8</color>
+    <color name="pregnancy_color_ebf0f3">#ebf0f3</color>
+    <color name="pregnancy_color_3fae2a">#3fae2a</color>
+    <color name="pregnancy_color_d7ffffff">#d7ffffff</color>
+    <color name="pregnancy_color_4bbad5">#4bbad5</color>
+    <color name="pregnancy_color_5cffffff">#5cffffff</color>
+    <color name="pregnancy_color_eceff4">#eceff4</color>
+    <color name="pregnancy_color_b61ba3d5">#b61ba3d5</color>
+    <color name="pregnancy_color_ffe49c">#ffe49c</color>
+    <color name="pregnancy_color_61686f">#61686f</color>
+    <color name="pregnancy_color_ff9eaf">#ff9eaf</color>
+    <color name="pregnancy_color_01bdbd">#01bdbd</color>
+    <color name="pregnancy_color_845cea">#845cea</color>
+    <color name="pregnancy_color_f7f8fa">#f7f8fa</color>
+
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
+
+    <color name="pregnancy_color_f8f8f8">#f8f8f8</color>
+    <color name="pregnancy_color_fe84a6">#fe84a6</color>
+    <color name="pregnancy_color_fff349">#fff349</color>
+    <color name="pregnancy_color_fff692">#fff692</color>
+
+    <color name="pregnancy_color_337bd1ff">#337bd1ff</color>
+    <color name="pregnancy_color_4dc8bef3">#4dc8bef3</color>
+    <color name="pregnancy_color_1ea9a9">#1ea9a9</color>
+    <color name="pregnancy_color_3a4ec2">#3a4ec2</color>
+    <color name="pregnancy_color_0079e2">#0079e2</color>
+    <color name="pregnancy_color_3349c9c9">#3349c9c9</color>
+    <color name="pregnancy_color_33fc8979">#33fc8979</color>
+    <color name="pregnancy_color_f7593e">#f7593e</color>
+    <color name="pregnancy_color_f5fdff">#f5fdff</color>
+    <color name="pregnancy_color_fe7272">#fe7272</color>
+    <color name="pregnancy_color_ff4500">#ff4500</color>
+    <color name="pregnancy_color_e2e2e2">#e2e2e2</color>
+    <color name="pregnancy_color_bc4235">#bc4235</color>
+    <color name="pregnancy_color_1a49c9c9">#1a49c9c9</color>
+    <color name="pregnancy_color_eff4f3">#eff4f3</color>
+    <color name="pregnancy_color_f95c5c">#f95c5c</color>
+
+    <color name="pregnancy_color_fff2c5">#fff2C5</color>
+    <color name="pregancy_color_b3000000">#b3000000</color>
+    <color name="pregnancy_color_e5e5e5">#e5e5e5</color>
+    <color name="text_title_bar_btn">#444444</color>
+    <color name="text_title_bar_btn_disable">#bbbbbb</color>
+    <color name="text_title_bar_btn_press">#49c9c9</color>
+
+    <!--text 规范色-->
+    <color name="text_marked_title">#181818</color>
+    <color name="text_normal_title">#444444</color>
+    <color name="pregnancy_bg_color">#f5f5f5</color>
+    <color name="bg_gray">#bcc0c5</color>
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <drawable name="transparent">#00000000</drawable>
+    <color name="pregnancy_color_bbbbbb">#bbbbbb</color>
+    <color name="pregnancy_ff527b">#ff527b</color>
+    <color name="pregnancy_color_49C9C9">#49c9c9</color>
+    <color name="pink_gang">@color/theme</color>
+    <color name="light_grey_gang">#999999</color>
+    <color name="pregnancy_color_27aeaa">#27aeaa</color>
+
+    <color name="pregnancy_color_b3000000">#b3000000</color>
+    <color name="pregnancy_color_4ccaca">#4ccaca</color>
+    <color name="pregnancy_color_4ad6d6">#4ad6d6</color>
+    <color name="pregnancy_color_4c49c9c9">#4c49C9C9</color>
+
+    <color name="pregnancy_week_bg_week_first">#83DCDE</color>
+    <color name="pregnancy_gender_bg">@color/theme</color>
+    <color name="pregnancy_week_bg_week_normal">#D0D0D0</color>
+    <color name="pregnancy_week_bg_current">@color/theme</color>
+    <color name="home_tools_title">#222</color>
+    <color name="home_tools_content">#777</color>
+    <color name="white_gray">#DFDFDF</color>
+    <color name="baby_listen_bg">#83DCDE</color>
+    <color name="guide_bg">#66000000</color>
+
+    <color name="qupai_gray_0x19">#191919</color>
+    <color name="qupai_gray_0x33">#333333</color>
+    <color name="qupai_gray_0x44">#444444</color>
+    <color name="qupai_gray_0x48">#484848</color>
+    <color name="qupai_gray_0x4d">#4d4d4d</color>
+    <color name="qupai_gray_0x80">#808080</color>
+    <color name="qupai_gray_0x88">#888888</color>
+    <color name="qupai_gray_0x8c">#8c8c8c</color>
+    <color name="qupai_gray_0x92">#929292</color>
+    <color name="qupai_gray_0x99">#999999</color>
+    <color name="qupai_gray_0xd4">#D4D4D4</color>
+    <color name="qupai_gray_0xe2">#E2E2E2</color>
+    <color name="qupai_gray_0xe5">#E5E5E5</color>
+    <color name="qupai_gray_0xf0">#f0f0f0</color>
+    <color name="qupai_gray_0xf2">#f2f2f2</color>
+    <color name="share_ic_text_color">#999999</color>
+    <color name="pregnancy_color_a67832">#a67832</color>
+    <color name="pregnancy_color_b5966a">#b5966a</color>
+    <color name="pregnancy_color_825e26">#825e26</color>
+
+    <color name="pregnancy_color_f9b017">#f9b017</color>
+    <color name="pregnancy_color_daf8f8">#daf8f8</color>
+    <color name="pregnancy_color_f8e7eb">#f8e7eb</color>
+    <color name="line_background">#e7e7e7</color>
+    <color name="pregnancy_color_9f9f9f">#9f9f9f</color>
+    <color name="pregnancy_color_33a6b5f6">#33a6b5f6</color>
+    <color name="pregnancy_color_899df0">#899df0</color>
+
+    <color name="pregnancy_color_e9f4f6">#e9f4f6</color>
+    <color name="pregnancy_color_f2f5f6">#f2f5f6</color>
+    <color name="pregnancy_color_ffebf0">#ffebf0</color>
+    <color name="pregnancy_color_ffdee6">#ffdee6</color>
+    <color name="sys_light_grey">#DCDCDC</color>
+    <color name="bb_default_image_color">#e5e5e5</color>
+    <color name="white_a">#ffffff</color>
+    <color name="trans_color">#00000000</color>
+
+    <color name="light">#EFF5F9</color>
+    <color name="list_items_divider">#d1d1d0</color>
+    <color name="bgColorMain">#FFFFFF</color>
+    <color name="bg_list_item_pressed">#EFF5F9</color>
+    <color name="textColorWhite">#FFFFFF</color>
+
+    <drawable name="gray2">#999999</drawable>
+
+    <color name="text_no_items">#d1d1d0</color>
+    <color name="bg">#fff6f7f6</color>
+    <color name="contacts_text_separator_text_color">#0A84BD</color>
+    <color name="tabs_main">#0A84BD</color>
+    <color name="list_view_areas_divider">#F7F7F7</color>
+    <color name="refresh_control_text_color">#B3B4B4</color>
+    <color name="text_color_main">#000000</color>
+</resources>
