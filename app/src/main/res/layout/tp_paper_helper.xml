@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_bar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            style="@style/ActionBarItem"
+            android:src="@drawable/mt_actionbar_back" />
+
+
+        <com.pic.optimize.helper.view.PagerSlidingTabStrip
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_toRightOf="@id/ib_back"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="@color/mt_dividing_line" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

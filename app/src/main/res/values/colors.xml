@@ -388,4 +388,8 @@
     <color name="list_view_areas_divider">#F7F7F7</color>
     <color name="refresh_control_text_color">#B3B4B4</color>
     <color name="text_color_main">#000000</color>
+    <color name="mt_dividing_line">#e4e4e4</color>
+
+    <color name="mt_h_text_blue">#49C9C9</color>
+    <color name="mt_h_text_black">#181818</color>
 </resources>

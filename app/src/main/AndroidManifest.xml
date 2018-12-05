@@ -63,7 +63,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".fresco.TestListActivity">
+        <activity android:name=".helper.PaperHelpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
