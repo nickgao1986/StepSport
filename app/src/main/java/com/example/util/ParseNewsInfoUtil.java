@@ -3,13 +3,9 @@ package com.example.util;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.Patterns;
 
 import com.example.item.LinkInfo;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -20,30 +16,7 @@ import java.util.regex.Pattern;
 
 
 public class ParseNewsInfoUtil {
-	
-	public static String getReplistString(JSONArray jsonList){
-    	String strReplist = null;
-    	StringBuffer sbuf = new StringBuffer();
-    	try{
-    		int size = jsonList.length();
-    		if(size == 0){
-    			return null;
-    		}
-    		for(int i = 0; i < size; i++){
-    			JSONObject jobj = jsonList.getJSONObject(i);
-    			sbuf.append(jobj.getString("title"));
-    			if(i != size - 1){
-    			   sbuf.append('\n');
-    			}
-    		}
-    	}catch(Exception ex){
-    		Log.e("NewsModel", "getReplistString", ex);
-    	}finally{
-    		strReplist = sbuf.toString();
-    	}
-    	return strReplist;
-    }
-	
+
 	private static Pattern EMAIL_PATTERN = Patterns.EMAIL_ADDRESS;
 	private static Pattern PHONE_PATTERN = Patterns.PHONE;
 	private static Pattern WEBURL_PATTERN = Patterns.WEB_URL;
