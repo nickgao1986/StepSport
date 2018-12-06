@@ -13,3 +13,5 @@
 - IntroView支持表情，电话，email的view
 
 ##PicWallActivity 照片墙的例子
+
+##SnapScreenActivity 很实用的滑屏控件

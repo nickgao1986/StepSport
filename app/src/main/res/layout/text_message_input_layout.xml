@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/edit_sms"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/messages_send_bar"
+    android:orientation="horizontal" >
+
+    <EditText
+        android:id="@+id/message_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_search_input"
+        android:hint="@string/tap_to_enter_message"
+        android:imeOptions="flagNoEnterAction"
+        android:inputType="textCapSentences|textAutoCorrect|textMultiLine|textShortMessage|textNoSuggestions"
+        android:maxLength="161"
+        android:maxLines="10"
+        android:textSize="@dimen/text_message_text_size"
+        android:minHeight="@dimen/min_edit_text_height"
+        android:paddingBottom="7dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        android:paddingTop="7dp"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:id="@+id/char_counter_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/char_counter_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/send_sms_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/button_send"
+            android:paddingBottom="8dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="8dp"
+            android:text="@string/send_button"
+            android:textColor="@color/messages_send_bar"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

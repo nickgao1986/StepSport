@@ -412,4 +412,13 @@
     <drawable name="blue2">#0000ff</drawable>
     <drawable name="blue3">#EBEBEB</drawable>
 
+    <color name="messages_name_read">#666666</color>
+    <color name="messages_name_not_read">#0b405e</color>
+    <color name="messages_date">#B2B2B2</color>
+    <color name="messages_indicator">#de1c24</color>
+    <color name="messages_send_bar">#08415A</color>
+    <color name="messages_send_button">#b5b5b5</color>
+    <color name="text_income_color">#000000</color>
+    <color name="text_sendout_color">#000000</color>
+    <color name="error_text_color">#de1c24</color>
 </resources>

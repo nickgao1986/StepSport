@@ -31,4 +31,8 @@
     <dimen name="contact_type_margin_left_right">15dp</dimen>
     <dimen name="contact_name_margin_left_right">15dp</dimen>
     <dimen name="list_item_section_height">30dp</dimen>
+
+    <dimen name="min_edit_text_height">32dp</dimen>
+    <dimen name="text_message_text_size">17sp</dimen>
+    <dimen name="text_message_input_padding">9dp</dimen>
 </resources>
