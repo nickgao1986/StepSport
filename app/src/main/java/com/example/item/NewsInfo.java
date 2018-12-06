@@ -1,7 +1,5 @@
 package com.example.item;
 
-import com.example.util.ParseNewsInfoUtil;
-
 import java.util.ArrayList;
 
 
@@ -77,12 +75,7 @@ public class NewsInfo {
 	public void setTitleList(ArrayList<LinkInfo> titleList){
 		this.titleList = titleList;
 	}
-	public ArrayList<LinkInfo> makeTitleList(String strInfo){
-		if(titleList == null){
-		    titleList = ParseNewsInfoUtil.parseNewsLinkString(strInfo);
-		}
-		return titleList;
-	}
+
 	
 	public ArrayList<LinkInfo> getIntroList(){
 		return introList;
@@ -91,17 +84,7 @@ public class NewsInfo {
 	public void setIntroList(ArrayList<LinkInfo> introList){
 		this.introList = introList;
 	}
-	public ArrayList<LinkInfo> makeIntroList(String strInfo){
-		if(introList == null){
-			introList = ParseNewsInfoUtil.parseNewsLinkString(strInfo);
-		}
-		return introList;
-	}
+
 	
-	public ArrayList<LinkInfo> makeDiaryIntroList(String strInfo){
-		if(introList == null){
-			introList = ParseNewsInfoUtil.parseDiaryLinkString(strInfo);
-		}
-		return introList;
-	}
+
 }

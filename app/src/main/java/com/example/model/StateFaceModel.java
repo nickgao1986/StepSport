@@ -1,7 +1,6 @@
 package com.example.model;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
@@ -45,10 +44,9 @@ public class StateFaceModel {
 		mFaceIcons.clear();
 		mSmallFaceMap.clear();
 		mSmallFaceIcons.clear();
-
-		AssetManager assetManager = context.getAssets();
 		ArrayList<String> faces = new ArrayList<String>();
 		try {
+			//读取json文件里的内容
 			String text = ParseNewsInfoUtil.getAssetJsonByName(context,"state_face/state_face.json");
 			JSONObject jsonObject = new JSONObject(text);
 			JSONObject data = jsonObject.optJSONObject("data");
@@ -62,8 +60,7 @@ public class StateFaceModel {
 			e.printStackTrace();
 		}
 
-		int i;
-		for (i = 0; i < faces.size(); ++i) {
+		for (int i = 0; i < faces.size(); ++i) {
 			int index = i + 1;
 			int id = context.getResources().getIdentifier("msgface_" + index,
 					"drawable", "com.pic.optimize");
