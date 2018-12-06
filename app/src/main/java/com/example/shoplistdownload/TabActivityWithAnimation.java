@@ -96,7 +96,7 @@ public class TabActivityWithAnimation extends TabActivity {
 		barTitle.setText(R.string.main_tab_bar);
 		ImageView barIcon = (ImageView) barWidgetView.findViewById(R.id.icon);
 		barIcon.setBackgroundResource(NORMAL_IMAGE[1]);
-		
+
 		tabSpec = tabSpec.setIndicator(barWidgetView).setContent(intent);
 		mTabHost.addTab(tabSpec);
 
@@ -149,22 +149,23 @@ public class TabActivityWithAnimation extends TabActivity {
 	     if (mTabWidget.getChildCount() < 2) {
 	         return;
 	     }
-	     
+
+
 	     if (getResources().getConfiguration().orientation != lastImageChangeOrientation) {
 	         lastImageChangeOrientation = getResources().getConfiguration().orientation;
-	         
+
 	         widgetItemWidth = mTabWidget.getWidth() / mTabWidget.getChildCount();
-	         
+
 	         View currView = mTabWidget.getChildAt(currTabIndex);
 	         focusWidgetItemWidth = currView.getWidth();
 	         focusWidgetItemHeight = currView.getHeight();
-	         
+
 	         LayoutParams lp = animImage.getLayoutParams();
 	         lp.width = focusWidgetItemWidth;
 	         lp.height = focusWidgetItemHeight;
 	         animImage.setLayoutParams(lp);
 	     }
-	        
+
 	     int fromX = lastTabIndex * widgetItemWidth;
 	     int toX = currTabIndex * widgetItemWidth;
 	     Log.v("test", "fromX:" + fromX + " toX:" + toX);
