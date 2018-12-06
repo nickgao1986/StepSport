@@ -103,11 +103,12 @@ public class IntroView extends TextView {
             return StartY;
         }
         float y = StartY;
-        float fontHeight = -paint.ascent() + paint.descent();//fontMetrics.bottom - fontMetrics.ascent;
+        float fontHeight = -paint.ascent() + paint.descent();
         int len = infoList.size();
         int color = getCurrentTextColor();
         for (int i = 0; i < len; i++) {
             LinkInfo info = infoList.get(i);
+            //如果LinkInfo为表情，那么我们需要用canvas.drawBitmap的方式去绘制
             if (info.isFace()) {
                 Bitmap faceBmp = null;
                 if (mFaceType == MSG_FACE_TYPE) {
@@ -144,6 +145,7 @@ public class IntroView extends TextView {
                 paint.setColor(getResources().getColor(R.drawable.blue1));
             }
 
+            //如果只是普通文字，那么只要canvas.drawText就行
             if (curLen + xLen + starLen >= displayWidth) {
                 int lenStr = strContent.length();
                 for (int j = 0; j < lenStr; j++) {
@@ -281,6 +283,12 @@ public class IntroView extends TextView {
         return false;
     }
 
+    /**
+     * 如果是phone或是email的链接，那么我们使用canvas.drawRect的方式进行绘制
+     * @param canvas
+     * @param paint
+     * @param info
+     */
     private void paintSelectRectF(Canvas canvas, Paint paint, LinkInfo info) {
         ArrayList<RectF> rectList = info.getRectFList();
         int len = rectList.size();

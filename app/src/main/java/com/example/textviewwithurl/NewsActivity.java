@@ -29,11 +29,13 @@ public class NewsActivity extends Activity implements OnClickLinkListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.news_activity);
 		StateFaceModel.getInstance().init(this);
+		tvState = (ScrollText)findViewById(R.id.news_statustxt);
 		IntroView news_item_text = (IntroView)findViewById(R.id.news_item_text);
 		String text = "如何在TextView中插入表情符号如(#f1)，邮件youjiancau@sina.com,电话号码18559298168呢，默认的TextView是支持不了这个特性的";
 
 		news_item_text.setTitleList(ParseNewsInfoUtil.parseStr(text));
 		news_item_text.setOnClickLinkListener(this);
+		initStatus();
 	}
 	
     private void initStatus(){

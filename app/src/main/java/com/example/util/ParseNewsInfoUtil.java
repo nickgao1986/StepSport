@@ -29,6 +29,7 @@ public class ParseNewsInfoUtil {
     	ArrayList<LinkInfo> infoList = null;
     	try{
     		infoList = new ArrayList<LinkInfo>();
+    		//把所有的email标签都取出来
     		Matcher matcher = EMAIL_PATTERN.matcher(strLink);
     		int begin = 0;
     		while(matcher.find()) {
@@ -41,7 +42,8 @@ public class ParseNewsInfoUtil {
             	info.setType(LinkInfo.EMAIL);
         		infoList.add(info);
     		}
-    		
+
+			//把所有的phone标签都取出来
     		Matcher matcher1 = PHONE_PATTERN.matcher(strLink);
     		while(matcher1.find()) {
     			int start = matcher1.start();
@@ -53,7 +55,8 @@ public class ParseNewsInfoUtil {
             	info.setType(LinkInfo.PHONENUMBER);
         		infoList.add(info);
     		}
-    		
+
+			//把所有的表情标签都取出来
     		Pattern pattern = Pattern.compile("(\\(#\\S{1,2}\\))");
     	    Matcher matcher2 = pattern.matcher(strLink);
     		 while(matcher2.find()) {
@@ -66,9 +69,11 @@ public class ParseNewsInfoUtil {
             	info.setFace(true);
         		infoList.add(info);
     		}
-    		
+
+    		//对infoList进行排序
     		Collections.sort(infoList);
     		int last = 0;
+    		//按照文本的顺序重新组装成一个resultList
     		for(int i=0;i<infoList.size();i++) {
     			LinkInfo info = infoList.get(i);
     			if(begin != info.getStartIndex()){

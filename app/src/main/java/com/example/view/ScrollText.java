@@ -157,6 +157,7 @@ public class ScrollText extends TextView {
     @Override
     public void onDraw(Canvas canvas) {
         try {
+            //初始化一个txtCanvas，里面放txtBmp的bitmap
             setTxtBmp();
             if (txtBmp == null) {
                 return;
