@@ -63,7 +63,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.example.textviewwithurl.NewsActivity">
+        <activity android:name="com.example.shoplistdownload.TabActivityWithAnimation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -72,7 +72,11 @@
         </activity>
 
         <activity android:name=".MainTest"/>
-        <activity android:name="com.example.shoplistdownload.EditTextExample"/>
+        <activity android:name="com.example.textviewwithurl.NewsActivity"/>
+        <activity android:name=".helper.PaperHelpActivity"/>
+        <activity android:name=".PicTest"/>
+        <activity android:name=".picwall.PicWallActivity"/>
+        <activity android:name=".fresco.TestListActivity"/>
 
     </application>
 

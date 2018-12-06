@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.pic.optimize.R;
 
-public class MainActivity extends AppCompatActivity {
+public class PicWallActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

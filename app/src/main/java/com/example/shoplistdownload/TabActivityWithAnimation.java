@@ -17,8 +17,13 @@ import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
+import com.example.textviewwithurl.NewsActivity;
 import com.pic.optimize.MainTest;
+import com.pic.optimize.PicTest;
 import com.pic.optimize.R;
+import com.pic.optimize.fresco.TestListActivity;
+import com.pic.optimize.helper.PaperHelpActivity;
+import com.pic.optimize.picwall.PicWallActivity;
 
 
 public class TabActivityWithAnimation extends TabActivity {
@@ -74,7 +79,7 @@ public class TabActivityWithAnimation extends TabActivity {
 
 		View homeWidgetView = mLayoutInflater.inflate(R.layout.tab_indicator, mTabWidget, false);
 		Intent intent = new Intent();
-		intent.setClass(this, MainTest.class);
+		intent.setClass(this, PicWallActivity.class);
 		TabHost.TabSpec tabSpec = mTabHost.newTabSpec(HOME_TAB);
 		TextView homeTitle = (TextView) homeWidgetView.findViewById(R.id.title);
 		homeTitle.setText(R.string.main_tab_home);
@@ -86,7 +91,7 @@ public class TabActivityWithAnimation extends TabActivity {
 
 		View barWidgetView = mLayoutInflater.inflate(R.layout.tab_indicator, mTabWidget, false);
 		tabSpec = this.mTabHost.newTabSpec(CHAT_TAB);
-		intent = new Intent(this, EditTextExample.class);
+		intent = new Intent(this, NewsActivity.class);
 		TextView barTitle = (TextView) barWidgetView.findViewById(R.id.title);
 		barTitle.setText(R.string.main_tab_bar);
 		ImageView barIcon = (ImageView) barWidgetView.findViewById(R.id.icon);
@@ -97,7 +102,7 @@ public class TabActivityWithAnimation extends TabActivity {
 
 		View msgWidgetView = mLayoutInflater.inflate(R.layout.tab_indicator, mTabWidget, false);
 		tabSpec = this.mTabHost.newTabSpec(MESSAGE_TAB);
-		intent = new Intent(this, MainTest.class);
+		intent = new Intent(this, TestListActivity.class);
 		TextView msgTitle = (TextView) msgWidgetView.findViewById(R.id.title);
 		msgTitle.setText(R.string.main_tab_message);
 		ImageView msgIcon = (ImageView) msgWidgetView.findViewById(R.id.icon);
@@ -107,7 +112,7 @@ public class TabActivityWithAnimation extends TabActivity {
 
 		View myinfoWidgetView = mLayoutInflater.inflate(R.layout.tab_indicator, mTabWidget, false);
 		tabSpec = this.mTabHost.newTabSpec(PROFILE_TAB);
-		intent = new Intent(this, MainTest.class);
+		intent = new Intent(this, PaperHelpActivity.class);
 		TextView myinfoTitle = (TextView) myinfoWidgetView.findViewById(R.id.title);
 		myinfoTitle.setText(R.string.main_tab_myinfo);
 		ImageView myinfoIcon = (ImageView) myinfoWidgetView.findViewById(R.id.icon);
@@ -117,7 +122,7 @@ public class TabActivityWithAnimation extends TabActivity {
 
 		View moreWidgetView = mLayoutInflater.inflate(R.layout.tab_indicator, mTabWidget, false);
 		tabSpec = this.mTabHost.newTabSpec(MORE_TAB);
-		intent = new Intent(this, EditTextExample.class);
+		intent = new Intent(this, PicWallActivity.class);
 		TextView moreTitle = (TextView) moreWidgetView.findViewById(R.id.title);
 		moreTitle.setText(R.string.main_tab_more);
 		ImageView moreIcon = (ImageView) moreWidgetView.findViewById(R.id.icon);
