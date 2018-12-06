@@ -3,11 +3,6 @@ package com.pic.optimize;
 import android.app.Activity;
 import android.os.Bundle;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import okhttp3.OkHttpClient;
-
 public class MainTest extends Activity{
 
     private LargeImageView mLargeImageView;
@@ -16,10 +11,8 @@ public class MainTest extends Activity{
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activitiy_main);
+        setContentView(R.layout.activity_main);
 
-        mLargeImageView = (LargeImageView) findViewById(R.id.img);
-        OkHttpClient client;
     }
 
 }

@@ -46,5 +46,8 @@
     <string name="name1">我叫%1$s身高%2$2.2fCM</string>
     <string name="noContacts">No Contacts</string>
     <string name="contact_no_name">Unknown</string>
+    <string name="news_state_hint">你正在做什么？</string>
+    <string name="news_diary_pwd">此日记凭密码访问</string>
+
 </resources>
 

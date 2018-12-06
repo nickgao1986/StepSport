@@ -63,7 +63,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".helper.PaperHelpActivity">
+        <activity android:name="com.example.textviewwithurl.NewsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -71,6 +71,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".MainTest"/>
+        <activity android:name="com.example.shoplistdownload.EditTextExample"/>
 
     </application>
 

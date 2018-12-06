@@ -392,4 +392,24 @@
 
     <color name="mt_h_text_blue">#49C9C9</color>
     <color name="mt_h_text_black">#181818</color>
+    <drawable name="white">#FFFFFF</drawable>
+    <drawable name="red">#FF0000</drawable>
+    <drawable name="black">#000000</drawable>
+    <drawable name="black_news">#363636</drawable>
+    <drawable name="gray1">#AAAAAA</drawable>
+    <drawable name="gray3">#BBBBBB</drawable>
+    <drawable name="gray4">#666666</drawable>
+    <drawable name="gray5">#333333</drawable>
+    <drawable name="gray6">#F2F2F2</drawable>
+    <drawable name="gray7">#DEDEDE</drawable>
+    <drawable name="tabHostSplitLineColor">#999396</drawable>
+    <drawable name="message_detail_bg">#EFEFEF</drawable>
+    <drawable name="face_list_bg">#EFEFEF</drawable>
+    <drawable name="blue1">#ff576b95</drawable>
+    <drawable name="blue_link">#ff576b95</drawable>
+    <drawable name="voteSummaryTextColor">#008080</drawable>
+    <drawable name="desktopnoticebg">#EFEFEF</drawable>
+    <drawable name="blue2">#0000ff</drawable>
+    <drawable name="blue3">#EBEBEB</drawable>
+
 </resources>
