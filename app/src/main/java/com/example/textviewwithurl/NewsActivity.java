@@ -9,7 +9,6 @@ import android.view.Window;
 import android.widget.ImageView;
 
 import com.example.item.LinkInfo;
-import com.example.model.MessageFaceModel;
 import com.example.model.NewsModel;
 import com.example.model.StateFaceModel;
 import com.example.util.ParseNewsInfoUtil;
@@ -30,12 +29,11 @@ public class NewsActivity extends Activity implements OnClickLinkListener{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.news_activity);
 		StateFaceModel.getInstance().init(this);
-		MessageFaceModel.getInstance().init(this);
 		tvState = (ScrollText)findViewById(R.id.news_statustxt);
 		IntroView news_item_text = (IntroView)findViewById(R.id.news_item_text);
-		String s = "dsafsdfsdf(#可怜)fsgfdg(#鬼脸)fdgdfgdfgdfgdfgdfgfdgfdgfdgfdgdfg";
+		String text = "如何在TextView中插入表情符号如(#f1)，邮件youjiancau@sina.com,电话号码18559298168呢，默认的TextView是支持不了这个特性的";
 
-		news_item_text.setTitleList(ParseNewsInfoUtil.parseStr(s));
+		news_item_text.setTitleList(ParseNewsInfoUtil.parseStr(text));
 		news_item_text.setOnClickLinkListener(this);
 		initStatus();
 
@@ -43,11 +41,10 @@ public class NewsActivity extends Activity implements OnClickLinkListener{
 	
     private void initStatus(){
     	ivState = (ImageView) findViewById(R.id.news_statusinput);
-    	String s = "dsafsdfsdf(#闭嘴)fsgfdg(#睡觉)fdgdfgdfgdfgdfgdfgfdgfdgfdgfdgdfgfgdfgdfgdfgfdgfdgfdgfdgdfg";
+    	String s = "厦门这边的沙茶面很好吃，尤其是民族路上的一家很有名的店(#f2)";
     	newsModel.setStatus(s);
     	String strModel = newsModel.getStatus();
         setStateText(strModel);
-        
 	}
     
 	private void setStateText(String strModel){

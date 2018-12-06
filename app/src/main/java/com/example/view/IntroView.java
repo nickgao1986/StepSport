@@ -13,7 +13,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 
 import com.example.item.LinkInfo;
-import com.example.model.MessageFaceModel;
+import com.example.model.StateFaceModel;
 import com.pic.optimize.R;
 
 import java.util.ArrayList;
@@ -111,7 +111,8 @@ public class IntroView extends TextView {
             if (info.isFace()) {
                 Bitmap faceBmp = null;
                 if (mFaceType == MSG_FACE_TYPE) {
-                    faceBmp = MessageFaceModel.getInstance().getFaceIcon(info.getContent());
+                    faceBmp = StateFaceModel.getInstance()
+                            .getSmallFaceIcon(info.getContent());
                 }
                 if (faceBmp != null) {
                     int xLen = faceBmp.getWidth() + 4;
@@ -194,19 +195,17 @@ public class IntroView extends TextView {
         }
         float x = StartX;
         int len = infoList.size();
-        //FontMetrics fontMetrics = paint.getFontMetrics();
-        float fontHeight = -paint.ascent() + paint.descent();//fontMetrics.bottom - fontMetrics.top;
+        float fontHeight = -paint.ascent() + paint.descent();
         for (int i = 0; i < len; i++) {
             LinkInfo info = infoList.get(i);
 
-            //���￪ʼ����ÿ�����ӵĵ������
             info.getRectFList().clear();
 
-            if (info.isFace()) {//������Ű�
+            if (info.isFace()) {
                 Bitmap faceBmp = null;
                 if (mFaceType == MSG_FACE_TYPE) {
-                    faceBmp = MessageFaceModel.getInstance().getFaceIcon(info.getContent());
-                }
+                    faceBmp = StateFaceModel.getInstance()
+                            .getSmallFaceIcon(info.getContent());                }
                 if (faceBmp != null) {
                     int xLen = faceBmp.getWidth() + 4;
                     if (x + xLen >= displayWidth) {
@@ -383,8 +382,8 @@ public class IntroView extends TextView {
                     if (info.isFace()) {
                         Bitmap faceBmp = null;
                         if (mFaceType == MSG_FACE_TYPE) {
-                            faceBmp = MessageFaceModel.getInstance().getFaceIcon(info.getContent());
-                        }
+                            faceBmp = StateFaceModel.getInstance()
+                                    .getSmallFaceIcon(info.getContent());                        }
                         if (faceBmp != null) {
                             int wSize = faceBmp.getWidth() + 4;
                             if (width + wSize >= maxWidth) {
@@ -397,7 +396,6 @@ public class IntroView extends TextView {
                     }
 
                     String text = info.getContent();
-                    //  text = text.replaceAll("\n", " ");
                     if (!TextUtils.isEmpty(text)) {
                         float wSize = tempPaint.measureText(text);
                         if (width + wSize >= maxWidth) {

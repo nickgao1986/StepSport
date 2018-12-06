@@ -1,67 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/news_headerlayout" 
-	android:layout_width="fill_parent"
-	android:layout_height="wrap_content">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/news_profilelayout" 
-	android:layout_width="fill_parent"
-	android:layout_height="43dp"
-	android:gravity="center"
-	android:background="@drawable/news_statusbg1pix">
-	<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:id="@+id/news_logo_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:clickable="true"
-        android:layout_marginLeft="4dp">
-		<ImageView android:id="@+id/news_logoborder" 
-		    android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:src="@drawable/news_headborder"
-			android:layout_gravity="center">
-		</ImageView>
-		<ImageView android:id="@+id/news_logo" 
-		    android:layout_width="33dp"
-			android:layout_height="33dp"
-			android:src="@drawable/news_head"
-			android:layout_gravity="center">
-		</ImageView>
-	</FrameLayout>
-	<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:id="@+id/news_state_layout"
+                android:id="@+id/news_headerlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/news_profilelayout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="4dp"
-		android:layout_marginLeft="4dp"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/news_logo_layout">
-        <ImageView android:id="@+id/news_statusinput" 
-		    android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:background="@drawable/input_bg"
-			android:layout_gravity="center">
-		</ImageView>
-		<com.example.view.ScrollText android:id="@+id/news_statustxt" 
-		    android:layout_width="wrap_content"
-			android:layout_height="wrap_content" 
-			android:paddingLeft="10dp"
-			android:paddingRight="10dp"
-			android:layout_gravity="center_vertical"
-			android:textColor="#000000"
-			android:textSize="16sp"
-			android:hint="@string/news_state_hint"
-			android:inputType="text"/>
-	</FrameLayout>
-	</RelativeLayout>
-	<TextView
-		android:id="@+id/news_header_time"
-		android:layout_width="fill_parent"
-		android:layout_height="25dp" 
-		android:layout_below="@id/news_profilelayout"
-		android:textSize="14sp"
-		android:textColor="@drawable/gray2"
-		android:gravity="center"
-		android:visibility="gone"/>
+        android:layout_height="43dp"
+        android:background="@drawable/news_statusbg1pix"
+        android:gravity="center">
+
+        <FrameLayout
+            android:id="@+id/news_logo_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/news_logoborder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/news_headborder">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/news_logo"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:src="@drawable/news_head">
+            </ImageView>
+        </FrameLayout>
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                     android:id="@+id/news_state_layout"
+                     android:layout_width="fill_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_centerVertical="true"
+                     android:layout_marginLeft="4dp"
+                     android:layout_marginRight="4dp"
+                     android:layout_toRightOf="@id/news_logo_layout">
+
+            <ImageView
+                android:id="@+id/news_statusinput"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/input_bg">
+            </ImageView>
+
+            <com.example.view.ScrollText
+                android:id="@+id/news_statustxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:hint="@string/news_state_hint"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#000000"
+                android:textSize="16sp"/>
+        </FrameLayout>
+    </RelativeLayout>
+
+
 </RelativeLayout>

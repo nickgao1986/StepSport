@@ -1,15 +1,19 @@
 package com.example.util;
 
+import android.content.Context;
+import android.content.res.AssetManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 
 import com.example.item.LinkInfo;
-import com.example.model.MessageFaceModel;
+import com.example.model.StateFaceModel;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -81,7 +85,6 @@ public class ParseNewsInfoUtil {
         		infoList.add(info);
     		}
     		
-    		//(#��Ц)
     		Pattern pattern = Pattern.compile("(\\(#\\S{1,2}\\))");
     	    Matcher matcher2 = pattern.matcher(strLink);
     		 while(matcher2.find()) {
@@ -122,7 +125,6 @@ public class ParseNewsInfoUtil {
     	return resultList;
 	}
 	
-	 //����Intro
     public static ArrayList<LinkInfo> parseNewsLinkString(String strLink){
     	if(TextUtils.isEmpty(strLink)){
     		return null;
@@ -271,7 +273,7 @@ public class ParseNewsInfoUtil {
     	if(TextUtils.isEmpty(str)){
     		return;
     	}
-    	ArrayList<String> faceList = MessageFaceModel.getInstance().getFaceStrings();
+    	ArrayList<String> faceList = StateFaceModel.getInstance().getFaceStrings();
     	int len = faceList.size();
     	int startIndex = 0;
 
@@ -333,5 +335,31 @@ public class ParseNewsInfoUtil {
     	info.setContent(str);
 		infoList.add(info);
     }
-    
+
+	public static String getAssetJsonByName(Context context, String fileName) {
+		StringBuilder sb = new StringBuilder();
+		BufferedReader bf = null;
+		try {
+			AssetManager am = context.getAssets();
+			bf = new BufferedReader(new InputStreamReader(am.open(fileName)));
+			String line;
+			while ((line = bf.readLine()) != null) {
+				sb.append(line);
+			}
+		} catch (Throwable e) {
+			e.printStackTrace();
+			return null;
+		} finally {
+			try {
+				if (bf != null) {
+					bf.close();
+					bf = null;
+				}
+			} catch (Throwable e) {
+				e.printStackTrace();
+			}
+		}
+		return sb.toString().length() > 0 ? sb.toString() : null;
+	}
+
 }

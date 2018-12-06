@@ -5,16 +5,13 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import com.example.util.ParseNewsInfoUtil;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 
 public class StateFaceModel {
 
@@ -51,42 +48,24 @@ public class StateFaceModel {
 
 		AssetManager assetManager = context.getAssets();
 		ArrayList<String> faces = new ArrayList<String>();
-		DocumentBuilderFactory docBuilderFactory = null;
-		DocumentBuilder docBuilder = null;
-		Document doc = null;
 		try {
-			docBuilderFactory = DocumentBuilderFactory.newInstance();
-			docBuilder = docBuilderFactory.newDocumentBuilder();
-			doc = docBuilder.parse(assetManager
-					.open("state_face/state_face.xml"));
-			Element root = doc.getDocumentElement();
-			NodeList nodeList = root.getElementsByTagName("string");
-			for (int i = 0; i < nodeList.getLength(); i++) {
-				Node node = nodeList.item(i);
-				String s = "";
-				NodeList list = node.getChildNodes();
-				if (list != null) {
-					for (int j = 0; j < list.getLength(); j++) {
-						s += list.item(j).getNodeValue();
-					}
-				}
-				faces.add(s);
+			String text = ParseNewsInfoUtil.getAssetJsonByName(context,"state_face/state_face.json");
+			JSONObject jsonObject = new JSONObject(text);
+			JSONObject data = jsonObject.optJSONObject("data");
+			JSONArray list = data.optJSONArray("list");
+			for (int i=0;i<list.length();i++) {
+				JSONObject item = list.optJSONObject(i);
+				String value = item.optString("face");
+				faces.add(value);
 			}
-
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			doc = null;
-			docBuilder = null;
-			docBuilderFactory = null;
-
 		}
 
 		int i;
 		for (i = 0; i < faces.size(); ++i) {
 			int index = i + 1;
-			int id = context.getResources().getIdentifier("stateface_" + index,
+			int id = context.getResources().getIdentifier("msgface_" + index,
 					"drawable", "com.pic.optimize");
 			try {
 				Bitmap bm = BitmapFactory.decodeResource(
@@ -97,14 +76,11 @@ public class StateFaceModel {
 
 				mFaceStrings.add(faces.get(i));
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 
 		mInitialized = true;
-//		Bitmap bitmap = mSmallFaceMap.get(s);
-//		System.out.println("===bitmap=" + bitmap);
 	}
 
 	public ArrayList<String> getFaceStrings() {
