@@ -33,7 +33,6 @@ public class NewsActivity extends Activity implements OnClickLinkListener{
 		MessageFaceModel.getInstance().init(this);
 		tvState = (ScrollText)findViewById(R.id.news_statustxt);
 		IntroView news_item_text = (IntroView)findViewById(R.id.news_item_text);
-		//String s = "(#%$%$%3434343434343$%$%youjiancau@163.com$dfsfsfsdffds^15959224872)dfsfdsafsaf@153.cn&&fefrewafrewfjwio(fsfsfsd@tre.com.cn()()()www.baidu.com3242343243www.sohu.com@afjiofjfjaof";
 		String s = "dsafsdfsdf(#可怜)fsgfdg(#鬼脸)fdgdfgdfgdfgdfgdfgfdgfdgfdgfdgdfg";
 
 		news_item_text.setTitleList(ParseNewsInfoUtil.parseStr(s));
