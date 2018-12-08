@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.pic.optimize.fresco.FeedsMainAdapter;
+import com.pic.optimize.picwall.PicWallActivity;
 
 import java.util.ArrayList;
 
@@ -27,7 +28,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("NewsSwitchActivity");
         list.add("SnapToScreenActivity");
         list.add("PicWallActivity");
-        list.add("加载优化");
+        list.add("ParseJsonTest");
         list.add("第三方框架");
         list.add("图片压缩");
         list.add("超大图片加载");
@@ -56,6 +57,12 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 1:
                 SnapToScreenActivity.startActivity(TestListActivity.this);
+                break;
+            case 2:
+                PicWallActivity.startActivity(TestListActivity.this);
+                break;
+            case 3:
+                ParseJsonTest.startActivity(TestListActivity.this);
                 break;
         }
     }

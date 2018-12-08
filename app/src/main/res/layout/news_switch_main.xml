@@ -1,16 +1,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff" >
-
-    <include layout="@layout/title_layout" />
+    android:background="@color/white" >
 
     <RelativeLayout
         android:id="@+id/column_navi"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/top_column_bg" >
-
+        <!-- 最左边的小箭头 -->
         <ImageButton
             android:id="@+id/column_to_left"
             android:layout_width="wrap_content"
@@ -22,6 +20,7 @@
             android:src="@drawable/arr_left"
             android:visibility="visible" />
 
+        <!-- 最右边的小箭头 -->
         <ImageButton
             android:id="@+id/column_to_right"
             android:layout_width="wrap_content"
@@ -46,15 +45,17 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:paddingLeft="5.0dp"
-                android:paddingRight="5.0dp"
-                android:paddingTop="3.0dp" >
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="3dp" >
 
+                <!-- 选中的滑块 -->
                 <ImageView
                     android:id="@+id/column_slide_bar"
-                    android:layout_width="49.0dp"
-                    android:layout_height="29.0dp" />
+                    android:layout_width="49dp"
+                    android:layout_height="29dp" />
 
+                <!-- 所有的TextView加到这个LinearLayout中 -->
                 <LinearLayout
                     android:id="@+id/column_title_layout"
                     android:layout_width="fill_parent"

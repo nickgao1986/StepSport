@@ -22,7 +22,6 @@ import java.util.ArrayList;
 
 public class NewsSwitchActivity extends Activity implements OnClickListener{
 
-	private HorizontalScrollView columnScrollView;
 	private LinearLayout columnTitleLayout;
 	private ArrayList<String> array = new ArrayList<String>();
 	private ImageView animImage;
@@ -42,12 +41,9 @@ public class NewsSwitchActivity extends Activity implements OnClickListener{
 
 		setContentView(R.layout.news_switch_main);
 
-		LayoutInflater inflater = getLayoutInflater();
 		animImage = (ImageView)findViewById(R.id.column_slide_bar);
 		scrollToLeft = (ImageButton)findViewById(R.id.column_to_left);
 	    scrollToRight = (ImageButton)findViewById(R.id.column_to_right);
-		HorizontalScrollView localHorizontalScrollView = (HorizontalScrollView) findViewById(R.id.column_scrollview);
-		this.columnScrollView = localHorizontalScrollView;
 		columnTitleLayout = (LinearLayout) findViewById(R.id.column_title_layout);
 		
 		updateResource();

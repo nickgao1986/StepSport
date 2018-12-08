@@ -17,3 +17,5 @@
 ## SnapScreenActivity 很实用的滑屏控件
 
 ## NewsSwitchActivity, 仿网易客户端的首页例子
+
+## JsonReader, JsonReader解析json的例子

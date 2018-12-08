@@ -78,6 +78,7 @@
         <activity android:name=".picwall.PicWallActivity"/>
         <activity android:name=".NewsSwitchActivity"/>
         <activity android:name=".SnapToScreenActivity"/>
+        <activity android:name=".ParseJsonTest"/>
 
     </application>
 
