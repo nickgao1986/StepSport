@@ -35,4 +35,9 @@
     <dimen name="min_edit_text_height">32dp</dimen>
     <dimen name="text_message_text_size">17sp</dimen>
     <dimen name="text_message_input_padding">9dp</dimen>
+
+    <dimen name="header_btn_width">70dp</dimen>
+    <dimen name="top_dropdown_triangle_margin">14dp</dimen>
+    <dimen name="top_menu_btn_height">45dip</dimen>
+    <dimen name="top_menu_btn_margin">7dip</dimen>
 </resources>

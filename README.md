@@ -12,6 +12,8 @@
 - ScrollText文字循环滚动的view
 - IntroView支持表情，电话，email的view
 
-##PicWallActivity 照片墙的例子
+## PicWallActivity 照片墙的例子
 
-##SnapScreenActivity 很实用的滑屏控件
+## SnapScreenActivity 很实用的滑屏控件
+
+## NewsSwitchActivity, 仿网易客户端的首页例子

@@ -63,7 +63,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".SnapToScreenActivity">
+        <activity android:name=".TestListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -76,8 +76,8 @@
         <activity android:name=".helper.PaperHelpActivity"/>
         <activity android:name=".PicTest"/>
         <activity android:name=".picwall.PicWallActivity"/>
-        <activity android:name=".fresco.TestListActivity"/>
-        <!--<activity android:name=".SnapToScreenActivity"/>-->
+        <activity android:name=".NewsSwitchActivity"/>
+        <activity android:name=".SnapToScreenActivity"/>
 
     </application>
 

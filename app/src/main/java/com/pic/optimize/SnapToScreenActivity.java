@@ -1,6 +1,8 @@
 package com.pic.optimize;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -9,6 +11,12 @@ import android.widget.ImageView;
 import com.example.view.MyGroup;
 
 public class SnapToScreenActivity extends Activity {
+
+	public static void startActivity(Context context) {
+		Intent intent = new Intent();
+		intent.setClass(context,SnapToScreenActivity.class);
+		context.startActivity(intent);
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

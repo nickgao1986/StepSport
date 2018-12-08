@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dropdownBckgrnd"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_pop_up_dimmer"
+    android:orientation="vertical" >
+
+    <ImageButton
+        android:id="@+id/dropdown_bright"
+        android:layout_width="@dimen/header_btn_width"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/top_dropdown_triangle_margin"
+        android:background="@null"
+        android:paddingLeft="4dp"
+        android:src="@drawable/arrow_dropdown_pressed" />
+
+    <LinearLayout
+        android:id="@+id/text_chat_menu_linear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/topmenu_popup_down"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</RelativeLayout>

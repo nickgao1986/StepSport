@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <include layout="@layout/title_layout" />
+
+    <RelativeLayout
+        android:id="@+id/column_navi"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_column_bg" >
+
+        <ImageButton
+            android:id="@+id/column_to_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5.0dp"
+            android:background="#00000000"
+            android:src="@drawable/arr_left"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/column_to_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5.0dp"
+            android:background="#00000000"
+            android:src="@drawable/arr_right"
+            android:visibility="visible" />
+
+        <HorizontalScrollView
+            android:id="@+id/column_scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="35.0dp"
+            android:layout_toLeftOf="@+id/column_to_right"
+            android:layout_toRightOf="@+id/column_to_left"
+            android:fadingEdge="vertical"
+            android:scrollbars="none" >
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="5.0dp"
+                android:paddingRight="5.0dp"
+                android:paddingTop="3.0dp" >
+
+                <ImageView
+                    android:id="@+id/column_slide_bar"
+                    android:layout_width="49.0dp"
+                    android:layout_height="29.0dp" />
+
+                <LinearLayout
+                    android:id="@+id/column_title_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical" />
+            </FrameLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>
