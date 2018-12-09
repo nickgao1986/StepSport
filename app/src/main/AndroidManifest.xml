@@ -84,6 +84,8 @@
         <activity android:name=".InputFaceActivity"
                   android:theme="@android:style/Theme.Dialog"/>
         <activity android:name=".LicenseActivity"/>
+        <activity android:name=".UploadPhotoActivity"/>
+
     </application>
 
 </manifest>

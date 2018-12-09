@@ -63,6 +63,10 @@
     </string-array>
     <string name="more_column">更多</string>
     <string name="report_loading">Loading…</string>
-
+    <string name="input_new_tag">输入其它标签词...</string>
+    <string name="repost_vote_friend_opinion">其中好友的观点为</string>
+    <string name="no_memory_to_view_photo">no memory to view_photo</string>
+    <string name="upload_photo_fail">照片上传失败!</string>
+    <string name="upload_photo_success">照片上传成功!</string>
 </resources>
 

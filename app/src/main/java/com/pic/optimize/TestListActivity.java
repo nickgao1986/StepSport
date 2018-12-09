@@ -35,7 +35,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("DialogTest");
         list.add("InputFaceActivity");
         list.add("LicenseActivity");
-        list.add("存储优化");
+        list.add("UploadPhotoActivity");
         list.add("加载优化");
         list.add("第三方框架");
         list.add("图片压缩");
@@ -79,6 +79,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 8:
                 LicenseActivity.startActivity(TestListActivity.this);
+                break;
+            case 9:
+                UploadPhotoActivity.startActivity(TestListActivity.this);
                 break;
         }
     }
