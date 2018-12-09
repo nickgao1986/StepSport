@@ -32,7 +32,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("ParseJsonTest");
         list.add("TabActivityWithAnimation");
         list.add("OppositeDrawActivity");
-        list.add("超大图片加载");
+        list.add("DialogTest");
         list.add("性能优化");
         list.add("图片优化");
         list.add("存储优化");
@@ -70,6 +70,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 5:
                 OppositeDrawActivity.startActivity(TestListActivity.this);
+                break;
+            case 6:
+                DialogTest.startActivity(TestListActivity.this);
                 break;
         }
     }

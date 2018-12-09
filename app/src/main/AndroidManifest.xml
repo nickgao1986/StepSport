@@ -80,7 +80,7 @@
         <activity android:name=".SnapToScreenActivity"/>
         <activity android:name=".ParseJsonTest"/>
         <activity android:name=".OppositeDrawActivity"/>
-
+        <activity android:name=".DialogTest"/>
     </application>
 
 </manifest>
