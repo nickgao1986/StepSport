@@ -31,7 +31,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("PicWallActivity");
         list.add("ParseJsonTest");
         list.add("TabActivityWithAnimation");
-        list.add("图片压缩");
+        list.add("OppositeDrawActivity");
         list.add("超大图片加载");
         list.add("性能优化");
         list.add("图片优化");
@@ -67,6 +67,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 4:
                 TabActivityWithAnimation.startActivity(TestListActivity.this);
+                break;
+            case 5:
+                OppositeDrawActivity.startActivity(TestListActivity.this);
                 break;
         }
     }

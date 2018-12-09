@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OppositeDrawActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingTop="5dp"
+        android:id="@+id/bottom"
+        android:layout_alignParentBottom="true" >
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:text="Mirror Effect" />
+
+        <ToggleButton
+            android:id="@+id/settings_toggle_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/label"
+            android:background="@drawable/toggle_background"
+            android:textColor="#FF808080"
+            android:textOff="Off"
+            android:textOn="On"
+            android:width="55sp" />
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_background"
+            android:text="clear" />
+
+        <Button
+            android:id="@+id/change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/btn_clear"
+            android:layout_toRightOf="@id/settings_toggle_button"
+            android:background="@drawable/btn_background"
+            android:layout_marginLeft="10dp"
+            android:text="change" />
+    </RelativeLayout>
+
+     <com.pic.optimize.DrawView
+        android:id="@+id/drawview"
+        android:layout_above="@id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </com.pic.optimize.DrawView>
+</RelativeLayout>

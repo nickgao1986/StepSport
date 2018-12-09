@@ -79,6 +79,7 @@
         <activity android:name=".NewsSwitchActivity"/>
         <activity android:name=".SnapToScreenActivity"/>
         <activity android:name=".ParseJsonTest"/>
+        <activity android:name=".OppositeDrawActivity"/>
 
     </application>
 

@@ -19,3 +19,5 @@
 ## NewsSwitchActivity, 仿网易客户端的首页例子
 
 ## JsonReader, JsonReader解析json的例子
+
+## OppositeDrawActivity 手指上在屏幕上绘制路径(带镜面效果)
