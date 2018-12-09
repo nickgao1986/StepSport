@@ -1,0 +1,17 @@
+{
+	"data": {
+		"product_info": {
+			"name": "澳斯贝贝 婴儿长袖水晶绒睡袋 100cm 4",
+			"image": "http://img01.meituncdn.com/group2/M00/00/78/rBABnFVMXPqAKlu5AAD9lKlBSzE063.jpg",
+			"stock": 0
+		},
+		"task_list": [
+			{
+				"task_id": 4,
+				"status": "进行中"
+			}
+		]
+	},
+	"status": "success",
+	"message": null
+}

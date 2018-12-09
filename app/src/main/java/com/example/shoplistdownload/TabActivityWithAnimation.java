@@ -7,21 +7,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
 import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
 import android.view.animation.Animation.AnimationListener;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
 
 import com.example.textviewwithurl.NewsActivity;
-import com.pic.optimize.MainTest;
-import com.pic.optimize.PicTest;
+import com.pic.optimize.NewsSwitchActivity;
+import com.pic.optimize.ParseJsonTest;
 import com.pic.optimize.R;
-import com.pic.optimize.fresco.TestListActivity;
 import com.pic.optimize.helper.PaperHelpActivity;
 import com.pic.optimize.picwall.PicWallActivity;
 
@@ -58,7 +57,14 @@ public class TabActivityWithAnimation extends TabActivity {
         R.drawable.profile_pressed,
         R.drawable.more_pressed
     };
-	
+
+	public static void startActivity(Context context) {
+		Intent intent = new Intent();
+		intent.setClass(context,TabActivityWithAnimation.class);
+		context.startActivity(intent);
+	}
+
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -102,7 +108,7 @@ public class TabActivityWithAnimation extends TabActivity {
 
 		View msgWidgetView = mLayoutInflater.inflate(R.layout.tab_indicator, mTabWidget, false);
 		tabSpec = this.mTabHost.newTabSpec(MESSAGE_TAB);
-		intent = new Intent(this, TestListActivity.class);
+		intent = new Intent(this, NewsSwitchActivity.class);
 		TextView msgTitle = (TextView) msgWidgetView.findViewById(R.id.title);
 		msgTitle.setText(R.string.main_tab_message);
 		ImageView msgIcon = (ImageView) msgWidgetView.findViewById(R.id.icon);

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.shoplistdownload.TabActivityWithAnimation;
 import com.pic.optimize.fresco.FeedsMainAdapter;
 import com.pic.optimize.picwall.PicWallActivity;
 
@@ -29,7 +30,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("SnapToScreenActivity");
         list.add("PicWallActivity");
         list.add("ParseJsonTest");
-        list.add("第三方框架");
+        list.add("TabActivityWithAnimation");
         list.add("图片压缩");
         list.add("超大图片加载");
         list.add("性能优化");
@@ -63,6 +64,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 3:
                 ParseJsonTest.startActivity(TestListActivity.this);
+                break;
+            case 4:
+                TabActivityWithAnimation.startActivity(TestListActivity.this);
                 break;
         }
     }

@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.JsonReader;
+import android.util.Log;
+
+import com.example.json.HistoryResponse;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,8 +28,26 @@ public class ParseJsonTest extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        parseAssertDataUseGson();
         parseAssertData();
     }
+
+    public void parseAssertDataUseGson() {
+        InputStream is = null;
+        try {
+            is = this.getAssets().open("json2.json", Context.MODE_PRIVATE);
+            int length = is.available();
+            byte[] buffer = new byte[length];
+            is.read(buffer);
+            Reader response = new StringReader(new String(buffer));
+            Gson gson = new Gson();
+            HistoryResponse mydata = gson.fromJson(response,HistoryResponse.class);
+            Log.d("TAG","<<<<mydata="+mydata.data.task_list.get(0).status);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 
     public void parseAssertData() {
         InputStream is = null;
