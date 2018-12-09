@@ -40,4 +40,5 @@
     <dimen name="top_dropdown_triangle_margin">14dp</dimen>
     <dimen name="top_menu_btn_height">45dip</dimen>
     <dimen name="top_menu_btn_margin">7dip</dimen>
+    <dimen name="image_width">50dp</dimen>
 </resources>

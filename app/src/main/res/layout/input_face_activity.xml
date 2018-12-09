@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="300dp"
+  android:minHeight="100dp"
+  android:background="@drawable/face_list_bg">
+  <GridView
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:id="@+id/input_face_gridview" 
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:layout_marginLeft="18dp"
+	  android:layout_marginRight="10dp" 
+	  android:layout_marginTop = "18dp"
+	  android:layout_marginBottom = "30dp"
+	  android:numColumns="auto_fit" 
+	  android:horizontalSpacing="10dp"
+	  android:verticalSpacing="15dp"
+	  android:columnWidth="50dp"
+	  android:stretchMode="columnWidth"
+	  android:gravity="center"
+	  android:layout_weight="1.0">
+  </GridView>
+  
+  <LinearLayout
+	  xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content">
+	  <Button
+	  	  android:id="@+id/input_face_cancel_button" 
+		  android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:background="@drawable/cancel_button_style">
+	  </Button>
+  </LinearLayout>
+</RelativeLayout>

@@ -81,6 +81,9 @@
         <activity android:name=".ParseJsonTest"/>
         <activity android:name=".OppositeDrawActivity"/>
         <activity android:name=".DialogTest"/>
+        <activity android:name=".InputFaceActivity"
+                  android:theme="@android:style/Theme.Dialog"/>
+
     </application>
 
 </manifest>

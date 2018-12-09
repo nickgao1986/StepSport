@@ -23,3 +23,5 @@
 ## OppositeDrawActivity 手指上在屏幕上绘制路径(带镜面效果)
 
 ## DialogTest 自定义弹出框的例子
+
+## InputFaceActivity 表情弹框
