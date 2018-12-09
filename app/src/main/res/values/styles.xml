@@ -46,4 +46,12 @@
         <item name="android:typeface">sans</item>
         <item name="android:textColor">#999999</item>
     </style>
+
+    <style name="RCMSmallProgressBar" parent="android:Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/progress_small</item>
+        <item name="android:minWidth">37dip</item>
+        <item name="android:maxWidth">37dip</item>
+        <item name="android:minHeight">37dip</item>
+        <item name="android:maxHeight">37dip</item>
+    </style>
 </resources>

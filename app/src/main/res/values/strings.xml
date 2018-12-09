@@ -62,5 +62,7 @@
         <item>娱乐</item>
     </string-array>
     <string name="more_column">更多</string>
+    <string name="report_loading">Loading…</string>
+
 </resources>
 

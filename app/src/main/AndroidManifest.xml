@@ -83,7 +83,7 @@
         <activity android:name=".DialogTest"/>
         <activity android:name=".InputFaceActivity"
                   android:theme="@android:style/Theme.Dialog"/>
-
+        <activity android:name=".LicenseActivity"/>
     </application>
 
 </manifest>

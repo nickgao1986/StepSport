@@ -34,7 +34,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("OppositeDrawActivity");
         list.add("DialogTest");
         list.add("InputFaceActivity");
-        list.add("图片优化");
+        list.add("LicenseActivity");
         list.add("存储优化");
         list.add("加载优化");
         list.add("第三方框架");
@@ -76,6 +76,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 7:
                 InputFaceActivity.startActivity(TestListActivity.this);
+                break;
+            case 8:
+                LicenseActivity.startActivity(TestListActivity.this);
                 break;
         }
     }
