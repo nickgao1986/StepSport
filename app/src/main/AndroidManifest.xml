@@ -85,6 +85,7 @@
                   android:theme="@android:style/Theme.Dialog"/>
         <activity android:name=".LicenseActivity"/>
         <activity android:name=".UploadPhotoActivity"/>
+        <activity android:name="com.example.shoplistdownload.TabActivityWithAnimation"/>
 
     </application>
 

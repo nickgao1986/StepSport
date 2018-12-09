@@ -25,3 +25,5 @@
 ## DialogTest 自定义弹出框的例子
 
 ## InputFaceActivity 表情弹框
+
+## UploadPhotoActivity 上传图片例子
