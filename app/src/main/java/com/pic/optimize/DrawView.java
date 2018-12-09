@@ -46,22 +46,7 @@ public class DrawView extends View {
 		mOppositePath = new Path();
 		mBitmapPaint = new Paint(Paint.DITHER_FLAG);
 	}
-	
-//	public DrawView(Context c) {
-//		super(c);
-//		mPaint = new Paint();
-//		mPaint.setAntiAlias(true);
-//		mPaint.setDither(true);
-//		mPaint.setColor(0xFFFF0000);
-//		mPaint.setStyle(Paint.Style.STROKE);
-//		mPaint.setStrokeJoin(Paint.Join.ROUND);
-//		mPaint.setStrokeCap(Paint.Cap.ROUND);
-//		mPaint.setStrokeWidth(8);
-//		
-//		mPath = new Path();
-//		mOppositePath = new Path();
-//		mBitmapPaint = new Paint(Paint.DITHER_FLAG);
-//	}
+
 
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -79,15 +64,7 @@ public class DrawView extends View {
 		}
 	}
 
-	@Override
-	protected void onDraw(Canvas canvas) {
-		canvas.drawColor(0xFFAAAAAA);
-		canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
-		canvas.drawPath(mPath, mPaint);
-		if(isMirrorDraw) {
-			canvas.drawPath(mOppositePath, mOppoPaint);
-		}
-	}
+
 
 	private float mX, mY;
 	private float mOppositeX, mOppositeY;
@@ -97,28 +74,6 @@ public class DrawView extends View {
 		isMirrorDraw = flag;
 	}
 
-	private void touch_start(float x, float y) {
-		mPath.reset();
-		mPath.moveTo(x, y);
-		mX = x;
-		mY = y;
-	}
-
-	private void touch_move(float x, float y) {
-		float dx = Math.abs(x - mX);
-		float dy = Math.abs(y - mY);
-		if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
-			mPath.quadTo(mX, mY, (x + mX) / 2, (y + mY) / 2);
-			mX = x;
-			mY = y;
-		}
-	}
-
-	private void touch_up() {
-		mPath.lineTo(mX, mY);
-		mCanvas.drawPath(mPath, mPaint);
-		mPath.reset();
-	}
 
 	private void touch_opposite_up() {
 		mOppositePath.lineTo(mOppositeX, mY);
@@ -145,20 +100,56 @@ public class DrawView extends View {
 
 	}
 
+    @Override
+    protected void onDraw(Canvas canvas) {
+        canvas.drawColor(0xFFAAAAAA);
+        canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
+        canvas.drawPath(mPath, mPaint);
+        if(isMirrorDraw) {
+            canvas.drawPath(mOppositePath, mOppoPaint);
+        }
+    }
+
+    private void touch_start(float x, float y) {
+        mPath.reset();
+        mPath.moveTo(x, y);
+        mX = x;
+        mY = y;
+    }
+
+    private void touch_move(float x, float y) {
+        float dx = Math.abs(x - mX);
+        float dy = Math.abs(y - mY);
+        if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
+            mPath.quadTo(mX, mY, (x + mX) / 2, (y + mY) / 2);
+            mX = x;
+            mY = y;
+        }
+    }
+
+    private void touch_up() {
+        mPath.lineTo(mX, mY);
+        mCanvas.drawPath(mPath, mPaint);
+        mPath.reset();
+    }
+
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		float x = event.getX();
 		float y = event.getY();
 
 		switch (event.getAction()) {
+		    //当手指按下的时候记录开始的位置
 		case MotionEvent.ACTION_DOWN:
 			touch_start(x, y);
 			if(isMirrorDraw) {
 				touch_opposite_start(x, y);
 			}
+			//必须调用invalidate重绘屏幕，这样画的线才能展示出来
 			invalidate();
 			break;
 		case MotionEvent.ACTION_MOVE:
+		    //通过mPath.quadTo,quadTo 用于绘制圆滑曲线，即贝塞尔曲线
 			touch_move(x, y);
 			if(isMirrorDraw) {
 				touch_opposite_move(x, y);
@@ -166,6 +157,7 @@ public class DrawView extends View {
 			invalidate();
 			break;
 		case MotionEvent.ACTION_UP:
+		    //讲path最后指向mX,mY,然后mCanvas.drawPath
 			touch_up();
 			if(isMirrorDraw) {
 				touch_opposite_up();
