@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.shoplistdownload.TabActivityWithAnimation;
+import com.example.shoplistdownload.TestDropdownHideActivity;
 import com.pic.optimize.database.DatabaseTestActivity;
 import com.pic.optimize.fresco.FeedsMainAdapter;
 import com.pic.optimize.picwall.PicWallActivity;
@@ -38,7 +39,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("LicenseActivity");
         list.add("UploadPhotoActivity");
         list.add("DatabaseTestActivity");
-        list.add("第三方框架");
+        list.add("TestDropdownHideActivity");
         list.add("图片压缩");
         list.add("超大图片加载");
         list.add("性能优化");
@@ -86,6 +87,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 10:
                 DatabaseTestActivity.startActivity(TestListActivity.this);
+                break;
+            case 11:
+                TestDropdownHideActivity.startActivity(TestListActivity.this);
                 break;
         }
     }

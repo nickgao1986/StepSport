@@ -53,7 +53,39 @@ final class DbHelper extends SQLiteOpenHelper {
             db.endTransaction();
         }
     }
-    
+
+    @Override
+    public synchronized SQLiteDatabase getReadableDatabase() {
+        if (db_r == null || !db_r.isOpen()) {
+            try {
+                db_r = super.getReadableDatabase();
+            } catch (SQLiteException e) {
+                //TODO Implement proper error handling
+                db_r = null;
+
+                throw e;
+            }
+        }
+        return db_r;
+    }
+
+
+    @Override
+    public synchronized SQLiteDatabase getWritableDatabase() {
+        if (db_w == null || !db_w.isOpen() || db_w.isReadOnly()) {
+            try {
+                db_w = super.getWritableDatabase();
+            } catch (SQLiteException e) {
+                //TODO Implement proper error handling
+                db_w = null;
+
+                throw e;
+            }
+        }
+        return db_w;
+    }
+
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
@@ -122,36 +154,6 @@ final class DbHelper extends SQLiteOpenHelper {
     }
 
     
-    @Override
-    public synchronized SQLiteDatabase getReadableDatabase() {
-        if (db_r == null || !db_r.isOpen()) {
-            try {
-                db_r = super.getReadableDatabase();
-            } catch (SQLiteException e) {
-                //TODO Implement proper error handling
-                db_r = null;
-                
-                throw e;
-            }
-        }            
-        return db_r;
-    }
-
-    
-    @Override
-    public synchronized SQLiteDatabase getWritableDatabase() {
-        if (db_w == null || !db_w.isOpen() || db_w.isReadOnly()) {
-            try {
-                db_w = super.getWritableDatabase();
-            } catch (SQLiteException e) {
-                //TODO Implement proper error handling
-                db_w = null;
-                
-                throw e;
-            }
-        }            
-        return db_w;
-    }
 
 }
 
