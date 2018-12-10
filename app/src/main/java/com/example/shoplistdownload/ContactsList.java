@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.ResourceCursorAdapter;
@@ -154,6 +155,25 @@ public class ContactsList extends ListActivity{
 		
 		getListView().setOnScrollListener(mAdapter);
 		setListAdapter(mAdapter);
+		getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				try {
+					Cursor cursor = (Cursor) getListAdapter().getItem(position);
+					if (cursor == null) {
+						return;
+					}
+
+					int contactId = cursor.getInt(Personal.ID_COLUMN_INDEX);
+					Intent intent = new Intent();
+					intent.setClass(ContactsList.this, ContactDetail.class);
+					intent.putExtra("contactId",contactId);
+					startActivity(intent);
+				}catch(Exception ex) {
+					ex.printStackTrace();
+				}
+			}
+		});
 		mSectionIndexer.init(getListView(), mAdapter, textView);
 		startQuery();
 	}
@@ -305,10 +325,8 @@ public class ContactsList extends ListActivity{
 
 				String curLetter = getTitle(getDisplayName(c));
 
-				//������ǰ�����ֵĵ�һ��������ʲô���ǲ���section�Ŀ�ͷ
 				if (TextUtils.isEmpty(curtitle) || !TextUtils.equals(curLetter, curtitle)) {
 					mSectionDatas[i].title = curLetter;
-					//�����ǰ��������section�Ŀ�ͷ
 					sectionPositionMap.put(i, position);
 					curtitle = curLetter;
 					i++;
@@ -656,9 +674,7 @@ public class ContactsList extends ListActivity{
 			return mSections;
 		}
 
-		/**
-		 * �ҳ����section��Ӧ��position
-		 */
+
 		@Override
 		public int getPositionForSection(int section) {
 			if (mSectionPositionMap == null)
@@ -671,9 +687,7 @@ public class ContactsList extends ListActivity{
 			return mSectionPositionMap.get(section, -1);
 		}
 
-		/**
-		 * �ҳ����position��Ӧ��section
-		 */
+
 		@Override
 		public int getSectionForPosition(int position) {
 			if (mPositionSectionMap == null)

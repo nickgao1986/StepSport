@@ -27,3 +27,7 @@
 ## InputFaceActivity 表情弹框
 
 ## UploadPhotoActivity 上传图片例子
+
+## ContactList 联系人列表
+
+## ContactDetail 联系人详情

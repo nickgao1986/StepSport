@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center" >
+
+    <FrameLayout
+        android:id="@+id/contacts_logo_layout"
+        android:layout_width="@dimen/incall_photo_view_size"
+        android:layout_height="@dimen/incall_photo_view_size" >
+
+        <ImageView
+            android:id="@+id/contact_photo"
+            android:layout_width="@dimen/incall_photo_view_size"
+            android:layout_height="@dimen/incall_photo_view_size"
+            />
+
+    </FrameLayout>
+
+</LinearLayout>

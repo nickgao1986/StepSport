@@ -12,7 +12,7 @@
     <dimen name="default_button_radius">5dp</dimen>
     <dimen name="default_button_padding">10dp</dimen>
     <dimen name="btn_margin_left_right">20dp</dimen>
-    <dimen name="incall_photo_view_size">130dp</dimen>
+    <dimen name="incall_photo_view_size">160dp</dimen>
     <dimen name="incall_photo_view_corner_l">2dp</dimen>
     <dimen name="incall_photo_view_corner_r">10dp</dimen>
     
