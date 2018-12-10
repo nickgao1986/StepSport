@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.example.shoplistdownload.ContactDetail;
 import com.example.shoplistdownload.ContactsList;
 import com.example.shoplistdownload.TabActivityWithAnimation;
 import com.example.shoplistdownload.TestDropdownHideActivity;
@@ -43,8 +42,8 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("DatabaseTestActivity");
         list.add("TestDropdownHideActivity");
         list.add("ContactsList");
-        list.add("ContactDetail");
-        list.add("性能优化");
+        list.add("ExpandListItemActivity");
+        list.add("ExpandListItemActivity");
         list.add("图片优化");
         list.add("存储优化");
         list.add("加载优化");
@@ -97,7 +96,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 ContactsList.startActivity(TestListActivity.this);
                 break;
             case 13:
-                ContactDetail.startActivity(TestListActivity.this);
+                ExpandListItemActivity.startActivity(TestListActivity.this);
                 break;
         }
     }

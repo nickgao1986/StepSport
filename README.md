@@ -31,3 +31,5 @@
 ## ContactList 联系人列表
 
 ## ContactDetail 联系人详情
+
+## ExpandListItemActivity android的ListView点击item使item展开的做法

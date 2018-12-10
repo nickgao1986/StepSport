@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="BUTTON"
+        android:id="@+id/btn"
+        android:layout_alignParentTop="true"
+        android:textColor="#000000" >
+    </Button>
+
+    <ListView
+        android:layout_below="@id/btn"
+        android:id="@+id/draggable_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="5dip"
+        android:cacheColorHint="#f4f4f4"
+        android:fadingEdge="none"
+        android:listSelector="#f4f4f4"
+        android:paddingLeft="16dip"
+        android:paddingRight="16dip"
+        android:transcriptMode="alwaysScroll"
+        />
+
+</RelativeLayout>
