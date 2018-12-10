@@ -1,21 +1,10 @@
 package com.example.shoplistdownload;
 
 
-import java.lang.ref.SoftReference;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import com.example.shoplistdownload.Projections.Personal;
-import com.example.view.SectionIndexerView;
-
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.AsyncQueryHandler;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -34,7 +23,19 @@ import android.widget.ProgressBar;
 import android.widget.ResourceCursorAdapter;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
+
+import com.example.shoplistdownload.Projections.Personal;
+import com.example.view.SectionIndexerView;
 import com.pic.optimize.R;
+
+import java.lang.ref.SoftReference;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class ContactsList extends ListActivity{
@@ -66,6 +67,12 @@ public class ContactsList extends ListActivity{
 	protected static ExecutorService sImageFetchThreadPool;
 	
 	private SectionIndexerView mSectionIndexer;
+
+	public static void startActivity(Context context) {
+		Intent intent = new Intent();
+		intent.setClass(context,ContactsList.class);
+		context.startActivity(intent);
+	}
 	
 	protected final class MyHandler extends AsyncQueryHandler {
 		/**
