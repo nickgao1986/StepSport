@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.shoplistdownload.TabActivityWithAnimation;
+import com.pic.optimize.database.DatabaseTestActivity;
 import com.pic.optimize.fresco.FeedsMainAdapter;
 import com.pic.optimize.picwall.PicWallActivity;
 
@@ -36,7 +37,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("InputFaceActivity");
         list.add("LicenseActivity");
         list.add("UploadPhotoActivity");
-        list.add("加载优化");
+        list.add("DatabaseTestActivity");
         list.add("第三方框架");
         list.add("图片压缩");
         list.add("超大图片加载");
@@ -82,6 +83,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 9:
                 UploadPhotoActivity.startActivity(TestListActivity.this);
+                break;
+            case 10:
+                DatabaseTestActivity.startActivity(TestListActivity.this);
                 break;
         }
     }

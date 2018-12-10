@@ -42,24 +42,24 @@ public class HttpUploadedFile {
 	
 	
 	String url = "http://2.novelread.sinaapp.com/framework-sae/index.php?c=main&a=getPostBody";
-	private int lastErrCode = 0;// ���һ�γ���Ĵ������
+	private int lastErrCode = 0;
 	byte[] tmpBuf = new byte[BUF_LEN];
 	byte[] tmpBuf2 = new byte[BUF_LEN * 2];
 	public static final int POST_PROGRESS_NOTIFY = 101;
 	HttpURLConnection connection = null;
-	public static final int HTTP_ARGUMENT_ERR = -1001;// HTTP ��������
+	public static final int HTTP_ARGUMENT_ERR = -1001;
 	public static final int HTTP_RESPONSE_EMPTY = -1002;// Http Response is
 														// Empty
-	public static final int HTTP_URL_ERR = -1003;// Url��ʽ����
-	public static final int HTTP_GZIP_ERR = -1004;// ��Ӧ���ݽ�ѹ��ʧ��
-	public static final int HTTP_CANCELED = -1005;// ��ǰ������ȡ��
-	public static final int HTTP_EXCEPTION = -1006;// �����쳣
+	public static final int HTTP_URL_ERR = -1003;
+	public static final int HTTP_GZIP_ERR = -1004;
+	public static final int HTTP_CANCELED = -1005;
+	public static final int HTTP_EXCEPTION = -1006;
 	private boolean bIsStop = false;
 	protected Object objAbort = new Object();
 
 	private Handler mHandler = null;
-	public static final int TIMEOUT = 30000;// ��ʱʱ��30��
-	private static final int BUF_LEN = 512;// ���ݻ��峤��
+	public static final int TIMEOUT = 30000;
+	private static final int BUF_LEN = 512;
 
 	public boolean doUploadPhoto(Context context, String filePathName,
 			Handler handler) {

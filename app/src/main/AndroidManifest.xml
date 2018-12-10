@@ -86,6 +86,7 @@
         <activity android:name=".LicenseActivity"/>
         <activity android:name=".UploadPhotoActivity"/>
         <activity android:name="com.example.shoplistdownload.TabActivityWithAnimation"/>
+        <activity android:name=".database.DatabaseTestActivity"/>
 
     </application>
 

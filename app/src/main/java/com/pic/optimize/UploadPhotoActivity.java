@@ -22,9 +22,12 @@ import android.widget.TableLayout.LayoutParams;
 import android.widget.Toast;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.channels.FileChannel;
 
 public class UploadPhotoActivity extends Activity{
 
@@ -165,6 +168,30 @@ public class UploadPhotoActivity extends Activity{
 			return false;
 		}
 	}
+
+	private void copyDatabase() {
+		File file = new File("/data/data/com.pic.optimize/databases");
+		String[] array = file.list();
+		for(int i=0;i<array.length;i++) {
+			Log.d("TAG","=====array[i]="+array[i]);
+		}
+		File f = new File("/data/data/com.pic.optimize/databases/record107994554.db");
+		String sdcardPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+		File o = new File(sdcardPath+"/record107994554.db");
+		if(f.exists()) {
+			FileChannel outF;
+			try {
+				outF = new FileOutputStream(o).getChannel();
+				new FileInputStream(f).getChannel().transferTo(0, f.length(),outF);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			Toast.makeText(mContext, "完成", Toast.LENGTH_SHORT).show();
+		}
+	}
+
 
 	private void doCancelUploadPhoto(){
 		if(mIsUploading){
