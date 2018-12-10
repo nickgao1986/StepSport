@@ -47,8 +47,7 @@ final class DbHelper extends SQLiteOpenHelper {
             }
             db.setTransactionSuccessful();
         } catch (Throwable e) {
-            //TODO Implement proper error handling
-            
+
             throw new RuntimeException("DB creation failed: " + e.getMessage());
         } finally {
             db.endTransaction();

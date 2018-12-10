@@ -19,7 +19,7 @@ public class MyProvider extends ContentProvider {
     static final String TAG = "[RC]MyProvider";
 
     /* URI authority string */
-    public static final String AUTHORITY = "com.example.testactivity.provider.myprovider";
+    public static final String AUTHORITY = "com.pic.optimize.provider.myprovider";
 
     /* URI paths names */
     public static final String MyTest1Table = "MyTest1Table";

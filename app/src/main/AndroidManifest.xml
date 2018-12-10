@@ -87,7 +87,10 @@
         <activity android:name=".UploadPhotoActivity"/>
         <activity android:name="com.example.shoplistdownload.TabActivityWithAnimation"/>
         <activity android:name=".database.DatabaseTestActivity"/>
-
+        <provider
+            android:name=".database.MyProvider"
+            android:authorities="com.pic.optimize.provider.myprovider"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -7,9 +7,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.Window;
+import android.widget.Toast;
 
-import com.pic.optimize.UploadPhotoActivity;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+
 
 public class DatabaseTestActivity extends Activity {
 
@@ -24,17 +33,45 @@ public class DatabaseTestActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		copyDatabase();
+		DbHelper.getInstance(this);
+		addDataToDataBase();
 		queryDataBase1();
 	}
-	
-	
+
+	private void copyDatabase() {
+		File file = new File("/data/data/com.pic.optimize/databases");
+		String[] array = file.list();
+		for(int i=0;i<array.length;i++) {
+			Log.d("TAG","=====array[i]="+array[i]);
+		}
+		File f = new File("/data/data/com.pic.optimize/databases/my.db");
+		String sdcardPath = Environment.getExternalStorageDirectory().getAbsolutePath();
+		File o = new File(sdcardPath+"/my.db");
+		if(f.exists()) {
+			FileChannel outF;
+			Log.d("TAG","=====file exsit");
+
+			try {
+				outF = new FileOutputStream(o).getChannel();
+				new FileInputStream(f).getChannel().transferTo(0, f.length(),outF);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			Toast.makeText(this, "完成", Toast.LENGTH_SHORT).show();
+		}
+	}
+
+
+
 	private void addDataToDataBase() {
 		try {
 			ContentResolver resolver = this.getContentResolver();
 			ContentValues values = new ContentValues();
 			values.put(DataBaseClass.MyTest1Table.TEST1, "cc");
 			values.put(DataBaseClass.MyTest1Table.account_ID, 1002);
-			values.put(DataBaseClass.MyTest1Table.TEST2, "dd");
 			resolver.insert(UriHelper.getUri(MyProvider.MyTest1Table),
 					values);
 		} catch (Throwable error) {
@@ -51,7 +88,6 @@ public class DatabaseTestActivity extends Activity {
 		while(cursor.moveToNext()) {
 			int account = cursor.getInt(1);
 			String test1 = cursor.getString(2);
-			System.out.println("====account="+account+"test1="+test1);
 		}
 		cursor.close();
 	}

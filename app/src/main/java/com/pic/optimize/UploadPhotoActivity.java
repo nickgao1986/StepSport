@@ -169,29 +169,6 @@ public class UploadPhotoActivity extends Activity{
 		}
 	}
 
-	private void copyDatabase() {
-		File file = new File("/data/data/com.pic.optimize/databases");
-		String[] array = file.list();
-		for(int i=0;i<array.length;i++) {
-			Log.d("TAG","=====array[i]="+array[i]);
-		}
-		File f = new File("/data/data/com.pic.optimize/databases/record107994554.db");
-		String sdcardPath = Environment.getExternalStorageDirectory().getAbsolutePath();
-		File o = new File(sdcardPath+"/record107994554.db");
-		if(f.exists()) {
-			FileChannel outF;
-			try {
-				outF = new FileOutputStream(o).getChannel();
-				new FileInputStream(f).getChannel().transferTo(0, f.length(),outF);
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			Toast.makeText(mContext, "完成", Toast.LENGTH_SHORT).show();
-		}
-	}
-
 
 	private void doCancelUploadPhoto(){
 		if(mIsUploading){
