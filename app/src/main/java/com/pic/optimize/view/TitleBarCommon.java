@@ -99,4 +99,15 @@ public class TitleBarCommon extends RelativeLayout {
         return this;
     }
 
+    /**
+     * 设置左边箭头
+     *
+     * @param lsnr
+     * @return
+     */
+    public TitleBarCommon setLeftViewListener(OnClickListener lsnr) {
+        mIvLeft.setOnClickListener(lsnr);
+        return this;
+    }
+
 }

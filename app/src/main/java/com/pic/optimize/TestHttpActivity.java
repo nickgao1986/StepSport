@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -46,8 +45,13 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
         mBookMainAdapter = new BookMainAdapter(this);
         listView.setAdapter(mBookMainAdapter);
         listView.setOnItemClickListener(this);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         new InitDataAsyncTask().execute();
+
     }
 
     private void initTitle() {
@@ -56,7 +60,8 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
         titleBarCommon.setRightTextViewListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(TestHttpActivity.this,"aaa",Toast.LENGTH_LONG).show();
+                BookDetail.startActivity(TestHttpActivity.this,null);
+
             }
         });
     }
@@ -96,6 +101,7 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+        Book book = mBookArrayList.get(position);
+        BookDetail.startActivity(TestHttpActivity.this,book);
     }
 }
