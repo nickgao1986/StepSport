@@ -19,6 +19,8 @@
     <color name="picker_main_bj">#cccccc</color>
     <color name="transparent_black">#7F000000</color>
     <color name="bg_bar">#262626</color>
+    <color name="percent_8_black">#14000000</color> <!-- 8% 000000-->
+    <color name="red_bn">#ff74b9</color>
 
     <color name="e5e5e5">#e5e5e5</color>
     <color name="t49c9c9">#49c9c9</color>

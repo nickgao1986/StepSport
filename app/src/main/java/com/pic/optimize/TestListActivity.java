@@ -17,6 +17,8 @@ import java.util.ArrayList;
 
 public class TestListActivity extends Activity implements AdapterView.OnItemClickListener {
 
+    public static final String TAG = TestListActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("NewsSwitchActivity");
         list.add("SnapToScreenActivity");
         list.add("PicWallActivity");
-        list.add("ParseJsonTest");
+        list.add("TestHttpActivity");
         list.add("TabActivityWithAnimation");
         list.add("OppositeDrawActivity");
         list.add("DialogTest");
@@ -66,7 +68,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 PicWallActivity.startActivity(TestListActivity.this);
                 break;
             case 3:
-                ParseJsonTest.startActivity(TestListActivity.this);
+                TestHttpActivity.startActivity(TestListActivity.this);
                 break;
             case 4:
                 TabActivityWithAnimation.startActivity(TestListActivity.this);
@@ -98,6 +100,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
             case 13:
                 ExpandListItemActivity.startActivity(TestListActivity.this);
                 break;
+
         }
     }
 }

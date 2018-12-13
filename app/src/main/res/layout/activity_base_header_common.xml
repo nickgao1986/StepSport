@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_height">
+    <!-- 图标  -->
+    <ImageView
+        android:id="@+id/baselayout_iv_left"
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:scaleType="center"
+        style="@style/title_bar_common_style"
+        android:src="@drawable/nav_btn_back" />
+
+    <TextView
+        android:id="@+id/baselayout_tv_title"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:singleLine="true"
+        android:maxWidth="240dip"
+        android:text="@string/app_name"
+        style="@style/title_bar_common_style"
+        android:textColor="@color/white_a"
+        android:textSize="@dimen/text_size_20" />
+
+    <ImageView
+        android:id="@+id/baselayout_iv_right"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:scaleType="center"
+        style="@style/title_bar_common_style"
+        tools:visibility="visible"
+        android:visibility="gone" />
+
+    <!-- 文字 -->
+    <TextView
+        android:id="@+id/baselayout_tv_left"
+        android:gravity="center"
+        android:maxWidth="240dip"
+        android:singleLine="true"
+        style="@style/title_bar_common_style"
+        android:textColor="@color/white_a"
+        android:textSize="@dimen/text_size_16"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/baselayout_tv_right_yunqi"
+        android:layout_alignParentRight="true"
+        android:gravity="right|center_vertical"
+        android:maxWidth="240dip"
+        android:singleLine="true"
+        style="@style/title_bar_common_style"
+        android:textColor="@color/white_a"
+        android:textSize="@dimen/text_size_16"
+        android:visibility="visible" />
+
+</merge>

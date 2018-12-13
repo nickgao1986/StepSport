@@ -96,6 +96,7 @@
 
         <activity android:name="com.example.shoplistdownload.ContactDetail"/>
         <activity android:name=".ExpandListItemActivity"/>
+        <activity android:name=".TestHttpActivity"/>
 
         <provider
             android:name=".database.MyProvider"

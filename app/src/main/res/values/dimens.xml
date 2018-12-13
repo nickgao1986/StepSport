@@ -41,4 +41,6 @@
     <dimen name="top_menu_btn_height">45dip</dimen>
     <dimen name="top_menu_btn_margin">7dip</dimen>
     <dimen name="image_width">50dp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
 </resources>
