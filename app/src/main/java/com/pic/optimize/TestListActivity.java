@@ -45,7 +45,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("TestDropdownHideActivity");
         list.add("ContactsList");
         list.add("ExpandListItemActivity");
-        list.add("ExpandListItemActivity");
+        list.add("DragIconActivity");
         list.add("图片优化");
         list.add("存储优化");
         list.add("加载优化");
@@ -99,6 +99,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 13:
                 ExpandListItemActivity.startActivity(TestListActivity.this);
+                break;
+            case 14:
+                DragIconActivity.startActivity(TestListActivity.this);
                 break;
 
         }

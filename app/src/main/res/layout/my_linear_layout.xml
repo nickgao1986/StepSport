@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/item1"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon1" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/item2"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@id/item1"
+        android:src="@drawable/icon2" >
+    </ImageView>
+
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item2"
+        android:layout_marginTop="20dp"
+        android:text="move1"
+         android:layout_centerHorizontal="true"
+        android:textColor="#000000" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item1"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/btn1"
+        android:text="move2"
+        android:textColor="#000000" >
+    </Button>
+
+</merge>

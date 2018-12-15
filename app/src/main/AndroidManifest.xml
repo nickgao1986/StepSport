@@ -98,6 +98,8 @@
         <activity android:name=".ExpandListItemActivity"/>
         <activity android:name=".TestHttpActivity"/>
         <activity android:name=".BookDetail"/>
+        <activity android:name=".DragIconActivity"/>
+
         <provider
             android:name=".database.MyProvider"
             android:authorities="com.pic.optimize.provider.myprovider"

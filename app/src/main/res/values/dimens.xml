@@ -43,4 +43,5 @@
     <dimen name="image_width">50dp</dimen>
     <dimen name="text_size_20">20sp</dimen>
     <dimen name="text_size_16">16sp</dimen>
+    <dimen name="top">30dp</dimen>
 </resources>
