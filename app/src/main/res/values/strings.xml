@@ -68,5 +68,13 @@
     <string name="no_memory_to_view_photo">no memory to view_photo</string>
     <string name="upload_photo_fail">照片上传失败!</string>
     <string name="upload_photo_success">照片上传成功!</string>
+
+    <string name="parse_error">数据解析失败,请重试</string>
+    <string name="req_fail">请求失败</string>
+    <string name="loading">加载中&#8230;</string>
+    <string name="success">成功</string>
+    <string name="operation_fail">操作失败</string>
+    <string name="auth_code_error">校验码错误</string>
+
 </resources>
 

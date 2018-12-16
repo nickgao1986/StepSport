@@ -1,27 +1,16 @@
 package com.pic.optimize.http.api;
 
 import android.content.Context;
-import android.os.Parcel;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
-import com.babytree.R;
-import com.babytree.platform.constants.BabytreeEvent;
-import com.babytree.platform.model.ObjectParcelable;
-import com.babytree.platform.okhttp.OkHttpUtil;
-import com.babytree.platform.okhttp.OkRequestParams;
-import com.babytree.platform.okhttp.response.OkHttpCallback;
-import com.babytree.platform.okhttp.response.OkHttpResJsonHandler;
-import com.babytree.platform.sys.BaseApplication;
-import com.babytree.platform.util.DialogUtil;
-import com.babytree.platform.util.EmulatorDetector;
-import com.babytree.platform.util.HttpErrorUtil;
-import com.babytree.platform.util.LogUtil;
-import com.babytree.platform.util.MonitorUtil;
-import com.babytree.platform.util.StatisticsUtil;
-import com.babytree.platform.util.ToastUtil;
-import com.babytree.platform.util.Util;
+import com.pic.optimize.R;
+import com.pic.optimize.fresco.PicApplication;
+import com.pic.optimize.http.OkHttpUtil;
+import com.pic.optimize.http.Util.Util;
+import com.pic.optimize.http.params.OkRequestParams;
+import com.pic.optimize.http.response.OkHttpCallback;
 
 import org.json.JSONObject;
 
@@ -31,8 +20,11 @@ import okhttp3.Call;
 import okhttp3.Headers;
 import okhttp3.Response;
 
-import static com.babytree.platform.constants.Url.PROTOCOL_HTTP;
-import static com.babytree.platform.constants.Url.PROTOCOL_HTTPS;
+import static com.pic.optimize.http.api.ApiKey.DATA;
+import static com.pic.optimize.http.api.ApiKey.MESSAGE;
+import static com.pic.optimize.http.api.ApiKey.STATUS;
+import static com.pic.optimize.http.constant.Url.PROTOCOL_HTTP;
+import static com.pic.optimize.http.constant.Url.PROTOCOL_HTTPS;
 
 
 public abstract class ApiBase {
@@ -117,13 +109,11 @@ public abstract class ApiBase {
 
         @Override
         protected void onSuccessRequest(Call call, @Nullable final Response res, int code, Headers headers, JSONObject response) {
-            onApiRequestLog(call, code);
             super.onSuccessRequest(call, res, code, headers, response);
         }
 
         @Override
         protected void onFailureRequest(Call call, @Nullable final Response res, int code, Headers headers, int error, Throwable t) {
-            onApiRequestLog(call, code);
             onFailureErrorLog(call, code, headers, "");
             super.onFailureRequest(call, res, code, headers, error, t);
         }
@@ -215,7 +205,6 @@ public abstract class ApiBase {
             } else {
                 failure(API_STATUS_NET_ERROR, "亲,您的网络不给力！");
             }
-            LogUtil.i(TAG, "onFailure e = [" + t + "];" + getRealUrl(getUrl()));
         }
     };
 
@@ -230,19 +219,10 @@ public abstract class ApiBase {
             try {
                 mApiListener.failure(ApiBase.this);
             } catch (Exception e) {
-                MonitorUtil.reportError(this, e);
-                LogUtil.e(TAG, e.getMessage());
             }
         }
     }
 
-    protected ApiBase(Parcel in) {
-        super(in);
-        mTag = in.readValue(((Object) this).getClass().getClassLoader());
-        mTimeoutDuration = in.readInt();
-        mStatus = in.readString();
-        mStatusMessage = in.readString();
-    }
 
     protected ApiBase() {
         super();
@@ -250,18 +230,11 @@ public abstract class ApiBase {
 
     public Context getContext() {
         if (mContext == null) {
-            return BaseApplication.getContext();
+            return PicApplication.getContext();
         }
         return mContext;
     }
 
-    public void writeToParcel(Parcel out, int flags) {
-        super.writeToParcel(out, flags);
-        out.writeValue(mTag);
-        out.writeInt(mTimeoutDuration);
-        out.writeString(mStatus);
-        out.writeString(mStatusMessage);
-    }
 
     /**
      * 获取标签
@@ -321,7 +294,6 @@ public abstract class ApiBase {
         try {
             return mResponse.toString();
         } catch (Throwable e) {
-            MonitorUtil.reportError(this, e);
             return "";
         }
     }
@@ -423,8 +395,6 @@ public abstract class ApiBase {
         try {
             mParams.put(key, file);
         } catch (Throwable e) {
-            MonitorUtil.reportError(this, e);
-            LogUtil.e(TAG, "addParam e[" + e + "]");
             e.printStackTrace();
         }
     }
@@ -433,7 +403,6 @@ public abstract class ApiBase {
         try {
             mParams.put(key, files);
         } catch (Throwable e) {
-            MonitorUtil.reportError(this, e);
             e.printStackTrace();
         }
     }
@@ -484,7 +453,6 @@ public abstract class ApiBase {
      * @param jsonObject
      */
     private void onParse(JSONObject jsonObject) throws Exception {
-        ApiScoreAction.parseScore(this, mContext, jsonObject);
         parse(jsonObject);
     }
 
@@ -495,26 +463,6 @@ public abstract class ApiBase {
      */
     protected abstract void parse(JSONObject jsonObject) throws Exception;
 
-    /**
-     * 所有请求的Url 添加到数据库
-     * <p>
-     * 所有请求状态码上传友盟
-     */
-    protected void onApiRequestLog(Call call, int statusCode) {
-        if (call == null || isStatusCodePreHttp(statusCode)) {
-            return;
-        }
-        try {
-            if (Util.getPropertiesValue("api_url").equalsIgnoreCase("true")) {
-                String url = call.request().url().toString();
-                HttpErrorUtil.getInstance(mContext).insertApiUrl(getRealUrl(getUrl()).hashCode(), url);
-            }
-            StatisticsUtil.onEvent(mContext, BabytreeEvent.EVENT_API_STATUS, String.valueOf(statusCode));
-        } catch (Exception e) {
-            MonitorUtil.reportError(this, e);
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Http 请求失败  错误日志
@@ -528,9 +476,7 @@ public abstract class ApiBase {
         }
         try {
             String url = call.request().url().toString();
-            HttpErrorUtil.getInstance(mContext).insertErrorLog(getRealUrl(getUrl()).hashCode(), statusCode, url, headers, content);
         } catch (Exception e) {
-            MonitorUtil.reportError(this, e);
             e.printStackTrace();
         }
     }
@@ -625,21 +571,6 @@ public abstract class ApiBase {
         post();
     }
 
-    /**
-     * http 同步 post
-     *
-     * @param context           ：上下文
-     * @param showLoading       ：是否显示加载界面
-     * @param loadingString     ：加载界面文字， 如果为空将显示默认文字
-     * @param dismissLoading    ：请求完成后是否清除加载界面
-     * @param showStatusMessage ：是否显示出错信息
-     * @param listener          ：发送回调
-     */
-    public void syncPost(Context context, boolean showLoading, String loadingString, boolean dismissLoading,
-                         boolean showStatusMessage, ApiListener listener) {
-        initSend(context, showLoading, loadingString, dismissLoading, showStatusMessage, listener);
-        syncPost();
-    }
 
     /**
      * http get
@@ -720,10 +651,7 @@ public abstract class ApiBase {
      * 无网络时模拟失败发送失败消息
      */
     private void post() {
-        if (EmulatorDetector.isEmulator()) {
-            LogUtil.d(TAG, "app当前运行的设备为模拟器，取消post请求服务器");
-            mSendListener.onFailure(null, STATUS_CODE_EMULATOR_PRE_HTTP, null, OkHttpCallback.RESPONSE_ERROR_NET, new Throwable("recvfrom failed: ECONNRESET (Connection reset by peer)"));
-        }
+
         if (Util.hasNetwork(mContext)) {
             OkHttpUtil.post(getRealUrl(getUrl()), mParams, mTag, mSendListener);
         } else if (mSendListener != null) {
@@ -731,25 +659,13 @@ public abstract class ApiBase {
         }
     }
 
-    private void syncPost() {
-        if (EmulatorDetector.isEmulator()) {
-            LogUtil.d(TAG, "app当前运行的设备为模拟器，取消syncPost请求服务器");
-            mSendListener.onFailure(null, STATUS_CODE_EMULATOR_PRE_HTTP, null, OkHttpCallback.RESPONSE_ERROR_NET, new Throwable("recvfrom failed: ECONNRESET (Connection reset by peer)"));
-        } else if (Util.hasNetwork(mContext)) {
-            OkHttpUtil.syncPost(getRealUrl(getUrl()), mParams, mTag, mSendListener);
-        } else if (mSendListener != null) {
-            mSendListener.onFailure(null, STATUS_CODE_NO_NETWORK_PRE_HTTP, null, OkHttpCallback.RESPONSE_ERROR_NET, new Throwable("recvfrom failed: ECONNRESET (Connection reset by peer)"));
-        }
-    }
+
 
     /**
      * 无网络时模拟失败发送失败消息
      */
     private void get() {
-        if (EmulatorDetector.isEmulator()) {
-            LogUtil.d(TAG, "app当前运行的设备为模拟器，取消get请求服务器");
-            mSendListener.onFailure(null, STATUS_CODE_EMULATOR_PRE_HTTP, null, OkHttpCallback.RESPONSE_ERROR_NET, new Throwable("recvfrom failed: ECONNRESET (Connection reset by peer)"));
-        } else if (Util.hasNetwork(mContext)) {
+        if (Util.hasNetwork(mContext)) {
             OkHttpUtil.get(getRealUrl(getUrl()), mParams, mTag, mSendListener);
         } else if (mSendListener != null) {
             mSendListener.onFailure(null, STATUS_CODE_NO_NETWORK_PRE_HTTP, null, OkHttpCallback.RESPONSE_ERROR_NET, new Throwable("recvfrom failed: ECONNRESET (Connection reset by peer)"));
@@ -769,8 +685,7 @@ public abstract class ApiBase {
     private void initSend(Context context, boolean showLoading, String loadingString, boolean dismissLoading,
                           boolean showStatusMessage, ApiListener listener) {
         if (null == context) {
-            LogUtil.e(TAG, " ---apiBase initSend error(context == null)");
-            context = BaseApplication.getContext();
+            context = PicApplication.getContext();
         }
         mContext = context;
         mApiListener = listener;
@@ -799,9 +714,9 @@ public abstract class ApiBase {
      * 显示加载界面
      */
     protected void showLoading() {
-        if (mShowLoading) {
-            DialogUtil.showLoadingDialog(mContext, getDialogMessage());
-        }
+//        if (mShowLoading) {
+//            DialogUtil.showLoadingDialog(mContext, getDialogMessage());
+//        }
     }
 
     /**
@@ -809,9 +724,9 @@ public abstract class ApiBase {
      */
     protected void dismissLoading() {
         // 成功时判断是否清除加载界面,失败时不判断是否清除直接清除加载界面
-        if ((!isSuccess()) || mDismissLoadingFinished) {
-            DialogUtil.dismissLoadingDialog(mContext);
-        }
+//        if ((!isSuccess()) || mDismissLoadingFinished) {
+//            DialogUtil.dismissLoadingDialog(mContext);
+//        }
     }
 
     /**
@@ -821,7 +736,7 @@ public abstract class ApiBase {
      */
     protected void showStatusMessage(String message) {
         if (mShowStatusMessage && !TextUtils.isEmpty(message)) {
-            ToastUtil.show(mContext, message);
+           // ToastUtil.show(mContext, message);
         }
     }
 

@@ -40,6 +40,11 @@ public class OkHttpUtil {
         }
     }
 
+    public static <T> void get(String url, OkRequestParams params, Object tag, OkHttpCallback<T> okHttpCallback) {
+        get(url, params, tag, true, okHttpCallback);
+    }
+
+
     public static <T> void get(String url, OkRequestParams params, Object tag, boolean commonParams, OkHttpCallback<T> okHttpCallback) {
         if (commonParams) {
             ApiCommonParams.appendCommonParams(params);
@@ -107,4 +112,53 @@ public class OkHttpUtil {
         }
         return url;
     }
+
+    public static <T> void post(String url, OkRequestParams params, Object tag, OkHttpCallback<T> okHttpCallback) {
+        post(url, params, tag, false, true, okHttpCallback);
+    }
+
+    /**
+     * post请求
+     *
+     * @param url           请求连接
+     * @param postBodyParams        请求参数
+     * @param tag           标记
+     * @param isProgress    是否显示上传进度
+     * @param commonParams  是否附带app公共参数
+     * @param okHttpCallback 上传回调
+     * @param <T>
+     */
+    public static <T> void post(String url, OkRequestParams postBodyParams, Object tag, boolean isProgress, boolean commonParams, OkHttpCallback<T> okHttpCallback) {
+        if (commonParams) {
+            OkRequestParams urlComParams = new OkRequestParams();
+            url = getFinalUrl(url, urlComParams);
+        } else {
+            url = getFinalUrl(url, postBodyParams);
+        }
+
+        Call call = null;
+        Callback callback = getCallBack(okHttpCallback);
+        try {
+            RequestBody requestBody = getRequestBody(postBodyParams, isProgress, okHttpCallback);
+            Headers headers = getRequestHeaders(postBodyParams);
+            Request request = getRequest(url, requestBody, headers, tag);
+
+            call = mOkHttpClient.newCall(request);
+            call.enqueue(callback);
+        } catch (Throwable e) {
+            e.printStackTrace();
+            callback.onFailure(call, new IOException("post", e));
+        }
+    }
+
+    private static <T> RequestBody getRequestBody(OkRequestParams params, boolean isProgress, OkHttpCallback<T> okHttpCallback) {
+        RequestBody requestBody = getRequestBody(params);
+        return requestBody;
+    }
+
+    private static RequestBody getRequestBody(OkRequestParams params) {
+        return params == null ? null : params.getRequestBody();
+    }
+
+
 }
