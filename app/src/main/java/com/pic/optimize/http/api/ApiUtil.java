@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import com.pic.optimize.R;
 import com.pic.optimize.fresco.PicApplication;
 import com.pic.optimize.http.OkHttpUtil;
+import com.pic.optimize.http.Util.DialogUtil;
 import com.pic.optimize.http.Util.Util;
 import com.pic.optimize.http.params.OkRequestParams;
 import com.pic.optimize.http.response.OkHttpCallback;
@@ -333,14 +334,6 @@ public abstract class ApiUtil {
         return mStatusMessage;
     }
 
-    /**
-     * 设置状态信息
-     *
-     * @param statusMessage ：状态信息
-     */
-    public void setStatusMessage(String statusMessage) {
-        mStatusMessage = statusMessage;
-    }
 
     /**
      * 设置状态码及错误信息
@@ -491,34 +484,6 @@ public abstract class ApiUtil {
         return STATUS_CODE_NO_NETWORK_PRE_HTTP == statusCode || STATUS_CODE_EMULATOR_PRE_HTTP == statusCode;
     }
 
-    /**
-     * http post
-     *
-     * @param context        ：上下文
-     * @param showLoading    ：是否显示加载界面
-     * @param dismissLoading ：请求响应后是否销毁加载界面
-     * @param listener       ：请求响应监听
-     */
-    public void post(Context context, boolean showLoading, boolean dismissLoading, ApiListener listener) {
-        post(context, showLoading, null, dismissLoading, true, listener);
-    }
-
-    @Deprecated
-    /**
-     * http post 需要尽量避免重复显示失败toast
-     *
-     * @param context
-     *            ：上下文
-     * @param loadingString
-     *            ：加载界面显示的提示文字, 如果传空将不显示加载界面
-     * @param dismissLoading
-     *            ：请求响应后是否销毁加载界面
-     * @param listener
-     *            ：请求响应监听
-     */
-    public void post(Context context, String loadingString, boolean dismissLoading, ApiListener listener) {
-        post(context, !TextUtils.isEmpty(loadingString), loadingString, dismissLoading, true, listener);
-    }
 
     /**
      * http post
@@ -532,27 +497,6 @@ public abstract class ApiUtil {
     public void post(Context context, String loadingString, boolean dismissLoading, boolean showStatusMessage,
                      ApiListener listener) {
         post(context, !TextUtils.isEmpty(loadingString), loadingString, dismissLoading, showStatusMessage, listener);
-    }
-
-    /**
-     * http post，默认显示加载界面，请求响应后销毁加载界面
-     *
-     * @param context  ：context上下文
-     * @param listener ：请求响应监听
-     */
-    public void post(Context context, ApiListener listener) {
-        post(context, true, null, true, true, listener);
-    }
-
-    /**
-     * http post，默认显示加载界面，请求响应后销毁加载界面
-     *
-     * @param context           ：context上下文
-     * @param showStatusMessage ：是否在出错时显示出错信息
-     * @param listener          ：请求响应监听
-     */
-    public void post(Context context, boolean showStatusMessage, ApiListener listener) {
-        post(context, true, null, true, showStatusMessage, listener);
     }
 
     /**
@@ -572,29 +516,7 @@ public abstract class ApiUtil {
     }
 
 
-    /**
-     * http get
-     *
-     * @param context        ：上下文
-     * @param showLoading    ：是否显示加载界面
-     * @param dismissLoading ：请求响应后是否销毁加载界面
-     * @param listener       ：请求响应监听
-     */
-    public void get(Context context, boolean showLoading, boolean dismissLoading, ApiListener listener) {
-        get(context, showLoading, null, dismissLoading, true, listener);
-    }
 
-    /**
-     * http get
-     *
-     * @param context        ：上下文
-     * @param loadingString  ：加载界面显示的提示文字, 如果传空将不显示加载界面
-     * @param dismissLoading ：请求响应后是否销毁加载界面
-     * @param listener       ：请求响应监听
-     */
-    public void get(Context context, String loadingString, boolean dismissLoading, ApiListener listener) {
-        get(context, !TextUtils.isEmpty(loadingString), loadingString, dismissLoading, true, listener);
-    }
 
     /**
      * http get
@@ -610,26 +532,6 @@ public abstract class ApiUtil {
         get(context, !TextUtils.isEmpty(loadingString), loadingString, dismissLoading, showStatusMessage, listener);
     }
 
-    /**
-     * http get，默认显示加载界面，请求响应后销毁加载界面
-     *
-     * @param context  ：context上下文
-     * @param listener ：请求响应监听
-     */
-    public void get(Context context, ApiListener listener) {
-        get(context, true, null, true, true, listener);
-    }
-
-    /**
-     * http get，默认显示加载界面，请求响应后销毁加载界面
-     *
-     * @param context           ：context上下文
-     * @param showStatusMessage ：是否在出错时显示出错信息
-     * @param listener          ：请求响应监听
-     */
-    public void get(Context context, boolean showStatusMessage, ApiListener listener) {
-        get(context, true, null, true, showStatusMessage, listener);
-    }
 
     /**
      * http get
@@ -714,9 +616,9 @@ public abstract class ApiUtil {
      * 显示加载界面
      */
     protected void showLoading() {
-//        if (mShowLoading) {
-//            DialogUtil.showLoadingDialog(mContext, getDialogMessage());
-//        }
+        if (mShowLoading) {
+            DialogUtil.showLoadingDialog(mContext, getDialogMessage());
+        }
     }
 
     /**
@@ -724,9 +626,9 @@ public abstract class ApiUtil {
      */
     protected void dismissLoading() {
         // 成功时判断是否清除加载界面,失败时不判断是否清除直接清除加载界面
-//        if ((!isSuccess()) || mDismissLoadingFinished) {
-//            DialogUtil.dismissLoadingDialog(mContext);
-//        }
+        if ((!isSuccess()) || mDismissLoadingFinished) {
+            DialogUtil.dismissLoadingDialog(mContext);
+        }
     }
 
     /**
@@ -748,36 +650,6 @@ public abstract class ApiUtil {
         return result;
     }
 
-    /**
-     * 是否有添加积分成功弹出  start
-     **/
-    private boolean isToastScore = false;
 
-    /**
-     * 有积分相关 toast或者弹窗，不弹出其他成功文案
-     *
-     * @return
-     */
-    public boolean isToastScore() {
-        return isToastScore;
-    }
-
-    public void setToastScore(boolean isToastScore) {
-        this.isToastScore = isToastScore;
-    }
-    /** 是否弹出加载成功信息(选择性使用) end **/
-
-    /**
-     * 是否显示积分Toast
-     */
-    private boolean isShowScoreToast = true;
-
-    public void setShowScoreToast(boolean isShowScore) {
-        this.isShowScoreToast = isShowScore;
-    }
-
-    public boolean isShowScoreToast() {
-        return isShowScoreToast;
-    }
 
 }

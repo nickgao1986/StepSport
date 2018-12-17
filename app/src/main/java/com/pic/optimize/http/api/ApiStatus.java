@@ -48,7 +48,7 @@ public class ApiStatus {
 	 */
 	public static boolean isSuccess(String status) {
 		boolean result = false;
-		if (("success".equalsIgnoreCase(status)) || ("0".equals(status))) {
+		if (("success".equalsIgnoreCase(status)) || ("0".equals(status)) || ("200".equals(status))) {
 			result = true;
 		}
 		return result;

@@ -3,7 +3,6 @@ package com.pic.optimize;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -13,15 +12,12 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.pic.optimize.fresco.HttpUtil;
 import com.pic.optimize.http.Book;
 import com.pic.optimize.http.BookMainAdapter;
-import com.pic.optimize.http.api.ApiUtil;
 import com.pic.optimize.http.api.ApiListener;
-import com.pic.optimize.http.test.TestWalkmateApi;
+import com.pic.optimize.http.api.ApiUtil;
+import com.pic.optimize.http.test.TestGetBookApi;
 import com.pic.optimize.view.TitleBarCommon;
-
-import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,22 +46,28 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
         listView.setAdapter(mBookMainAdapter);
         listView.setOnItemClickListener(this);
 
-        proceedNoticeModuleApi();
+        proceedBookApi();
     }
 
 
 
 
-    private void proceedNoticeModuleApi() {
-        new TestWalkmateApi().get(this, null, false, false, new ApiListener(){
+    private void proceedBookApi() {
+        new TestGetBookApi().get(this, "loading", true, false, new ApiListener(){
 
             @Override
             public void success(ApiUtil api) {
                 Log.d(TAG,"<<<<<<success");
+                TestGetBookApi api1 = (TestGetBookApi)api;
+                if(api1.mData != null) {
+                    mBookArrayList = new Gson().fromJson(api1.mData, new TypeToken<List<Book>>(){}.getType());
+                    mBookMainAdapter.setList(mBookArrayList);
+                }
             }
 
             @Override
             public void failure(ApiUtil api) {
+                Log.d(TAG,"<<<<<<failure");
 
             }
         });
@@ -74,7 +76,7 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
     @Override
     protected void onResume() {
         super.onResume();
-        new InitDataAsyncTask().execute();
+        //new InitDataAsyncTask().execute();
 
     }
 
@@ -88,39 +90,6 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
 
             }
         });
-    }
-
-    private class InitDataAsyncTask extends AsyncTask<Void,Void,Void> {
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            HttpUtil httpUtil = new HttpUtil();
-            String url = "http://139.199.89.89/api/v1/books";
-            String response = httpUtil.get(TestHttpActivity.this,url);
-            Log.d(TAG,"response="+response);
-            parseResponse(response);
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-            super.onPostExecute(aVoid);
-            Log.d(TAG,"<<<<<mBookArrayList="+ mBookArrayList);
-            mBookMainAdapter.setList(mBookArrayList);
-        }
-    }
-
-    private void parseResponse(String response) {
-        try{
-            Gson gson = new Gson();
-            JSONArray jsonArray = new JSONArray(response);
-            ArrayList<Book> books;
-            mBookArrayList = new Gson().fromJson(response, new TypeToken<List<Book>>(){}.getType());
-
-        }catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
     }
 
     @Override
