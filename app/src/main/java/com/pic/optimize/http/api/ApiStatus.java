@@ -18,7 +18,6 @@ public class ApiStatus {
 		new StatusMap("0", R.string.success),
 		new StatusMap("success", R.string.success),
 		new StatusMap("failed", R.string.operation_fail),
-		
 		new StatusMap("auth_code_error", R.string.auth_code_error),
 	};
 

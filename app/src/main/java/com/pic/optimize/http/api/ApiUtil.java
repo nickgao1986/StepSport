@@ -27,9 +27,9 @@ import static com.pic.optimize.http.constant.Url.PROTOCOL_HTTP;
 import static com.pic.optimize.http.constant.Url.PROTOCOL_HTTPS;
 
 
-public abstract class ApiBase {
+public abstract class ApiUtil {
 
-    private static final String TAG = ApiBase.class.getSimpleName();
+    private static final String TAG = ApiUtil.class.getSimpleName();
 
     public static final String API_STATUS_NO_NETWORK = "NoNetwork";
     public static final String API_STATUS_REJECT_ERROR = "RejectError";
@@ -140,7 +140,7 @@ public abstract class ApiBase {
                         dismissLoading();
                         onParse(response);
                         if (null != mApiListener) {
-                            mApiListener.success(ApiBase.this);
+                            mApiListener.success(ApiUtil.this);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -217,14 +217,14 @@ public abstract class ApiBase {
         }
         if (null != mApiListener) {
             try {
-                mApiListener.failure(ApiBase.this);
+                mApiListener.failure(ApiUtil.this);
             } catch (Exception e) {
             }
         }
     }
 
 
-    protected ApiBase() {
+    protected ApiUtil() {
         super();
     }
 
@@ -250,7 +250,7 @@ public abstract class ApiBase {
      *
      * @param tag ：标签，用于扩展保存标识信息
      */
-    public ApiBase setTag(Object tag) {
+    public ApiUtil setTag(Object tag) {
         mTag = tag;
         return this;
     }

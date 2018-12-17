@@ -9,7 +9,6 @@ import com.pic.optimize.http.params.OkRequestParams;
 import com.pic.optimize.http.response.OkHttpCallback;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -31,12 +30,13 @@ public class OkHttpUtil {
 
     public static void init(Context context) {
         if (mOkHttpClient == null) {
-            mClientBuilder = new OkHttpClient()
-                    .newBuilder()
-                    .connectTimeout(DEFAULT_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS)
-                    .readTimeout(DEFAULT_READ_TIMEOUT, TimeUnit.MILLISECONDS)
-                    .writeTimeout(DEFAULT_WRITE_TIMEOUT, TimeUnit.MILLISECONDS);
-            mOkHttpClient = mClientBuilder.build();
+//            mClientBuilder = new OkHttpClient()
+//                    .newBuilder()
+//                    .connectTimeout(DEFAULT_CONNECT_TIMEOUT, TimeUnit.MILLISECONDS)
+//                    .readTimeout(DEFAULT_READ_TIMEOUT, TimeUnit.MILLISECONDS)
+//                    .writeTimeout(DEFAULT_WRITE_TIMEOUT, TimeUnit.MILLISECONDS);
+//            mOkHttpClient = mClientBuilder.build();
+            mOkHttpClient = new OkHttpClient();
         }
     }
 
@@ -72,6 +72,7 @@ public class OkHttpUtil {
 
     public static Request getRequest(String url, RequestBody requestBody, Headers headers, Object tag) {
         Request.Builder builder = new Request.Builder();
+
         if (requestBody != null) {
             builder.post(requestBody);
         }
@@ -143,7 +144,10 @@ public class OkHttpUtil {
             Headers headers = getRequestHeaders(postBodyParams);
             Request request = getRequest(url, requestBody, headers, tag);
 
+
             call = mOkHttpClient.newCall(request);
+
+
             call.enqueue(callback);
         } catch (Throwable e) {
             e.printStackTrace();

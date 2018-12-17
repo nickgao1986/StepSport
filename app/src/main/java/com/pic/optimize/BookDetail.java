@@ -14,6 +14,9 @@ import android.widget.TextView;
 
 import com.pic.optimize.fresco.HttpUtil;
 import com.pic.optimize.http.Book;
+import com.pic.optimize.http.api.ApiUtil;
+import com.pic.optimize.http.api.ApiListener;
+import com.pic.optimize.http.test.TestBookApi;
 import com.pic.optimize.view.TitleBarCommon;
 
 public class BookDetail extends Activity {
@@ -49,7 +52,8 @@ public class BookDetail extends Activity {
         mSaveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new InitDataAsyncTask(mBook).execute();
+               // new InitDataAsyncTask(mBook).execute();
+                testApi();
             }
         });
 
@@ -64,6 +68,27 @@ public class BookDetail extends Activity {
         }
 
     }
+
+    private void testApi() {
+//        String para = new String("bookid="+mBook.bookid+"&bookName="+mBookNameEdit.getText().toString());
+//        String url = "http://139.199.89.89/api/v1/books";
+//        HttpUtil httpUtil = new HttpUtil();
+//        String response = httpUtil.post(BookDetail.this,url,para);
+
+        new TestBookApi(mBook.bookid,mBookNameEdit.getText().toString()).post(this, null, true, false,new ApiListener() {
+            @Override
+            public void success(ApiUtil api) {
+                Log.d(TAG,"<<<<<success="+api);
+            }
+
+            @Override
+            public void failure(ApiUtil api) {
+                Log.d(TAG,"<<<<<failure="+api);
+            }
+        });
+
+    }
+
 
     private class InitDataAsyncTask extends AsyncTask<Void,Void,Void> {
 

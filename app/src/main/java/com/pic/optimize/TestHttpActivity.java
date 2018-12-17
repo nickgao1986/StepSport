@@ -16,9 +16,9 @@ import com.google.gson.reflect.TypeToken;
 import com.pic.optimize.fresco.HttpUtil;
 import com.pic.optimize.http.Book;
 import com.pic.optimize.http.BookMainAdapter;
-import com.pic.optimize.http.api.ApiBase;
+import com.pic.optimize.http.api.ApiUtil;
 import com.pic.optimize.http.api.ApiListener;
-import com.pic.optimize.http.test.PedometerNoticeModuleApi;
+import com.pic.optimize.http.test.TestWalkmateApi;
 import com.pic.optimize.view.TitleBarCommon;
 
 import org.json.JSONArray;
@@ -55,16 +55,17 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
 
 
 
+
     private void proceedNoticeModuleApi() {
-        new PedometerNoticeModuleApi(true).get(this, null, false, false, new ApiListener(){
+        new TestWalkmateApi().get(this, null, false, false, new ApiListener(){
 
             @Override
-            public void success(ApiBase api) {
+            public void success(ApiUtil api) {
                 Log.d(TAG,"<<<<<<success");
             }
 
             @Override
-            public void failure(ApiBase api) {
+            public void failure(ApiUtil api) {
 
             }
         });

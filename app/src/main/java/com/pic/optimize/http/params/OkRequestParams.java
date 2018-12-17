@@ -211,6 +211,7 @@ public class OkRequestParams {
 
     private RequestBody createEncodingBuilderBody() throws Throwable {
         FormBody.Builder builder = new FormBody.Builder();
+
         for (ConcurrentHashMap.Entry<String, String> entry : mUrlParams.entrySet()) {
             builder.add(entry.getKey(), entry.getValue());
         }

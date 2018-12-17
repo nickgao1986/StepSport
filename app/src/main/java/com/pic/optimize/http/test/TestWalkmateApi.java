@@ -3,7 +3,7 @@ package com.pic.optimize.http.test;
 
 import android.util.Log;
 
-import com.pic.optimize.http.api.ApiBase;
+import com.pic.optimize.http.api.ApiUtil;
 import com.pic.optimize.http.constant.Url;
 
 import org.json.JSONObject;
@@ -14,10 +14,10 @@ import static com.pic.optimize.http.api.ApiKey.DATA;
  * Created by gyj on 2018/4/20.
  */
 
-public class PedometerNoticeModuleApi extends ApiBase {
+public class TestWalkmateApi extends ApiUtil {
 
 
-    public PedometerNoticeModuleApi(boolean isPedometerMainPage) {
+    public TestWalkmateApi() {
         super();
     }
 
@@ -33,5 +33,4 @@ public class PedometerNoticeModuleApi extends ApiBase {
             Log.d("TAG","<<<<<data="+data);
         }
     }
-
 }

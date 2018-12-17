@@ -7,12 +7,12 @@ public interface ApiListener {
 	 * 
 	 * @param api
 	 */
-	void success(ApiBase api);
+	void success(ApiUtil api);
 
 	/**
 	 * 发送失败监听
 	 * 
 	 * @param api
 	 */
-	void failure(ApiBase api);
+	void failure(ApiUtil api);
 }
