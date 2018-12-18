@@ -25,7 +25,7 @@ public class TestGetBookApi extends ApiUtil {
     }
 
     @Override
-    protected  void parse(JSONObject jsonObject) throws Exception {
+    protected  void parseData(JSONObject jsonObject) throws Exception {
         mData = jsonObject.optString(DATA);
     }
 }

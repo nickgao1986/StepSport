@@ -1,7 +1,6 @@
 package com.pic.optimize.http.api;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.widget.Toast;
 
@@ -17,7 +16,6 @@ import org.json.JSONObject;
 
 import okhttp3.Call;
 import okhttp3.Headers;
-import okhttp3.Response;
 
 import static com.pic.optimize.http.api.ApiKey.DATA;
 import static com.pic.optimize.http.api.ApiKey.MESSAGE;
@@ -92,16 +90,6 @@ public abstract class ApiUtil {
      * 发送监听
      */
     private OkHttpResJsonHandler mSendListener = new OkHttpResJsonHandler() {
-
-        @Override
-        protected void onSuccessRequest(Call call, @Nullable final Response res, int code, Headers headers, JSONObject response) {
-            super.onSuccessRequest(call, res, code, headers, response);
-        }
-
-        @Override
-        protected void onFailureRequest(Call call, @Nullable final Response res, int code, Headers headers, int error, Throwable t) {
-            super.onFailureRequest(call, res, code, headers, error, t);
-        }
 
         @Override
         protected boolean isPostMainThread() {
@@ -276,7 +264,7 @@ public abstract class ApiUtil {
      * @param jsonObject
      */
     private void onParse(JSONObject jsonObject) throws Exception {
-        parse(jsonObject);
+        parseData(jsonObject);
     }
 
     /**
@@ -284,7 +272,7 @@ public abstract class ApiUtil {
      *
      * @param jsonObject
      */
-    protected abstract void parse(JSONObject jsonObject) throws Exception;
+    protected abstract void parseData(JSONObject jsonObject) throws Exception;
 
 
 
@@ -315,7 +303,7 @@ public abstract class ApiUtil {
      */
     public void post(Context context, boolean showLoading, String loadingString, boolean dismissLoading,
                      boolean showStatusMessage, ApiListener listener) {
-        initSend(context, showLoading, loadingString, dismissLoading, showStatusMessage, listener);
+        init(context, showLoading, loadingString, dismissLoading, showStatusMessage, listener);
         post();
     }
 
@@ -349,7 +337,7 @@ public abstract class ApiUtil {
      */
     public void get(Context context, boolean showLoading, String loadingString, boolean dismissLoading,
                     boolean showStatusMessage, ApiListener listener) {
-        initSend(context, showLoading, loadingString, dismissLoading, showStatusMessage, listener);
+        init(context, showLoading, loadingString, dismissLoading, showStatusMessage, listener);
         get();
     }
 
@@ -388,8 +376,8 @@ public abstract class ApiUtil {
      * @param showStatusMessage ：是否显示出错信息
      * @param listener          ：发送回调
      */
-    private void initSend(Context context, boolean showLoading, String loadingString, boolean dismissLoading,
-                          boolean showStatusMessage, ApiListener listener) {
+    private void init(Context context, boolean showLoading, String loadingString, boolean dismissLoading,
+                      boolean showStatusMessage, ApiListener listener) {
         if (null == context) {
             context = PicApplication.getContext();
         }
@@ -453,7 +441,5 @@ public abstract class ApiUtil {
         }
         return result;
     }
-
-
 
 }

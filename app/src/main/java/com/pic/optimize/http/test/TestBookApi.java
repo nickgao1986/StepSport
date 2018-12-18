@@ -34,7 +34,7 @@ public class TestBookApi extends ApiUtil {
     }
 
     @Override
-    protected  void parse(JSONObject jsonObject) throws Exception {
+    protected  void parseData(JSONObject jsonObject) throws Exception {
         JSONObject data = jsonObject.optJSONObject(DATA);
         if (data != null) {
             Log.d("TAG","<<<<<data="+data);

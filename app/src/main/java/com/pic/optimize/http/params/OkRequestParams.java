@@ -1,28 +1,17 @@
 package com.pic.optimize.http.params;
 
-import java.io.File;
 import java.net.URLEncoder;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import okhttp3.FormBody;
 import okhttp3.Headers;
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
-/**
- * Created by ldy on 2015/12/30.
- */
+
 public class OkRequestParams {
 
-    public final static String APPLICATION_OCTET_STREAM =
-            "application/octet-stream";
-
     protected final ConcurrentHashMap<String, String> mUrlParams = new ConcurrentHashMap<>();
-    protected final ConcurrentHashMap<String, FileWrapper> mFileParams = new ConcurrentHashMap<>();
-    protected final ConcurrentHashMap<String, File[]> mFileArrays = new ConcurrentHashMap<>();
     protected final ConcurrentHashMap<String, String> mHeaderMap = new ConcurrentHashMap<>();
 
     public OkRequestParams() {
@@ -63,60 +52,20 @@ public class OkRequestParams {
 
     public void remove(String key) {
         mUrlParams.remove(key);
-        mFileParams.remove(key);
-        mFileArrays.remove(key);
         mHeaderMap.remove(key);
     }
 
-    public static class FileWrapper {
-
-        public final File file;
-        public final String fileName;
-        public final MediaType mediaType;
-
-        public FileWrapper(File file, MediaType mediaType) {
-            this.file = file;
-            this.mediaType = mediaType;
-            this.fileName = (file == null) ? "FILE" : file.getName();
-        }
-    }
 
     public RequestBody getRequestBody() {
         try {
-            if (mFileParams.size() > 0 || mFileArrays.size() > 0) {
-                return createMultipartBuilderBody();
-            } else {
-                return createEncodingBuilderBody();
-            }
+            return createEncodingBuilderBody();
         } catch (Throwable e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    private RequestBody createMultipartBuilderBody() throws Throwable {
-        MultipartBody.Builder builder = new MultipartBody.Builder();
-        builder.setType(MultipartBody.FORM);
 
-        for (ConcurrentHashMap.Entry<String, String> entry : mUrlParams.entrySet()) {
-            builder.addFormDataPart(entry.getKey(), entry.getValue());
-        }
-
-        for (ConcurrentHashMap.Entry<String, FileWrapper> entry : mFileParams.entrySet()) {
-            FileWrapper fileWrapper = entry.getValue();
-            builder.addFormDataPart(entry.getKey(), fileWrapper.fileName, RequestBody.create(fileWrapper.mediaType, fileWrapper.file));
-        }
-
-        for (ConcurrentHashMap.Entry<String, File[]> entry : mFileArrays.entrySet()) {
-            File[] files = entry.getValue();
-            for (File file : files) {
-                if (file != null && file.exists())
-                    builder.addFormDataPart(entry.getKey(), file.getName(),
-                            RequestBody.create(MediaType.parse(APPLICATION_OCTET_STREAM), file));
-            }
-        }
-        return builder.build();
-    }
 
     private RequestBody createEncodingBuilderBody() throws Throwable {
         FormBody.Builder builder = new FormBody.Builder();
@@ -153,24 +102,6 @@ public class OkRequestParams {
             result.append(entry.getKey());
             result.append("=");
             result.append(entry.getValue());
-        }
-
-        for (ConcurrentHashMap.Entry<String, FileWrapper> entry : mFileParams.entrySet()) {
-            if (result.length() > 0)
-                result.append("&");
-
-            result.append(entry.getKey());
-            result.append("=");
-            result.append("FILE");
-        }
-
-        for (ConcurrentHashMap.Entry<String, File[]> entry : mFileArrays.entrySet()) {
-            if (result.length() > 0)
-                result.append("&");
-
-            result.append(entry.getKey());
-            result.append("=");
-            result.append(Arrays.toString(entry.getValue()));
         }
 
         return result.toString();

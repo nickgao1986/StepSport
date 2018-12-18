@@ -10,7 +10,7 @@ public final class Projections {
 	 /**
 	  * This class help us to build projection for ListActivity
 	  * to display summary information about personal contacts.
-	  * Help to parse Cursor
+	  * Help to parseData Cursor
 	  */
 	 public static final class Personal {
 	        
