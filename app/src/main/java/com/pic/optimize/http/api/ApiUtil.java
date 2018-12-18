@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import com.pic.optimize.R;
 import com.pic.optimize.fresco.PicApplication;
@@ -41,7 +42,6 @@ public abstract class ApiUtil {
     public static final String API_STATUS_CANCELED = "canceled";
 
     private static final int STATUS_CODE_NO_NETWORK_PRE_HTTP = -1001; // 无网络状态码（不发送联网请求）
-    private static final int STATUS_CODE_EMULATOR_PRE_HTTP = -1002; // 模拟器状态码（不发送联网请求）
 
     public String newRsa = null;
     /**
@@ -115,7 +115,6 @@ public abstract class ApiUtil {
 
         @Override
         protected void onFailureRequest(Call call, @Nullable final Response res, int code, Headers headers, int error, Throwable t) {
-            onFailureErrorLog(call, code, headers, "");
             super.onFailureRequest(call, res, code, headers, error, t);
         }
 
@@ -148,43 +147,21 @@ public abstract class ApiUtil {
                         failure(API_STATUS_PARSE_ERROR, mContext.getString(R.string.parse_error));
                     }
                 } else {
-                    // 兼容根字段里含有失败message信息的api 优先级其次
-                    if (TextUtils.isEmpty(getStatusMessage())) {
-                        if (!"changeRsa".equals(getStatus())) {
-                            String message = response.optString(MESSAGE);
-                            if (TextUtils.isEmpty(message)) {
-                                message = mContext.getString(R.string.req_fail);
-                            }
-                            failure(status, message);
-                        } else {
-                            JSONObject data = response.optJSONObject(DATA);
-                            if (data != null) {
-                                if (data.has("newRsa")) {
-                                    newRsa = data.optString("newRsa");
-                                    failure(status, getStatusMessage());
-                                }
-                            }
-                        }
-                    } else {
-                        if ("failed".equals(getStatus())) {
-                            // 兼容data里含有message字段的api 优先级最高
-                            JSONObject data = response.optJSONObject(DATA);
-                            if (data != null) {
-                                String message = data.optString(MESSAGE);
+                    if ("failed".equals(getStatus())) {
+                        // 兼容data里含有message字段的api 优先级最高
+                        JSONObject data = response.optJSONObject(DATA);
+                        if (data != null) {
+                            String message = data.optString(MESSAGE);
+                            if (!TextUtils.isEmpty(message)) {
+                                failure(status, message);
+                            } else {
+                                message = response.optString(MESSAGE);
                                 if (!TextUtils.isEmpty(message)) {
                                     failure(status, message);
                                 } else {
-                                    message = response.optString(MESSAGE);
-                                    if (!TextUtils.isEmpty(message)) {
-                                        failure(status, message);
-                                    } else {
-                                        failure(status, getStatusMessage());
-                                    }
+                                    failure(status, getStatusMessage());
                                 }
                             }
-                        } else {
-                            // 兼容status里含有失败信息的api 优先级最低
-                            failure(status, getStatusMessage());
                         }
                     }
                 }
@@ -284,12 +261,6 @@ public abstract class ApiUtil {
         return API_STATUS_CANCELED.equalsIgnoreCase(getStatus());
     }
 
-    /**
-     * @return
-     */
-    public boolean isNonLogin() {
-        return API_STATUS_NONLOGIN.equalsIgnoreCase(getStatus());
-    }
 
     public String getResponse() {
         try {
@@ -410,11 +381,6 @@ public abstract class ApiUtil {
 
     /**
      * 获取url
-     * <p>
-     * 注：api url 尾标不要加 /
-     * 错误：Url.HOST_URL + "/api/mobile_sign/check_in/"
-     * 正确：Url.HOST_URL + "/api/mobile_sign/check_in"
-     *
      * @return：http链接url
      */
     protected abstract String getUrl();
@@ -457,32 +423,6 @@ public abstract class ApiUtil {
     protected abstract void parse(JSONObject jsonObject) throws Exception;
 
 
-    /**
-     * Http 请求失败  错误日志
-     *
-     * @param statusCode http response status line
-     * @param content    errorResponse.toString();  it`s may ""
-     */
-    protected void onFailureErrorLog(Call call, int statusCode, Headers headers, String content) {
-        if (call == null || isStatusCodePreHttp(statusCode)) {
-            return;
-        }
-        try {
-            String url = call.request().url().toString();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
-     * 是否是未发联网请求的模拟状态码
-     *
-     * @param statusCode
-     * @return
-     */
-    protected boolean isStatusCodePreHttp(int statusCode) {
-        return STATUS_CODE_NO_NETWORK_PRE_HTTP == statusCode || STATUS_CODE_EMULATOR_PRE_HTTP == statusCode;
-    }
 
 
     /**
@@ -638,7 +578,7 @@ public abstract class ApiUtil {
      */
     protected void showStatusMessage(String message) {
         if (mShowStatusMessage && !TextUtils.isEmpty(message)) {
-           // ToastUtil.show(mContext, message);
+            Toast.makeText(mContext,message,Toast.LENGTH_SHORT).show();
         }
     }
 

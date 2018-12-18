@@ -123,7 +123,6 @@ public abstract class OkHttpCallback<T> implements Callback {
         }
     }
 
-    @SuppressWarnings("unchecked")
     protected final T responseToJson(Response response) throws Throwable {
         String responseStr = responseToString(response).trim();
         if (responseStr.startsWith("{") || responseStr.startsWith("[")) {
