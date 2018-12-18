@@ -22,6 +22,12 @@ public class TestBookApi extends ApiUtil {
         addParam("bookName", bookName);
     }
 
+    public TestBookApi(String bookName,String bookDescription) {
+        super();
+        addParam("bookDescription", bookDescription);
+        addParam("bookName", bookName);
+    }
+
     @Override
     protected String getUrl() {
         return "http://139.199.89.89/api/v1/books";

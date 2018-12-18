@@ -26,8 +26,6 @@ import static com.pic.optimize.http.api.ApiKey.STATUS;
 
 public abstract class ApiUtil {
 
-    private static final String TAG = ApiUtil.class.getSimpleName();
-
     public static final String API_STATUS_REJECT_ERROR = "RejectError";
     public static final String API_STATUS_NET_ERROR = "NetError";
     public static final String API_STATUS_PARSE_ERROR = "ParseError";

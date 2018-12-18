@@ -45,8 +45,6 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
         mBookMainAdapter = new BookMainAdapter(this);
         listView.setAdapter(mBookMainAdapter);
         listView.setOnItemClickListener(this);
-
-        proceedBookApi();
     }
 
 
@@ -77,6 +75,7 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
     protected void onResume() {
         super.onResume();
         //new InitDataAsyncTask().execute();
+        proceedBookApi();
 
     }
 
