@@ -37,25 +37,6 @@ public class OkRequestParams {
         }
     }
 
-    public void put(String key, int value) {
-        put(key, String.valueOf(value));
-    }
-
-    public void put(String key, float value) {
-        put(key, String.valueOf(value));
-    }
-
-    public void put(String key, long value) {
-        put(key, String.valueOf(value));
-    }
-
-    public void put(String key, double value) {
-        put(key, String.valueOf(value));
-    }
-
-    public void put(String key, boolean value) {
-        put(key, String.valueOf(value));
-    }
 
     public void put(String key, String value) {
         if (key != null && value != null) {
@@ -69,79 +50,7 @@ public class OkRequestParams {
         }
     }
 
-    public void put(String key, File file) {
-        put(key, file, APPLICATION_OCTET_STREAM);
-    }
 
-    public void put(String key, File file, String contentType) {
-        if (file != null && file.exists() && file.length() != 0) {
-            put(key, new FileWrapper(file, MediaType.parse(contentType)));
-        }
-    }
-
-    public void put(String key, FileWrapper fileWrapper) {
-        try {
-            if (key != null && fileWrapper != null) {
-                mFileParams.put(key, fileWrapper);
-            }
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void put(String key, File... files) {
-        try {
-            if (key != null && files != null) {
-                mFileArrays.put(key, files);
-            }
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void putHeader(String key, int value) {
-        putHeader(key, String.valueOf(value));
-    }
-
-    public void putHeader(String key, float value) {
-        putHeader(key, String.valueOf(value));
-    }
-
-    public void putHeader(String key, long value) {
-        putHeader(key, String.valueOf(value));
-    }
-
-    public void putHeader(String key, double value) {
-        putHeader(key, String.valueOf(value));
-    }
-
-    public void putHeader(String key, boolean value) {
-        putHeader(key, String.valueOf(value));
-    }
-
-    public void putHeader(String key, String value) {
-        if (key != null && value != null) {
-            mHeaderMap.put(key, value);
-        }
-    }
-
-    public void putHeader(Map<String, String> params) {
-        if (params != null && params.size() > 0 ) {
-            mHeaderMap.putAll(params);
-        }
-    }
-
-    public Map<String, String> getUrlParams() {
-        return mUrlParams;
-    }
-
-    public Map<String, String> getHeaderParams() {
-        return mHeaderMap;
-    }
-
-    public Map<String, FileWrapper> getFileParams() {
-        return mFileParams;
-    }
 
     public Headers getRequestHeaders() {
         try {

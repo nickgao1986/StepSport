@@ -1,7 +1,6 @@
 package com.pic.optimize.http.api;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.widget.Toast;
@@ -16,8 +15,6 @@ import com.pic.optimize.http.response.OkHttpCallback;
 
 import org.json.JSONObject;
 
-import java.io.File;
-
 import okhttp3.Call;
 import okhttp3.Headers;
 import okhttp3.Response;
@@ -25,15 +22,12 @@ import okhttp3.Response;
 import static com.pic.optimize.http.api.ApiKey.DATA;
 import static com.pic.optimize.http.api.ApiKey.MESSAGE;
 import static com.pic.optimize.http.api.ApiKey.STATUS;
-import static com.pic.optimize.http.constant.Url.PROTOCOL_HTTP;
-import static com.pic.optimize.http.constant.Url.PROTOCOL_HTTPS;
 
 
 public abstract class ApiUtil {
 
     private static final String TAG = ApiUtil.class.getSimpleName();
 
-    public static final String API_STATUS_NO_NETWORK = "NoNetwork";
     public static final String API_STATUS_REJECT_ERROR = "RejectError";
     public static final String API_STATUS_NET_ERROR = "NetError";
     public static final String API_STATUS_PARSE_ERROR = "ParseError";
@@ -43,7 +37,6 @@ public abstract class ApiUtil {
 
     private static final int STATUS_CODE_NO_NETWORK_PRE_HTTP = -1001; // 无网络状态码（不发送联网请求）
 
-    public String newRsa = null;
     /**
      * 请求参数列表
      */
@@ -53,10 +46,7 @@ public abstract class ApiUtil {
      * 标签，用于扩展保存标识信息
      */
     private Object mTag = null;
-    /**
-     * 网络相应超时时间
-     */
-    private int mTimeoutDuration = 20 * 1000;
+
     /**
      * 状态码
      */
@@ -65,10 +55,7 @@ public abstract class ApiUtil {
      * 状态码信息
      */
     private String mStatusMessage = "";
-    /**
-     * 返回结果Json
-     */
-    private JSONObject mResponse = null;
+
     /**
      * 上下文
      */
@@ -134,7 +121,7 @@ public abstract class ApiUtil {
                 } else {
                     setStatus(status, statusMessage);
                 }
-                setResponseJson(response);
+
                 if (isSuccess()) {
                     try {
                         dismissLoading();
@@ -215,25 +202,6 @@ public abstract class ApiUtil {
 
 
     /**
-     * 获取标签
-     *
-     * @return：标签，用于扩展保存标识信息
-     */
-    public Object getTag() {
-        return mTag;
-    }
-
-    /**
-     * 设置标签
-     *
-     * @param tag ：标签，用于扩展保存标识信息
-     */
-    public ApiUtil setTag(Object tag) {
-        mTag = tag;
-        return this;
-    }
-
-    /**
      * 判断状态码是否成功
      *
      * @return
@@ -242,41 +210,8 @@ public abstract class ApiUtil {
         return ApiStatus.isSuccess(getStatus());
     }
 
-    /**
-     * 是否网络错误
-     *
-     * @return
-     */
-    public boolean isNetError() {
-        return API_STATUS_NO_NETWORK.equalsIgnoreCase(getStatus())
-                || API_STATUS_NET_ERROR.equalsIgnoreCase(getStatus());
-    }
-
-    /**
-     * 是否被取消
-     *
-     * @return
-     */
-    public boolean isCanceled() {
-        return API_STATUS_CANCELED.equalsIgnoreCase(getStatus());
-    }
 
 
-    public String getResponse() {
-        try {
-            return mResponse.toString();
-        } catch (Throwable e) {
-            return "";
-        }
-    }
-
-    public JSONObject getResponseJson() {
-        return mResponse;
-    }
-
-    private void setResponseJson(JSONObject response) {
-        this.mResponse = response;
-    }
 
     /**
      * 获取状态码
@@ -317,23 +252,6 @@ public abstract class ApiUtil {
         mStatusMessage = statusMessage;
     }
 
-    /**
-     * 获取超时时间
-     *
-     * @return：超时时间
-     */
-    public int getTimeoutDuration() {
-        return mTimeoutDuration;
-    }
-
-    /**
-     * 设置超时时间
-     *
-     * @param timeoutDuration ：新的超时时间
-     */
-    public void setTimeoutDuration(int timeoutDuration) {
-        mTimeoutDuration = timeoutDuration;
-    }
 
     /**
      * 添加参数
@@ -345,39 +263,6 @@ public abstract class ApiUtil {
         mParams.put(key, value);
     }
 
-    public void addParam(String key, int value) {
-        mParams.put(key, value);
-    }
-
-    /**
-     * 添加文件
-     *
-     * @param key
-     * @param file
-     */
-    public void addParam(String key, File file) {
-        try {
-            mParams.put(key, file);
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void addParam(String key, File... files) {
-        try {
-            mParams.put(key, files);
-        } catch (Throwable e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void addHeaderParam(String key, String value) {
-        mParams.putHeader(key, value);
-    }
-
-    public void addHeaderParam(String key, int value) {
-        mParams.putHeader(key, value);
-    }
 
     /**
      * 获取url
@@ -385,26 +270,7 @@ public abstract class ApiUtil {
      */
     protected abstract String getUrl();
 
-    /**
-     * 获取真正的Url地址
-     *
-     * @return 真正的Url地址
-     */
-    private String getRealUrl(@NonNull String url) {
-        if (isHttps() && url.contains(PROTOCOL_HTTP))
-            return url.replace(PROTOCOL_HTTP, PROTOCOL_HTTPS);
-        else
-            return url;
-    }
 
-    /**
-     * 判断是否是执行Https协议
-     *
-     * @return @return 是：https，否：http
-     */
-    public boolean isHttps() {
-        return false;
-    }
 
     /**
      * 解析数据
@@ -495,7 +361,7 @@ public abstract class ApiUtil {
     private void post() {
 
         if (Util.hasNetwork(mContext)) {
-            OkHttpUtil.post(getRealUrl(getUrl()), mParams, mTag, mSendListener);
+            OkHttpUtil.post(getUrl(), mParams, mTag, mSendListener);
         } else if (mSendListener != null) {
             mSendListener.onFailure(null, STATUS_CODE_NO_NETWORK_PRE_HTTP, null, OkHttpCallback.RESPONSE_ERROR_NET, new Throwable("recvfrom failed: ECONNRESET (Connection reset by peer)"));
         }
@@ -508,7 +374,7 @@ public abstract class ApiUtil {
      */
     private void get() {
         if (Util.hasNetwork(mContext)) {
-            OkHttpUtil.get(getRealUrl(getUrl()), mParams, mTag, mSendListener);
+            OkHttpUtil.get(getUrl(), mParams, mTag, mSendListener);
         } else if (mSendListener != null) {
             mSendListener.onFailure(null, STATUS_CODE_NO_NETWORK_PRE_HTTP, null, OkHttpCallback.RESPONSE_ERROR_NET, new Throwable("recvfrom failed: ECONNRESET (Connection reset by peer)"));
         }
