@@ -110,6 +110,7 @@ public class OkHttpUtil {
      * @param <T>
      */
     public static <T> void post(String url, OkRequestParams postBodyParams, Object tag, boolean isProgress, boolean commonParams, OkHttpCallback<T> okHttpCallback) {
+        //这里可以添加公共参数
         if (commonParams) {
             OkRequestParams urlComParams = new OkRequestParams();
             url = getFinalUrl(url, urlComParams);

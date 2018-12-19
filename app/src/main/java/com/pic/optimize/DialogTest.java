@@ -2,16 +2,16 @@ package com.pic.optimize;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+
+import com.com.fourmob.datetimepicker.date.NumberPicker;
+import com.com.fourmob.datetimepicker.date.TextPickerDialogUtil;
 
 public class DialogTest extends Activity {
 
@@ -27,22 +27,55 @@ public class DialogTest extends Activity {
 //        dialog.getWindow().setAttributes(lp);
 
 
-        Dialog dialog = getEditCustomDialog("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Log.d("TAG","<<<<left onclick");
-            }
-        }, "Upgrade Now", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Log.d("TAG","<<<<right onclick");
-            }
-        });
-        //是否可以点击硬件的back让弹出框消失
-        dialog.setCancelable(true);
-        //是否点击弹出框的空白部分可以让弹出框消失
-        dialog.setCanceledOnTouchOutside(true);
+//        Dialog dialog = getEditCustomDialog("Cancel", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                Log.d("TAG","<<<<left onclick");
+//            }
+//        }, "Upgrade Now", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                Log.d("TAG","<<<<right onclick");
+//            }
+//        });
+//        //是否可以点击硬件的back让弹出框消失
+//        dialog.setCancelable(true);
+//        //是否点击弹出框的空白部分可以让弹出框消失
+//        dialog.setCanceledOnTouchOutside(true);
+//        dialog.show();
+        showTimePicker();
 
+    }
+
+    private TextPickerDialogUtil dialog;
+    private void showTimePicker() {
+        if (dialog == null) {
+            dialog = new TextPickerDialogUtil(this);
+            dialog.addItems(getItem(24, "", " 时", 0), 1f, true);
+            dialog.addItems(getItem(60, "", "分", 0), 1f, false);
+            dialog.setListener(new TextPickerDialogUtil.OnSelectChangeListener() {
+                @Override
+                public void onDateChange(Integer[] value, NumberPicker changePicker) {
+                }
+
+                @Override
+                public void onConfirm(Integer[] value) {
+                    int hour = value[0];
+                    int minute = value[1];
+                }
+            });
+        }
+        dialog.pickers.get(0).setValue(7);
+        dialog.pickers.get(1).setValue(0);
+        dialog.show("提示时间");
+    }
+
+    private String[] getItem(int length, String startTag, String endTag, int start) {
+        String[] item = new String[length];
+        for (int i = start; i < length + start; i++) {
+            item[i - start] = startTag + i + endTag;
+        }
+        return item;
     }
 
     public AlertDialog getEditCustomDialog() {
