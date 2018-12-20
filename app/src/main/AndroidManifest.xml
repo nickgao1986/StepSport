@@ -163,7 +163,7 @@
 
             </intent-filter>
         </activity>
-
+        <activity android:name=".tutorail.TutorailActivity"/>
 
         <provider
             android:name=".database.MyProvider"

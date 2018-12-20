@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="70" android:drawable="@drawable/rocket_long" />
+    <item android:duration="70" android:drawable="@drawable/rocket_middle" />
+    <item android:duration="70" android:drawable="@drawable/rocket_short" />
+</animation-list>

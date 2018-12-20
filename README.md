@@ -41,3 +41,5 @@
 ## MenuActivity  menu动画展开的例子
 
 ## ShareActivity点击手机文件浏览器的文件，弹出来的菜单包含我们这个应用的例子
+
+## TutorailActivity 带动画效果的全屏用户提示页面

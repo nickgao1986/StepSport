@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<set android:repeatMode="reverse"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate android:duration="1000" android:repeatCount="infinite" android:fromXDelta="0.0" android:toXDelta="0.0" android:fromYDelta="-15.0" android:toYDelta="20.0" />
+    <alpha android:duration="1000" android:repeatCount="infinite" android:fromAlpha="1.0" android:toAlpha="0.3" />
+</set>

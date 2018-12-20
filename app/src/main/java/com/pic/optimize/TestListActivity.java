@@ -16,6 +16,7 @@ import com.pic.optimize.menu.MenuActivity;
 import com.pic.optimize.picwall.PicWallActivity;
 import com.pic.optimize.recycleview.TestRecycleViewActivity;
 import com.pic.optimize.satelite.SateActivity;
+import com.pic.optimize.tutorail.TutorailActivity;
 
 import java.util.ArrayList;
 
@@ -54,7 +55,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("SateActivity");
         list.add("MenuActivity");
         list.add("ShareActivity");
-        list.add("图片压缩");
+        list.add("TutorailActivity");
         list.add("超大图片加载");
         return list;
     }
@@ -118,6 +119,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 18:
                 ShareActivity.startActivity(TestListActivity.this);
+                break;
+            case 19:
+                TutorailActivity.startActivity(TestListActivity.this);
                 break;
 
         }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:repeatMode="reverse" >
+
+    <translate
+        android:duration="1000"
+        android:fromXDelta="0"
+        android:fromYDelta="-15"
+        android:repeatCount="infinite"
+        android:toXDelta="0"
+        android:toYDelta="20" />
+
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="1.0"
+        android:repeatCount="infinite"
+        android:toAlpha="0.3" />
+
+</set>
