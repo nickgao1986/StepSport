@@ -105,6 +105,66 @@
 
         <activity android:name=".menu.MenuActivity"/>
 
+        <activity
+            android:name=".export.ShareActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:mimeType="application/pdf" />
+                <data android:mimeType="image/bmp" />
+                <data android:mimeType="image/tiff" />
+                <data android:mimeType="image/gif" />
+                <data android:mimeType="image/jpeg" />
+                <data android:mimeType="image/x-ms-bmp" />
+                <data android:mimeType="image/png" />
+                <data android:mimeType="image/x-pcx" />
+                <data android:mimeType="image/targa" />
+                <data android:mimeType="image/x-photoshop" />
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="text/xml" />
+                <data android:mimeType="text/html" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="*"
+                    android:mimeType="*/*"
+                    android:pathPattern=".*\\.pdf"
+                    android:scheme="file" />
+
+                <data
+                    android:host="*"
+                    android:mimeType="*/*"
+                    android:pathPattern=".*\\.jpg"
+                    android:scheme="file" />
+
+                <data
+                    android:host="*"
+                    android:mimeType="*/*"
+                    android:pathPattern=".*\\.bmp"
+                    android:scheme="file" />
+                <data
+                    android:host="*"
+                    android:mimeType="*/*"
+                    android:pathPattern=".*\\.png"
+                    android:scheme="file" />
+
+                <data
+                    android:host="*"
+                    android:mimeType="*/*"
+                    android:pathPattern=".*\\.txt"
+                    android:scheme="file" />
+
+            </intent-filter>
+        </activity>
+
+
         <provider
             android:name=".database.MyProvider"
             android:authorities="com.pic.optimize.provider.myprovider"

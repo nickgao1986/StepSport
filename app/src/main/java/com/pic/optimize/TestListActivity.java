@@ -10,6 +10,7 @@ import com.example.shoplistdownload.ContactsList;
 import com.example.shoplistdownload.TabActivityWithAnimation;
 import com.example.shoplistdownload.TestDropdownHideActivity;
 import com.pic.optimize.database.DatabaseTestActivity;
+import com.pic.optimize.export.ShareActivity;
 import com.pic.optimize.fresco.FeedsMainAdapter;
 import com.pic.optimize.menu.MenuActivity;
 import com.pic.optimize.picwall.PicWallActivity;
@@ -52,7 +53,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("TestRecycleViewActivity");
         list.add("SateActivity");
         list.add("MenuActivity");
-        list.add("第三方框架");
+        list.add("ShareActivity");
         list.add("图片压缩");
         list.add("超大图片加载");
         return list;
@@ -114,6 +115,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 17:
                 MenuActivity.startActivity(TestListActivity.this);
+                break;
+            case 18:
+                ShareActivity.startActivity(TestListActivity.this);
                 break;
 
         }

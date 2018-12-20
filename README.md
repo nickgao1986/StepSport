@@ -39,3 +39,5 @@
 ## TestRecycleViewActivity  recycleview的例子
 
 ## MenuActivity  menu动画展开的例子
+
+## ShareActivity点击手机文件浏览器的文件，弹出来的菜单包含我们这个应用的例子
