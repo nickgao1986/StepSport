@@ -12,6 +12,7 @@ import com.example.shoplistdownload.TestDropdownHideActivity;
 import com.pic.optimize.database.DatabaseTestActivity;
 import com.pic.optimize.fresco.FeedsMainAdapter;
 import com.pic.optimize.picwall.PicWallActivity;
+import com.pic.optimize.recycleview.TestRecycleViewActivity;
 
 import java.util.ArrayList;
 
@@ -46,7 +47,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("ContactsList");
         list.add("ExpandListItemActivity");
         list.add("DragIconActivity");
-        list.add("图片优化");
+        list.add("TestRecycleViewActivity");
         list.add("存储优化");
         list.add("加载优化");
         list.add("第三方框架");
@@ -102,6 +103,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 14:
                 DragIconActivity.startActivity(TestListActivity.this);
+                break;
+            case 15:
+                TestRecycleViewActivity.startActivity(TestListActivity.this);
                 break;
 
         }

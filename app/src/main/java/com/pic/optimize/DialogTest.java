@@ -10,8 +10,8 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.com.fourmob.datetimepicker.date.NumberPicker;
-import com.com.fourmob.datetimepicker.date.TextPickerDialogUtil;
+import com.fourmob.datetimepicker.date.NumberPicker;
+import com.fourmob.datetimepicker.date.TextPickerDialogUtil;
 
 public class DialogTest extends Activity {
 

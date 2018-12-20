@@ -99,6 +99,7 @@
         <activity android:name=".TestHttpActivity"/>
         <activity android:name=".BookDetail"/>
         <activity android:name=".DragIconActivity"/>
+        <activity android:name=".recycleview.TestRecycleViewActivity"/>
 
         <provider
             android:name=".database.MyProvider"

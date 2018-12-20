@@ -427,5 +427,6 @@
     <color name="main_menu_text_blue_pressed">#4cbdff</color>
     <color name="main_menu_text_blue_normal">#0b405e</color>
     <color name="report_prompt_color">#B3B3B3</color>
+    <color name="ca_line_color">#E5E5E5</color>
 
 </resources>

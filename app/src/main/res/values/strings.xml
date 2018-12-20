@@ -76,5 +76,14 @@
     <string name="operation_fail">操作失败</string>
     <string name="auth_code_error">校验码错误</string>
 
+    <string-array name="description">
+        <item>实际最终信号的传输是通过物理层实现的</item>
+        <item>将比特组合成字节,再将字节组合成帧,使用链路层地址</item>
+        <item>本层通过IP寻址来建立两个节点之间的连接，为源端的运输层送来的分组</item>
+        <item>传输层建立了主机端到端的链接，传输层的作用是为上层协议提供端到端的可靠和透明的数据传输服务</item>
+        <item>会话层就是负责建立、管理和终止表示层实体之间的通信会话</item>
+        <item>表示层提供各种用于应用层数据的编码和转换功能</item>
+        <item>OSI参考模型中最靠近用户的一层，是为计算机用户提供应用接口</item>
+    </string-array>
 </resources>
 
