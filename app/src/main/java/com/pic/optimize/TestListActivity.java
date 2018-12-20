@@ -11,8 +11,10 @@ import com.example.shoplistdownload.TabActivityWithAnimation;
 import com.example.shoplistdownload.TestDropdownHideActivity;
 import com.pic.optimize.database.DatabaseTestActivity;
 import com.pic.optimize.fresco.FeedsMainAdapter;
+import com.pic.optimize.menu.MenuActivity;
 import com.pic.optimize.picwall.PicWallActivity;
 import com.pic.optimize.recycleview.TestRecycleViewActivity;
+import com.pic.optimize.satelite.SateActivity;
 
 import java.util.ArrayList;
 
@@ -48,8 +50,8 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("ExpandListItemActivity");
         list.add("DragIconActivity");
         list.add("TestRecycleViewActivity");
-        list.add("存储优化");
-        list.add("加载优化");
+        list.add("SateActivity");
+        list.add("MenuActivity");
         list.add("第三方框架");
         list.add("图片压缩");
         list.add("超大图片加载");
@@ -106,6 +108,12 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 15:
                 TestRecycleViewActivity.startActivity(TestListActivity.this);
+                break;
+            case 16:
+                SateActivity.startActivity(TestListActivity.this);
+                break;
+            case 17:
+                MenuActivity.startActivity(TestListActivity.this);
                 break;
 
         }

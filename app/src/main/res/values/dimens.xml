@@ -44,4 +44,5 @@
     <dimen name="text_size_20">20sp</dimen>
     <dimen name="text_size_16">16sp</dimen>
     <dimen name="top">30dp</dimen>
+    <dimen name="distance">150dp</dimen>
 </resources>

@@ -101,6 +101,10 @@
         <activity android:name=".DragIconActivity"/>
         <activity android:name=".recycleview.TestRecycleViewActivity"/>
 
+        <activity android:name=".satelite.SateActivity"/>
+
+        <activity android:name=".menu.MenuActivity"/>
+
         <provider
             android:name=".database.MyProvider"
             android:authorities="com.pic.optimize.provider.myprovider"
