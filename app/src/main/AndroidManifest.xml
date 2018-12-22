@@ -164,6 +164,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".tutorail.TutorailActivity"/>
+        <activity android:name=".rotatemenu.RoateMenuActivity"/>
 
         <provider
             android:name=".database.MyProvider"

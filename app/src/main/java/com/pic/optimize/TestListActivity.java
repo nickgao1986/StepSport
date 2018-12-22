@@ -15,6 +15,7 @@ import com.pic.optimize.fresco.FeedsMainAdapter;
 import com.pic.optimize.menu.MenuActivity;
 import com.pic.optimize.picwall.PicWallActivity;
 import com.pic.optimize.recycleview.TestRecycleViewActivity;
+import com.pic.optimize.rotatemenu.RoateMenuActivity;
 import com.pic.optimize.satelite.SateActivity;
 import com.pic.optimize.tutorail.TutorailActivity;
 
@@ -56,7 +57,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("MenuActivity");
         list.add("ShareActivity");
         list.add("TutorailActivity");
-        list.add("超大图片加载");
+        list.add("RoateMenuActivity");
         return list;
     }
 
@@ -122,6 +123,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 19:
                 TutorailActivity.startActivity(TestListActivity.this);
+                break;
+            case 20:
+                RoateMenuActivity.startActivity(TestListActivity.this);
                 break;
 
         }

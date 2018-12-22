@@ -85,5 +85,12 @@
         <item>表示层提供各种用于应用层数据的编码和转换功能</item>
         <item>OSI参考模型中最靠近用户的一层，是为计算机用户提供应用接口</item>
     </string-array>
+
+    <string name="action_settings">Settings</string>
+    <string name="messages_bar_item_fax">Fax</string>
+    <string name="tab_name_conference">Conferencing</string>
+    <string name="tab_name_zoom_video">Meetings</string>
+    <string name="messages_bar_item_text">Text</string>
+
 </resources>
 
