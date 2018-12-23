@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:left="@dimen/default_padding_to_side">
+        <nine-patch xmlns:android="http://schemas.android.com/apk/res/android"
+            android:src="@drawable/divider"
+            android:dither="false" />
+    </item>
+</layer-list>

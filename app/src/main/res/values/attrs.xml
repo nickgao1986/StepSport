@@ -1,5 +1,14 @@
 <resources>
 
+    <declare-styleable name="ExpandableEditText">
+        <attr name="titleText" format="string"/>
+        <attr name="titleTextStyle1" format="string"/>
+        <attr name="titleTextSize" format="dimension"/>
+        <attr name="titleTextColor" format="color"/>
+        <attr name="itemTextStyle" format="string"/>
+        <attr name="itemTextSize" format="dimension"/>
+        <attr name="itemTextColor" format="color"/>
+    </declare-styleable>
 
     <!--体温管理趋势图-->
     <declare-styleable name="TemperatureTrendChartView">

@@ -11,6 +11,7 @@ import com.example.shoplistdownload.TabActivityWithAnimation;
 import com.example.shoplistdownload.TestDropdownHideActivity;
 import com.pic.optimize.arouter.ArouterTest;
 import com.pic.optimize.database.DatabaseTestActivity;
+import com.pic.optimize.expandabletext.ExpandableEditActivity;
 import com.pic.optimize.export.ShareActivity;
 import com.pic.optimize.fresco.FeedsMainAdapter;
 import com.pic.optimize.menu.MenuActivity;
@@ -62,6 +63,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("RoateMenuActivity");
         list.add("ArouterTest");
         list.add("TabActivity");
+        list.add("ExpandableEditActivity");
         return list;
     }
 
@@ -136,6 +138,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 22:
                 TabActivity.startActivity(TestListActivity.this);
+                break;
+            case 23:
+                ExpandableEditActivity.startActivity(TestListActivity.this);
                 break;
 
         }

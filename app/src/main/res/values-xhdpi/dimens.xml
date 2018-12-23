@@ -271,4 +271,7 @@
     <dimen name="message_collect_right_space">24dp</dimen>
 
     <dimen name="meitun_home_background_pic_height">344dp</dimen>
+    <dimen name="choose_button_radius">12dp</dimen>
+    <dimen name="choose_button_bottom_padding">2dp</dimen>
+    <dimen name="choose_button_side_padding">10dp</dimen>
 </resources>

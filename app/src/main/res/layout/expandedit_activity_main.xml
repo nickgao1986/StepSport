@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ExpandableEditText="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+     >
+
+     <com.ringcentral.android.utils.ui.widget.ExpandableEditText
+                        android:id="@+id/edit_contact_area"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        ExpandableEditText:itemTextColor="@color/black"
+                        ExpandableEditText:itemTextSize="@dimen/font_size_medium"
+                        ExpandableEditText:titleText="To:"
+                        ExpandableEditText:titleTextColor="@color/black"
+                        ExpandableEditText:titleTextSize="@dimen/font_size_medium"
+                        android:background="@drawable/bg_list_item_shifted_divider"
+                        android:paddingBottom="9dp"
+                        android:paddingLeft="@dimen/default_padding_to_side"
+                        android:paddingRight="@dimen/default_padding_to_side"
+                        android:paddingTop="9dp" />
+
+
+</RelativeLayout>

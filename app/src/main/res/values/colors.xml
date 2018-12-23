@@ -459,4 +459,30 @@
     <color name="top_menu_button_bg">@color/us_palette_white</color>
     <color name="search_text_box_border">@color/us_palette_black_lighter_3</color>
     <color name="call_screens_header_divider">@color/us_palette_black_lighter_1</color>
+
+    <color name="palette_white">#FFFFFFFF</color>
+    <color name="palette_black">#FF2F2F2F</color>
+    <color name="palette_black_lighter_1">#FFB3B3B3</color>
+    <color name="palette_black_lighter_2">#FFD7D7D7</color>
+    <color name="palette_black_lighter_3">#FFF7F7F7</color>
+    <color name="palette_black_lighter_4">#FFE7E7E7</color>
+    <color name="palette_blue">#FF0A84BD</color>
+    <color name="palette_blue_lighter_1">#FFD5F3FD</color>
+    <color name="palette_blue_lighter_2">#FFEFF5F9</color>
+    <color name="palette_blue_lighter_3">#FFBAE4F2</color>
+    <color name="palette_orange">#FFFF8801</color>
+    <color name="palette_orange_lighter_1">#FFFFBB33</color>
+    <color name="palette_orange_lighter_2">#FFF9EBE2</color>
+    <color name="palette_green">#FF669900</color>
+    <color name="palette_green_lighter_1">#FF99CC00</color>
+    <color name="palette_green_lighter_2">#FFCCDD99</color>
+    <color name="palette_red">#FFCC0703</color>
+    <color name="palette_red_lighter_1">#FFFE4444</color>
+    <color name="palette_red_lighter_2">#FFFFCACA</color>
+    <color name="palette_red_lighter_3">#FFFEE2E2</color>
+    <color name="palette_menu_1">#303747</color>
+    <color name="palette_menu_2">#222831</color>
+    <color name="palette_menu_3">#3E4652</color>
+    <color name="palette_menu_4">#717881</color>
+    <color name="palette_menu_5">#72777F</color>
 </resources>

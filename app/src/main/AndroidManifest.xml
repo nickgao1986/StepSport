@@ -42,7 +42,9 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
     <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
-
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- Allows an application to write (but not read) the user's contacts data. -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <!-- getui start -->
     <uses-permission android:name="getui.permission.GetuiService.com.babytree.apps.pregnancy" />
@@ -168,6 +170,9 @@
         <activity android:name=".arouter.ArouterTest"></activity>
 
         <activity android:name="com.pic.optimize.tab.TabActivity"></activity>
+        <activity android:name="com.pic.optimize.expandabletext.ExpandableEditActivity"></activity>
+        <activity android:name="com.pic.optimize.expandabletext.ContactSelectorActivity"></activity>
+        <activity android:name="com.pic.optimize.expandabletext.ContactsListActivity"></activity>
 
         <provider
             android:name=".database.MyProvider"
