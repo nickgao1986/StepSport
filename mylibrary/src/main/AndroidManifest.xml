@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.weather.nick.mylibrary" >
+
+    <application>
+        <activity android:name=".MainActivity3"></activity>
+    </application>
+
+</manifest>

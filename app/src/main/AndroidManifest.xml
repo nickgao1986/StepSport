@@ -165,7 +165,7 @@
         </activity>
         <activity android:name=".tutorail.TutorailActivity"/>
         <activity android:name=".rotatemenu.RoateMenuActivity"/>
-
+        <activity android:name=".arouter.ArouterTest"></activity>
         <provider
             android:name=".database.MyProvider"
             android:authorities="com.pic.optimize.provider.myprovider"

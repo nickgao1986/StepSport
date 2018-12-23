@@ -9,6 +9,7 @@ import android.widget.ListView;
 import com.example.shoplistdownload.ContactsList;
 import com.example.shoplistdownload.TabActivityWithAnimation;
 import com.example.shoplistdownload.TestDropdownHideActivity;
+import com.pic.optimize.arouter.ArouterTest;
 import com.pic.optimize.database.DatabaseTestActivity;
 import com.pic.optimize.export.ShareActivity;
 import com.pic.optimize.fresco.FeedsMainAdapter;
@@ -58,6 +59,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("ShareActivity");
         list.add("TutorailActivity");
         list.add("RoateMenuActivity");
+        list.add("ArouterTest");
         return list;
     }
 
@@ -126,6 +128,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 20:
                 RoateMenuActivity.startActivity(TestListActivity.this);
+                break;
+            case 21:
+                ArouterTest.startActivity(TestListActivity.this);
                 break;
 
         }
