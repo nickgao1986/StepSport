@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/launcher_content"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
-</RelativeLayout>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/tab_main_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableTop="@drawable/launch_bar_button_foreground_message"
+        android:textColor="@color/launch_bar_text_color_selector"
+        android:textSize="13sp"
+        android:text="Contacts"/>
+
+    <TextView
+        android:id="@+id/tab_indicator_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sliding_menu_indicator"
+        android:layout_alignRight="@+id/tab_main_text"
+        android:gravity="center"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="3dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:singleLine="true"
+        android:textColor="@color/sliding_menu_indicator_text"
+        android:textSize="@dimen/indicator_text_size"
+        android:textStyle="bold"
+        android:text="11"
+        android:visibility="gone"/>
+
+</merge>

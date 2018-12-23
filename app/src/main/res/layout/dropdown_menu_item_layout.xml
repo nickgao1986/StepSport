@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+   android:layout_width="match_parent"
+   android:id="@+id/drop_down_item_layout"
+   android:layout_height="@dimen/drop_down_menu_height"
+   xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <TextView
+        android:id="@+id/top_menu_button"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/drop_down_menu_height"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textColor="@color/top_menu_button_selector"
+        android:textSize="@dimen/font_size_small" />
+
+    <TextView
+        android:id="@+id/indicator_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/top_menu_button"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_sliding_menu_indicator"
+        android:gravity="center"
+      	android:layout_marginLeft="5dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:singleLine="true"
+        android:textColor="@color/sliding_menu_indicator_text"
+        android:textSize="@dimen/indicator_text_size"
+        android:text="5"
+        android:textStyle="bold" />
+
+</RelativeLayout>

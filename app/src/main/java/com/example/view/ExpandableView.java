@@ -73,7 +73,7 @@ public class ExpandableView extends LinearLayout {
 	}
 	
 	private void initSubView() {
-		mMoreView = mInflater.inflate(R.layout.launch_bar_item, null).findViewById(R.id.launcher_content);
+		mMoreView = mInflater.inflate(R.layout.launch_bar_item12, null).findViewById(R.id.launcher_content);
 		mMoreView.setBackgroundResource(R.drawable.btn_launcher_more);
 		mMoreView.setOnClickListener(new OnClickListener() {
 			@Override

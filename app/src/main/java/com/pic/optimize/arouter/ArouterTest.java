@@ -36,15 +36,6 @@ public class ArouterTest extends Activity {
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //服务
-//                HelloService service = (HelloService) ARouter.getInstance().build("/service/hello").navigation();
-//                service.sayHello("hello sdsdf");
-
-//                Response call = BAFRouter.call("bbtrp://com.babytree.pregnancy/bb_userinfo_service/getuserinfo", new Bundle());
-//
-//                String message = call.message;
-//                Log.d(TAG, "onClick: " + message);
-
 
                 TestService service = (TestService) ARouter.getInstance().build("/testservice/hello").navigation();
                 service.sayHello("hello sdsdf");

@@ -119,7 +119,7 @@ public class DetailShopActivity extends Activity  implements ExpandItemClickList
 	}
 
 	private void addLauncherItem(int i) {
-		View view = LayoutInflater.from(this).inflate(R.layout.launch_bar_item, null).findViewById(R.id.launcher_content);
+		View view = LayoutInflater.from(this).inflate(R.layout.launch_bar_item12, null).findViewById(R.id.launcher_content);
 		view.setBackgroundDrawable(mLauncherDrawables.getDrawable(i));
 		mItemViews.add(view);
 	}

@@ -16,8 +16,9 @@ public class PlusMenuAnimation implements IAnimation {
         view.startAnimation(animation);
     }
 
+
     @Override
-    public void close(View view, int duration) {
+    public void close(View view, int duration, int tab, boolean isSwitch) {
         Animation animation = getAnimation(false, duration);
         view.startAnimation(animation);
     }

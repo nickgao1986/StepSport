@@ -5,7 +5,7 @@ import android.view.View;
 public interface IAnimation {
     public void setAnimationDelegate(IAnimationDelegate aniDelegate);
 
-    public void open(View view, int duration);
+    public void close(View view, int duration, int tab, boolean isSwitch);
 
-    public void close(View view, int duration);
+    public void open(View view, int duration);
 }

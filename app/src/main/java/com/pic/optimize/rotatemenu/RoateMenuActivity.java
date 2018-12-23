@@ -135,17 +135,35 @@ public class RoateMenuActivity extends Activity implements  IAction, IAnimationD
 	}
 
 	@Override
-	public void onAnimationStart() {
-		 mActionMenuBg.setVisibility(View.VISIBLE);
+	public void onAnimationStart(boolean isToUp) {
+		mActionMenuBg.setVisibility(View.VISIBLE);
 	}
 
 	@Override
-	public void onAnimationEnd() {
-		 mActionMenuBg.setVisibility(View.GONE);
+	public void onAnimationEnd(int tab, boolean isSwitch, boolean isToUp) {
+		mActionMenuBg.setVisibility(View.GONE);
 	}
 
 	@Override
+//	public void onAnimationStart() {
+//		 mActionMenuBg.setVisibility(View.VISIBLE);
+//	}
+//
+//	@Override
+//	public void onAnimationEnd() {
+//		 mActionMenuBg.setVisibility(View.GONE);
+//	}
+
+
+
+//	@Override
+//	public void onMenuItemSelect(int itemId) {
+//
+//	}
+
+
+
 	public void onMenuItemSelect(int itemId) {
-		
+
 	}
 }

@@ -18,6 +18,7 @@ import com.pic.optimize.picwall.PicWallActivity;
 import com.pic.optimize.recycleview.TestRecycleViewActivity;
 import com.pic.optimize.rotatemenu.RoateMenuActivity;
 import com.pic.optimize.satelite.SateActivity;
+import com.pic.optimize.tab.TabActivity;
 import com.pic.optimize.tutorail.TutorailActivity;
 
 import java.util.ArrayList;
@@ -60,6 +61,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("TutorailActivity");
         list.add("RoateMenuActivity");
         list.add("ArouterTest");
+        list.add("TabActivity");
         return list;
     }
 
@@ -131,6 +133,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 21:
                 ArouterTest.startActivity(TestListActivity.this);
+                break;
+            case 22:
+                TabActivity.startActivity(TestListActivity.this);
                 break;
 
         }

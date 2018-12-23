@@ -41,4 +41,12 @@
             <flag name="bottom" value="0x1000"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="RoundedCornerImageViewStyle">
+        <attr name="corner_radius" format="integer" />
+        <attr name="image_size" format="dimension" />
+        <attr name="default_image" format="reference" />
+        <attr name="border_width" format="dimension|integer" />
+    </declare-styleable>
+
 </resources>

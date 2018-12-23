@@ -36,7 +36,6 @@
     <dimen name="text_message_text_size">17sp</dimen>
     <dimen name="text_message_input_padding">9dp</dimen>
 
-    <dimen name="header_btn_width">70dp</dimen>
     <dimen name="top_dropdown_triangle_margin">14dp</dimen>
     <dimen name="top_menu_btn_height">45dip</dimen>
     <dimen name="top_menu_btn_margin">7dip</dimen>
@@ -45,5 +44,47 @@
     <dimen name="text_size_16">16sp</dimen>
     <dimen name="top">30dp</dimen>
     <dimen name="distance">150dp</dimen>
+
+    <dimen name="indicator_text_size">12sp</dimen>
     <dimen name="tab_item_padding">8dp</dimen>
+    <dimen name="menu_item_padding">25dp</dimen>
+    <dimen name="fragment_margin_bottom">54dp</dimen>
+    <dimen name="launch_bar_height">60dp</dimen>
+    <dimen name="header_btn_width">52dp</dimen>
+    <dimen name="header_text_padding_bottom">3dp</dimen>
+    <dimen name="header_buttons_padding_bottom">2dp</dimen>
+    <dimen name="reSkin_headerButtonsPadding">15dp</dimen>
+    <dimen name="header_photo_width">45dp</dimen>
+    <dimen name="header_photo_height">45dp</dimen>
+    <dimen name="font_size_large">15sp</dimen>
+    <dimen name="header_profile_width">38dp</dimen>
+    <dimen name="actoin_bar_border_width">1dp</dimen>
+    <dimen name="header_hight">60dp</dimen>
+    <dimen name="choose_button_side_padding">10dp</dimen>
+    <dimen name="top_menu_vertical_separator">1dp</dimen>
+    <dimen name="top_menu_btn_radius">2dp</dimen>
+    <dimen name="drop_down_menu_height">50dp</dimen>
+    <dimen name="drop_down_menu_height_for_tablet">35dp</dimen>
+    <dimen name="drop_down_menu_item_width_for_tablet">300dp</dimen>
+    <dimen name="drop_down_menu_item_margin_top_for_tablet">40dp</dimen>
+    <dimen name="drop_down_menu_item_margin_left_right">10dp</dimen>
+    <dimen name="header_padding_left_right">5dp</dimen>
+
+
+    <dimen name="default_button_stroke_width">1dp</dimen>
+    <dimen name="default_button_height">@dimen/small_list_view_item_height</dimen>
+    <dimen name="default_button_margin_left_right">@dimen/default_padding_to_side</dimen>
+    <dimen name="default_button_large_margin_top_bottom">@dimen/default_button_margin_top_bottom</dimen>
+    <dimen name="default_button_min_height">0dp</dimen>
+    <dimen name="default_between_buttons_margin">@dimen/default_button_margin_left_right</dimen>
+    <dimen name="small_list_view_item_height">52dp</dimen>
+    <dimen name="default_button_margin_top_bottom">10dp</dimen>
+    <dimen name="international_login_content_padding">16dp</dimen>
+    <dimen name="international_login_logo_bottom_padding">40dp</dimen>
+    <dimen name="international_login_logo_top_padding">40dp</dimen>
+    <dimen name="international_login_edit_view_padding">10dp</dimen>
+    <dimen name="international_login_sso_top_margin">24dp</dimen>
+    <dimen name="international_login_edit_view_margin">12dp</dimen>
+    <dimen name="international_login_signup_margin_bottom">36dp</dimen>
+    <dimen name="international_login_signin_margin_bottom">82dp</dimen>
 </resources>

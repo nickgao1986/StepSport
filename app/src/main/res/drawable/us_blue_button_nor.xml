@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/us_palette_blue" />
+    <corners android:radius="@dimen/default_button_radius" />
+    <padding
+        android:bottom="@dimen/default_button_padding"
+        android:left="@dimen/default_button_padding"
+        android:right="@dimen/default_button_padding"
+        android:top="@dimen/default_button_padding" />
+</shape>

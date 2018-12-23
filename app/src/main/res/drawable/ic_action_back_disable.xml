@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="12dp"
+        android:top="12dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/call_screens_header_divider" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/btn_bg_action_bar"
+        android:right="1dp" />
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/icon_back_disable" />
+    </item>
+
+</layer-list>

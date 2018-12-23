@@ -16,7 +16,7 @@ public class MenuRotateAnimation extends ViewStateManager implements IAnimation 
     @Override
     public void open(final View view, int duration) {
         if (mAnimationDelegate != null) {
-            mAnimationDelegate.onAnimationStart();
+            mAnimationDelegate.onAnimationStart(true);
         }
 
         setViewState(view, View.VISIBLE, true);
@@ -29,7 +29,7 @@ public class MenuRotateAnimation extends ViewStateManager implements IAnimation 
     }
 
     @Override
-    public void close(final View view, int duration) {
+    public void close(final View view, int duration, int tab, boolean isSwitch) {
         Animation animation;
         animation = new android.view.animation.RotateAnimation(0, mRotateDegrees, Animation.RELATIVE_TO_SELF,
                 0.5f, Animation.RELATIVE_TO_SELF, 1.0f);
@@ -49,10 +49,12 @@ public class MenuRotateAnimation extends ViewStateManager implements IAnimation 
             public void onAnimationEnd(Animation arg0) {
                 setViewState(view, View.GONE, false);
                 if (mAnimationDelegate != null) {
-                    mAnimationDelegate.onAnimationEnd();
+                    mAnimationDelegate.onAnimationEnd(1,false,false);
                 }
             }
         });
         view.startAnimation(animation);
     }
+
+
 }

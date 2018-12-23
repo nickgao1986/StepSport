@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:minWidth="@dimen/tutorial_tip_min_width"
+              android:background="@drawable/tip_background">
+
+    <TextView
+        android:text="Tap icon to do something."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/tutorial_tip_horizontal_padding_left"
+        android:paddingTop="@dimen/tutorial_tip_vertical_padding"
+        android:paddingBottom="@dimen/tutorial_tip_vertical_padding"
+        android:textColor="@color/black"
+        android:minWidth="@dimen/tutorial_tip_text_min_width"
+        android:maxWidth="@dimen/tutorial_tip_text_max_width"
+        android:textSize="@dimen/tutorial_tip_text_font_size"
+        android:id="@+id/tvText"/>
+
+    <ImageButton
+        android:id="@+id/btnClose"
+        android:layout_width="@dimen/tutorial_tip_close_button_width"
+        android:layout_height="@dimen/tutorial_tip_close_button_height"
+        android:layout_toRightOf="@id/tvText"
+        android:background="@android:color/transparent"
+        android:layout_gravity="center"
+        android:src="@drawable/tip_close_btn_selector"/>
+
+</RelativeLayout>

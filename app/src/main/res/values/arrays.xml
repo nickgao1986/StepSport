@@ -224,4 +224,22 @@
         <item>@drawable/btn_launcher_meeting</item>
         <item>@drawable/btn_launcher_presence</item>
     </array>
+
+    <declare-styleable name="TitleBar">
+        <attr name="title_text" format="integer" />
+        <attr name="title_right_button_label" format="integer" />
+        <attr name="title_right_button_drawable" format="integer" />
+        <attr name="title_has_dropdown" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="HeaderBar">
+        <attr name="header_header_text" format="integer" />
+        <attr name="header_right_button_label" format="integer" />
+        <attr name="header_left_button_label" format="integer" />
+
+        <attr name="header_left_button_drawable" format="integer" />
+        <attr name="header_right_button_drawable" format="integer" />
+
+        <attr name="header_menu_button_label" format="boolean" />
+    </declare-styleable>
 </resources>

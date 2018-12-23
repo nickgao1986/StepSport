@@ -40,7 +40,7 @@ public class PlusButton extends ImageView implements IAction {
 
 
     private void close(int duration) {
-        mAnimation.close(this, duration);
+        mAnimation.close(this, duration,0,false);
         if (mActionListener != null) {
             if (duration != 0) {
                 mActionListener.closeWithAnimation();
@@ -49,6 +49,7 @@ public class PlusButton extends ImageView implements IAction {
             }
         }
     }
+
 
     @Override
     public void openWithAnimation() {

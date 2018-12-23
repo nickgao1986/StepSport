@@ -117,12 +117,12 @@ public class ActionMenu extends ViewGroup implements IAction, View.OnClickListen
 
 	@Override
 	public void closeWithAnimation() {
-		  mAnimation.close(this, mAnimationDuration);
+		  mAnimation.close(this, mAnimationDuration,0,false);
 	}
 
 	@Override
 	public void closeWithoutAnimation() {
-		 mAnimation.close(this, 0);
+		 mAnimation.close(this, 0,0,false);
 	}
 
     @Override
