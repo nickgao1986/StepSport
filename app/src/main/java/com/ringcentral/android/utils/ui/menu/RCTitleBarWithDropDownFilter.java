@@ -130,11 +130,7 @@ public class RCTitleBarWithDropDownFilter extends RCMainTitleBar implements View
 
     private void showDropDownFilter(boolean showAnimation) {
         if (mDropDownFilterDialog == null) {
-            if(false) {
-                mDropDownFilterDialog = new DropDownFilterDialogForTablet(getContext());
-            }else{
-                mDropDownFilterDialog = new DropDownFilterDialogForPhone(getContext());
-            }
+            mDropDownFilterDialog = new DropDownFilterDialogForPhone(getContext());
         }
 
         rotatePlusButton(mContext, false);

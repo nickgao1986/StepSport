@@ -166,26 +166,6 @@ public class TabActivity extends TutorialActivity implements
 			}
 		});
 		
-		//saveFile("aaaa");
-	}
-
-	private void saveFile(String str) {
-		String fileName = Environment.getExternalStorageDirectory() + "/"
-				+ "log.txt";
-		BufferedWriter writer = null;
-		try {
-			writer = new BufferedWriter(new FileWriter(fileName));
-			writer.write(str);
-			writer.flush();
-		} catch (IOException ex) {
-			System.out.println("=====ex="+ex);
-		} finally {
-			try {
-				writer.close();
-			} catch (IOException ex) {
-
-			}
-		}
 	}
 
 	private void popDownWidget(final int tab, final boolean isSwitch) {
@@ -333,6 +313,25 @@ public class TabActivity extends TutorialActivity implements
 	@Override
 	public void onDropDownFilterClicked() {
 
+	}
+
+	private void saveFile(String str) {
+		String fileName = Environment.getExternalStorageDirectory() + "/"
+				+ "log.txt";
+		BufferedWriter writer = null;
+		try {
+			writer = new BufferedWriter(new FileWriter(fileName));
+			writer.write(str);
+			writer.flush();
+		} catch (IOException ex) {
+			System.out.println("=====ex="+ex);
+		} finally {
+			try {
+				writer.close();
+			} catch (IOException ex) {
+
+			}
+		}
 	}
 
 }
