@@ -120,5 +120,36 @@
 
     <string name="messages_bar_item_all">All Messages</string>
     <string name="messages_bar_item_voice">Voicemail</string>
+
+
+    <string name="main_home">首页</string>
+    <string name="main_new">"有什么新鲜的事情告诉大家"</string>
+    <string name="main_at">\@我</string>
+    <string name="main_comment">评论</string>
+    <string name="main_message">私信</string>
+    <string name="main_edit">编写</string>
+    <string name="main_reload">刷新</string>
+    <string name="main_news">信息</string>
+    <string name="main_my_info">我的资料</string>
+    <string name="menu_search">搜索</string>
+    <string name="more">更多</string>
+    <string name="link_lookaround">热门电影</string>
+    <string name="link_recommend">热门喜剧</string>
+    <string name="link_hot">热门演唱会</string>
+
+    <string name="main_gps_fail">地理信息获取失败</string>
+    <string name="attention_all">注意</string>
+    <string name="delete_location_or_not">是否删除地理信息？</string>
+    <string name="ok">ok</string>
+    <string name="cancel">cancel</string>
+    <string name="menu_camera">相机拍摄</string>
+    <string name="menu_gallery">手机相册</string>
+    <string name="pls_insert_sdcard">SD卡不可用</string>
+    <string name="delete_text">清除文字？</string>
+    <string name="override_draft_or_not">发现草稿已存在，是否覆盖？</string>
+    <string name="load_draft_or_not">发现草稿，是否加载？</string>
+    <string name="delete_draft">删除草稿</string>
+    <string name="itemmenu_delete">删除</string>
+    <string name="itemmenu_delete_mblog">删除微博</string>
 </resources>
 

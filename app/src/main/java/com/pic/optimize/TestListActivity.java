@@ -21,6 +21,7 @@ import com.pic.optimize.rotatemenu.RoateMenuActivity;
 import com.pic.optimize.satelite.SateActivity;
 import com.pic.optimize.tab.TabActivity;
 import com.pic.optimize.tutorail.TutorailActivity;
+import com.pic.optimize.weibo.WriteBlog;
 
 import java.util.ArrayList;
 
@@ -64,6 +65,7 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         list.add("ArouterTest");
         list.add("TabActivity");
         list.add("ExpandableEditActivity");
+        list.add("WriteBlog");
         return list;
     }
 
@@ -141,6 +143,9 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
                 break;
             case 23:
                 ExpandableEditActivity.startActivity(TestListActivity.this);
+                break;
+            case 24:
+                WriteBlog.startActivity(TestListActivity.this);
                 break;
 
         }

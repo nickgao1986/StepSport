@@ -87,4 +87,29 @@
     <dimen name="international_login_edit_view_margin">12dp</dimen>
     <dimen name="international_login_signup_margin_bottom">36dp</dimen>
     <dimen name="international_login_signin_margin_bottom">82dp</dimen>
+
+    <dimen name="button_height">45dp</dimen>
+    <dimen name="bottom_tab_font_size">10dp</dimen>
+    <dimen name="bottom_tab_padding_up">5dp</dimen>
+    <dimen name="bottom_tab_padding_drawable">2dp</dimen>
+
+    <dimen name="switch_logo_bottom_padding">30sp</dimen>
+
+    <dimen name="widget_height">100dp</dimen>
+    <dimen name="sta_height">48dp</dimen>
+
+    <dimen name="widget_write_margin_top">19dp</dimen>
+    <dimen name="widget_write_margin_left">10dp</dimen>
+
+    <dimen name="widget_content_margin_top">20dp</dimen>
+    <dimen name="widget_content_margin_left">10dp</dimen>
+    <dimen name="widget_logo_size">35dp</dimen>
+    <!--	<dimen name="detail_btn_compound_padding">1dp</dimen>-->
+    <dimen name="title_height">74dp</dimen>
+
+    <dimen name="new_blog_size">70dp</dimen>
+    <dimen name="emotion_item_view_height">13.3dp</dimen>
+    <dimen name="emotion_view_height">220dp</dimen>
+
+    <dimen name="splash_test_center_margin_right">0dp</dimen>
 </resources>

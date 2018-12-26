@@ -43,6 +43,10 @@
     <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CAMERA" >
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
     <!-- Allows an application to write (but not read) the user's contacts data. -->
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
@@ -165,6 +169,10 @@
 
             </intent-filter>
         </activity>
+
+        <activity android:name="com.pic.optimize.weibo.WriteBlog"/>
+
+
         <activity android:name=".tutorail.TutorailActivity"/>
         <activity android:name=".rotatemenu.RoateMenuActivity"/>
         <activity android:name=".arouter.ArouterTest"></activity>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="@android:color/white" >
+	
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:background="#f4f4f4" >
+		
+		<LinearLayout
+			android:id="@+id/btns_bottom"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+			android:orientation="horizontal">
+			
+			
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1">
+				<ImageButton
+					android:src="@drawable/btn_insert_save"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/bg_btn"
+					android:visibility="gone" />
+				
+				<ImageButton
+					android:id="@+id/ib_insert_location"
+					android:src="@drawable/btn_insert_location"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/bg_btn"/>
+					
+				<ImageButton
+					android:id="@+id/ib_insert_pic"
+					android:src="@drawable/btn_insert_pic"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/bg_btn"/>
+				
+				<ImageButton
+					android:id="@+id/ib_insert_topic"
+					android:src="@drawable/btn_insert_talk"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/bg_btn"/>
+				
+				<ImageButton
+					android:id="@+id/ib_insert_at"
+					android:src="@drawable/btn_insert_at"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/bg_btn"/>
+				
+				<ImageButton
+					android:id="@+id/ib_face_keyboard"
+					android:src="@drawable/btn_insert_face"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:background="@drawable/bg_btn"/>
+			</LinearLayout>
+		</LinearLayout>
+	
+		<RelativeLayout
+			android:id="@+id/marks"
+			android:layout_width="fill_parent"
+			android:layout_height="50dp"
+			android:padding="3dp"
+			android:layout_above="@id/btns_bottom" >
+			
+			<ImageView
+				android:id="@+id/iv_insertpic"
+				android:scaleType="centerCrop"
+				android:layout_width="50dp"
+				android:layout_height="fill_parent"
+				android:visibility="gone" />
+			
+			<ImageView
+				android:id="@+id/iv_location"
+				android:src="@drawable/icon_insertlocation"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="15dp"
+				android:layout_toRightOf="@id/iv_insertpic"
+				android:visibility="gone"/>
+				
+			<ProgressBar
+				android:id="@+id/pg_loadlocation"
+				style="@android:style/Widget.ProgressBar.Small.Inverse"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="15dp"
+				android:layout_toRightOf="@id/iv_insertpic"
+				android:visibility="gone" />
+			
+			<LinearLayout
+				android:id="@+id/ll_text_limit_unit"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerVertical="true"
+				android:layout_alignParentRight="true"
+				android:gravity="center"
+				android:background="@drawable/bg_delwords"
+				android:focusable="true"
+				android:clickable="true" android:layout_alignParentBottom="false">
+				
+				<TextView
+					android:id="@+id/tv_text_limit"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="140"
+					android:layout_marginRight="5px"
+					android:textColor="#333"/>
+				
+				<ImageView
+					android:src="@drawable/icon_delwords"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" />
+				
+			</LinearLayout>
+			
+		</RelativeLayout>
+		
+		<EditText
+			android:id="@+id/et_mblog"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_above="@id/marks"
+			android:background="@null"
+			android:capitalize="sentences"
+			android:imeOptions="actionDone"
+			android:gravity="top|left"
+			android:layout_margin="3px" />
+	
+	</RelativeLayout>
+	
+	<com.pic.optimize.weibo.view.EmotionView
+		android:id="@+id/emotion_view"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:visibility="gone" />
+</LinearLayout>
