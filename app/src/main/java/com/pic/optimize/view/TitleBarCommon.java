@@ -43,7 +43,7 @@ public class TitleBarCommon extends RelativeLayout {
     public void setLayoutInflater(LayoutInflater inflater){
         mLayoutInflater = inflater;
     }
-    /**自定义头部**/
+
     public void setCustomTitleBar(int customTitleLayoutId){
         if (customTitleLayoutId <=0) {
             this.setVisibility(View.GONE);
@@ -60,7 +60,6 @@ public class TitleBarCommon extends RelativeLayout {
         addView(baseHead,params);
     }
 
-    /**自定义头部**/
     public void setCustomTitleBar(View baseHead){
         if (baseHead == null) {
             this.setVisibility(View.GONE);

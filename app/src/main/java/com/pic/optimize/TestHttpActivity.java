@@ -96,4 +96,5 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
         Book book = mBookArrayList.get(position);
         BookDetail.startActivity(TestHttpActivity.this,book);
     }
+
 }

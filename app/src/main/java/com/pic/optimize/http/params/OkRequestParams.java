@@ -1,18 +1,17 @@
 package com.pic.optimize.http.params;
 
 import java.net.URLEncoder;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import okhttp3.FormBody;
-import okhttp3.Headers;
 import okhttp3.RequestBody;
 
 
 public class OkRequestParams {
 
-    protected final ConcurrentHashMap<String, String> mUrlParams = new ConcurrentHashMap<>();
-    protected final ConcurrentHashMap<String, String> mHeaderMap = new ConcurrentHashMap<>();
+    protected final HashMap<String, String> mUrlParams = new HashMap<>();
 
     public OkRequestParams() {
         this(null);
@@ -40,19 +39,8 @@ public class OkRequestParams {
     }
 
 
-
-    public Headers getRequestHeaders() {
-        try {
-            return Headers.of(mHeaderMap);
-        } catch (Throwable e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     public void remove(String key) {
         mUrlParams.remove(key);
-        mHeaderMap.remove(key);
     }
 
 
@@ -67,7 +55,7 @@ public class OkRequestParams {
 
 
 
-    private RequestBody createEncodingBuilderBody() throws Throwable {
+    private RequestBody createEncodingBuilderBody() {
         FormBody.Builder builder = new FormBody.Builder();
 
         for (ConcurrentHashMap.Entry<String, String> entry : mUrlParams.entrySet()) {

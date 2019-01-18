@@ -106,38 +106,38 @@ public class BookDetail extends Activity {
 
 
 
-//    private class InitDataAsyncTask extends AsyncTask<Void,Void,Void> {
-//
-//        private Book mBook;
-//        public InitDataAsyncTask(Book book) {
-//            mBook = book;
-//        }
-//        @Override
-//        protected Void doInBackground(Void... params) {
-//
-//            if(!isAddOrEdit) {
-//                String para = new String("bookid="+mBook.bookid+"&bookName="+mBookNameEdit.getText().toString());
-//                String url = "http://139.199.89.89/api/v1/books";
-//                HttpUtil httpUtil = new HttpUtil();
-//                String response = httpUtil.post(BookDetail.this,url,para);
-//                Log.d(TAG,"<<<<<response="+response);
-//            }else{
-//                String para = new String("bookDescription="+mBookNameEdit.getText().toString()+"&bookName="+mBookNameEdit.getText().toString());
-//                String url = "http://139.199.89.89/api/v1/books";
-//                HttpUtil httpUtil = new HttpUtil();
-//                String response = httpUtil.post(BookDetail.this,url,para);
-//                Log.d(TAG,"<<<<<response="+response);
-//            }
-//
-//            return null;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(Void aVoid) {
-//            super.onPostExecute(aVoid);
-//            finish();
-//        }
-//    }
+    private class InitDataAsyncTask extends AsyncTask<Void,Void,Void> {
+
+        private Book mBook;
+        public InitDataAsyncTask(Book book) {
+            mBook = book;
+        }
+        @Override
+        protected Void doInBackground(Void... params) {
+
+            if(!isAddOrEdit) {
+                String para = new String("bookid="+mBook.bookid+"&bookName="+mBookNameEdit.getText().toString());
+                String url = "http://139.199.89.89/api/v1/books";
+                HttpUtil httpUtil = new HttpUtil();
+                String response = httpUtil.post(BookDetail.this,url,para);
+                Log.d(TAG,"<<<<<response="+response);
+            }else{
+                String para = new String("bookDescription="+mBookNameEdit.getText().toString()+"&bookName="+mBookNameEdit.getText().toString());
+                String url = "http://139.199.89.89/api/v1/books";
+                HttpUtil httpUtil = new HttpUtil();
+                String response = httpUtil.post(BookDetail.this,url,para);
+                Log.d(TAG,"<<<<<response="+response);
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            finish();
+        }
+    }
 
 
     private void initTitle() {

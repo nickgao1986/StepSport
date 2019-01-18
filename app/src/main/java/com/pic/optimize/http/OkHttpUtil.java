@@ -55,8 +55,7 @@ public class OkHttpUtil {
         Call call = null;
         Callback callback = getCallBack(okHttpCallback);
         try {
-            Headers headers = (params == null ? null : params.getRequestHeaders());
-            Request request = getRequest(url, null, headers, tag);
+            Request request = getRequest(url, null, null, tag);
 
             call = mOkHttpClient.newCall(request);
             call.enqueue(callback);
@@ -122,8 +121,7 @@ public class OkHttpUtil {
         Callback callback = getCallBack(okHttpCallback);
         try {
             RequestBody requestBody = (postBodyParams == null ? null : postBodyParams.getRequestBody());
-            Headers headers = (postBodyParams == null ? null : postBodyParams.getRequestHeaders());
-            Request request = getRequest(url, requestBody, headers, tag);
+            Request request = getRequest(url, requestBody, null, tag);
 
             call = mOkHttpClient.newCall(request);
 
@@ -141,9 +139,7 @@ public class OkHttpUtil {
         if (requestBody != null) {
             builder.post(requestBody);
         }
-        if (headers != null) {
-            builder.headers(headers);
-        }
+
         if (tag != null) {
             builder.tag(tag);
         }

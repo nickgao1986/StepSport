@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.babytree.baf.aop.plugin'
 
 android {
     defaultConfig {
@@ -54,8 +53,7 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.3'
     compile 'com.squareup.okhttp3:okhttp-ws:3.3.1'
 
-    compile 'com.facebook.fresco:fresco:1.3.0+'
-    compile 'com.facebook.fresco:drawee:0.1.0+'
+    compile 'com.facebook.fresco:fresco:1.8.0'
     compile "com.nineoldandroids:library:2.4.0"
     compile'com.alibaba:arouter-api:1.3.1'
 

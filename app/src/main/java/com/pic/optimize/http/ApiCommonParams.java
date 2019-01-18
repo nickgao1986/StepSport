@@ -7,7 +7,7 @@ import com.pic.optimize.fresco.PicApplication;
 import com.pic.optimize.http.Util.Util;
 import com.pic.optimize.http.params.OkRequestParams;
 
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.HashMap;
 
 
 public class ApiCommonParams {
@@ -20,19 +20,11 @@ public class ApiCommonParams {
 	 * 应用标识(每个接口调用都需要传)
 	 */
 	private static String mAppName = null;
-	/**
-	 * mac地址(每个接口调用都需要传)
-	 */
-	private static String mMac = null;
+
 	/**
 	 * 版本号(每个接口调用都需要传)
 	 */
 	private static String mVersion = null;
-
-	/**
-	 * 网络状态(每个接口调用都需要传)
-	 */
-	private static int mNetworkState = 7;
 
 	/**
 	 * 用户id
@@ -52,10 +44,7 @@ public class ApiCommonParams {
      * build_serial
      */
     private static String mBuildSerial = null;
-    /**
-     * 渠道号
-     */
-    private static String mChannel = null;
+
 	/**
 	 * 手机型号
 	 */
@@ -64,10 +53,7 @@ public class ApiCommonParams {
 	 * 手机厂商
 	 */
 	private static String mManufacturer = null;
-	/**
-     * 用户下载app时间
-     */
-	private static long mDownloadTs;
+
 
 
 	static {
@@ -86,8 +72,8 @@ public class ApiCommonParams {
 	/**
 	 * 获取通用公共参数
 	 */
-	public static ConcurrentHashMap<String, String> fetchCommonsParams() {
-		ConcurrentHashMap<String, String> params = new ConcurrentHashMap<>();
+	public static HashMap<String, String> fetchCommonsParams() {
+		HashMap<String, String> params = new HashMap<>();
 
 		params.put("client_type", "android");
 
@@ -102,8 +88,7 @@ public class ApiCommonParams {
 		}
 
 
-		// 关键校验参数，无论是否为空（非null）都将其拼入api
-		params.put("mac", mMac == null ? "" : mMac);
+		params.put("uid", mUserId);
 		params.put("imei", mImei == null ? "" : mImei);
 
 		if (!TextUtils.isEmpty(mAndroidId)) {
@@ -139,70 +124,6 @@ public class ApiCommonParams {
 	}
 
 
-	public static int getNetworkState() {
-		return mNetworkState;
-	}
-
-	public static void setNetworkState(int networkState) {
-		mNetworkState = networkState;
-	}
-
-	/**
-	 * 获取渠道
-	 * @return
-	 */
-	public static String getChannel() {
-		return mChannel;
-	}
-
-	/**
-	 * 获取mac地址
-	 * @return
-	 */
-	public static String getMacAddress() {
-		return mMac;
-	}
-
-    /**
-     * 获取imei
-     * @return
-     */
-    public static String getImei() {
-        return mImei;
-    }
-
-    /**
-     * 获取手机型号
-     * @return
-     */
-    public static String getDeivceModel() {
-        return mPhoneModel;
-    }
-
-	/**
-	 * 获取 android id
-	 * @return
-	 */
-	public static String getAndroidId() {
-		return mAndroidId;
-	}
-
-	/**
-	 * 获取版本号
-	 * @return
-	 */
-	public static String getAppVersionName() {
-		return mVersion;
-	}
-
-
-	public static void setUserID(String userId) {
-		ApiCommonParams.mUserId = userId;
-	}
-	
-	public static String getUserId() {
-		return mUserId;
-	}
 
 
 }
