@@ -2,11 +2,9 @@ package com.pic.optimize;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Looper;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.shoplistdownload.ContactsList;
 import com.example.shoplistdownload.TabActivityWithAnimation;
@@ -40,23 +38,8 @@ public class TestListActivity extends Activity implements AdapterView.OnItemClic
         mListView.setAdapter(new FeedsMainAdapter(this,getList()));
         mListView.setOnItemClickListener(this);
 
-        testHandler();
     }
 
-    private void testHandler() {
-        new Thread(
-                new Runnable() {
-                    @Override
-                    public void run() {
-                        Looper.prepareMainLooper();
-                        mListView.setAdapter(new FeedsMainAdapter(TestListActivity.this,getList()));
-
-                        Toast.makeText(TestListActivity.this,"toast show",Toast.LENGTH_SHORT).show();
-                        Looper.loop();
-                    }
-                }
-        ).start();
-    }
 
 
     public ArrayList<String> getList() {

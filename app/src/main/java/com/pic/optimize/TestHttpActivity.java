@@ -14,6 +14,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.pic.optimize.http.Book;
 import com.pic.optimize.http.BookMainAdapter;
+import com.pic.optimize.http.BookResponse;
+import com.pic.optimize.http.BookService;
 import com.pic.optimize.http.api.ApiListener;
 import com.pic.optimize.http.api.ApiUtil;
 import com.pic.optimize.http.test.TestGetBookApi;
@@ -21,6 +23,12 @@ import com.pic.optimize.view.TitleBarCommon;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TestHttpActivity extends Activity implements AdapterView.OnItemClickListener {
 
@@ -69,6 +77,33 @@ public class TestHttpActivity extends Activity implements AdapterView.OnItemClic
 
             }
         });
+
+        useRetrofit();
+    }
+
+
+
+    private void useRetrofit() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://139.199.89.89") //设置网络请求的Url地址
+                .addConverterFactory(GsonConverterFactory.create()) //设置数据解析器
+                .build();
+        BookService service = retrofit.create(BookService.class);
+        Call<BookResponse> call = service.getResult();
+
+        //3.发送请求
+        call.enqueue(new Callback<BookResponse>() {
+            @Override
+            public void onResponse(Call<BookResponse> call, Response<BookResponse> response) {
+                Log.d(TAG,"<<<<<response="+response);
+            }
+
+            @Override
+            public void onFailure(Call<BookResponse> call, Throwable t) {
+
+            }
+        });
+
     }
 
     @Override

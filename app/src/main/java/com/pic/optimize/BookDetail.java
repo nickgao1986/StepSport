@@ -14,10 +14,18 @@ import android.widget.TextView;
 
 import com.pic.optimize.fresco.HttpUtil;
 import com.pic.optimize.http.Book;
-import com.pic.optimize.http.api.ApiUtil;
+import com.pic.optimize.http.BookPostService;
+import com.pic.optimize.http.BookResponse;
 import com.pic.optimize.http.api.ApiListener;
+import com.pic.optimize.http.api.ApiUtil;
 import com.pic.optimize.http.test.TestBookApi;
 import com.pic.optimize.view.TitleBarCommon;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BookDetail extends Activity {
 
@@ -53,7 +61,7 @@ public class BookDetail extends Activity {
             @Override
             public void onClick(View v) {
                // new InitDataAsyncTask(mBook).execute();
-                testApi();
+                useRetrofit();
             }
         });
 
@@ -102,6 +110,29 @@ public class BookDetail extends Activity {
 
     }
 
+
+    private void useRetrofit() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://139.199.89.89") //设置网络请求的Url地址
+                .addConverterFactory(GsonConverterFactory.create()) //设置数据解析器
+                .build();
+        BookPostService service = retrofit.create(BookPostService.class);
+        Call<BookResponse> call = service.getResult(mBookNameEdit.getText().toString(),mDescriptionEdit.getText().toString());
+
+        //3.发送请求
+        call.enqueue(new Callback<BookResponse>() {
+            @Override
+            public void onResponse(Call<BookResponse> call, Response<BookResponse> response) {
+                Log.d(TAG,"<<<<<response="+response);
+            }
+
+            @Override
+            public void onFailure(Call<BookResponse> call, Throwable t) {
+
+            }
+        });
+
+    }
 
 
 
